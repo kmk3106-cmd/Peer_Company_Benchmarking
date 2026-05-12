@@ -48,12 +48,17 @@ val JOIN lab   ON CIK,REPORT_DATE,ELMT_ID,LANG  -- 사람이 읽을 항목명
 val JOIN sub   USING(CIK, REPORT_DATE)          -- 제출 시점 메타
 ```
 
-## 4. 단위·정규화 (실수 잦은 곳)
-- `VALUE`는 문자열로 옴 → 숫자 캐스팅 필요
-- `UNIT_ID ∈ {KRW, SHARES, KRWEPS, PURE, USD}` — 통화 항목은 KRW만 비교
-- `DECIMALS = -3` → VALUE는 천원 단위 (실제 원 = VALUE × 10³)
-- `DECIMALS = -6` → 백만원, `-9` → 십억원
-- **적재 시 모두 원 단위 BIGINT로 정규화 권장**. 표시 단계에서 천원/백만원 변환.
+## 4. 단위·정규화 (실수 잦은 곳 — 실측으로 확정)
+- `VALUE`는 문자열로 옴 → 숫자 캐스팅 필요 (`TRY_CAST(VALUE AS DOUBLE)`)
+- `UNIT_ID ∈ {KRW, SHARES, KRWEPS, PURE, USD, BHD, CLP, ...}` — 통화 비교는 **KRW만**
+- **`DECIMALS`는 정확도(precision)만 표시 — 단위 변환에 사용 X** (XBRL 2.1 spec 그대로)
+  - `DECIMALS=-6` = "값은 10^6 단위까지 정확함" (백만원 정확도). VALUE는 그대로 원 단위.
+  - `DECIMALS=0` = "원 단위까지 정확". VALUE 그대로.
+  - 가이드 PDF의 "백만단위" 표기는 한국어 번역 모호함 — 실데이터 검증으로 spec 해석 채택.
+- **검증**: 흥국화재 자산 raw=12,894,689,000,000 (DECIMALS=-6) → 12.89조원 ✓
+              미래에셋생명 자산 raw=32,404,438,804,746 (DECIMALS=0) → 32.4조원 ✓
+- 결론: `val_norm.amount_krw = TRY_CAST(VALUE AS DOUBLE) WHERE UNIT_ID='KRW'`
+- DECIMALS는 별도 메타 컬럼으로 유지 (정확도 알림용)
 
 ## 5. 횡단 비교 가능 여부 판단
 - prefix가 `ifrs-full_`, `dart_`, `dart-gcd_`, `ias_*_` → **표준, 횡단 비교 가능**
