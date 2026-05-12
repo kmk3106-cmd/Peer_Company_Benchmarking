@@ -22,25 +22,24 @@ def liability_balance(
     spec: QuerySpec,
     item_name: str = "total_liability",
     period_instant: str | None = "2025-12-31",
-    fallback_to_separate: bool = True,
+    fallback_to_other_basis: bool = True,
 ) -> pd.DataFrame:
     """Cross-section of one balance-sheet top-line item across peers.
 
-    Uses `top_level_only=True` — only contexts whose sole axis is cons/sep.
-    This matches 사업보고서 BS values exactly (verified with 미래에셋 27.00조).
+    Project rule: 별도(separate) 기준만 사용 (CLAUDE.md §7). `QuerySpec.consolidation`
+    default is "separate". Use `top_level_only=True` to match 사업보고서 BS exactly
+    (verified: 미래에셋 별도 보험계약부채 27.00조 = 사업보고서 제39기 BS).
 
     Args:
-        item_name: key in liability_items.yml `liability_balance` (e.g.
-            'total_liability', 'total_asset_held', 'total_assets_bs').
+        item_name: key in liability_items.yml `liability_balance`.
         period_instant: YYYY-MM-DD instant date filter.
-        fallback_to_separate: if consolidation='consolidated' but a peer has
-            no consolidated submission (e.g. 흥국화재, 롯데손해), fall back
-            to that peer's separate value so the cross-section isn't full of
-            zeros.
+        fallback_to_other_basis: if a peer has no submission for the primary
+            basis (e.g. some firms only file consolidated), fall back to the
+            other basis. Marked in the `basis` column so it's visible.
 
     Returns long DataFrame:
         cik | name_ko | sector | item | amount_krw | period_instant | basis
-        where basis ∈ {'consolidated', 'separate'} indicates which was used.
+        where basis ∈ {'separate', 'consolidated'} indicates which was used.
     """
     d = liability_mapping.load()
     spec_item = d.liability_balance[item_name]
@@ -54,33 +53,30 @@ def liability_balance(
     df = collapse_to_one_per_cik(df, how="max_abs")
     df["basis"] = spec.consolidation
 
-    # Fallback: for peers missing from consolidated, pull separate
-    if (
-        fallback_to_separate
-        and spec.consolidation == "consolidated"
-    ):
+    if fallback_to_other_basis and spec.consolidation in ("separate", "consolidated"):
         from peer_benchmarking.domain import peer_groups
 
         peer_ciks = set(peer_groups.members_of(spec.peer_group))
         present = set(df["cik"]) if not df.empty else set()
         missing = peer_ciks - present
         if missing:
-            sep_spec = QuerySpec(
+            other = "consolidated" if spec.consolidation == "separate" else "separate"
+            other_spec = QuerySpec(
                 report_date=spec.report_date,
-                consolidation="separate",
+                consolidation=other,
                 peer_group=spec.peer_group,
             )
-            sep_df = fetch_element_values(
+            other_df = fetch_element_values(
                 con,
-                sep_spec,
+                other_spec,
                 element_id=spec_item.element_id,
                 require_period_instant=period_instant,
                 top_level_only=True,
             )
-            sep_df = collapse_to_one_per_cik(sep_df, how="max_abs")
-            sep_df = sep_df[sep_df["cik"].isin(missing)]
-            sep_df["basis"] = "separate"
-            df = pd.concat([df, sep_df], ignore_index=True)
+            other_df = collapse_to_one_per_cik(other_df, how="max_abs")
+            other_df = other_df[other_df["cik"].isin(missing)]
+            other_df["basis"] = other
+            df = pd.concat([df, other_df], ignore_index=True)
 
     df["item"] = item_name
     df["ko_label"] = spec_item.ko_label

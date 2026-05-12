@@ -100,10 +100,15 @@ val JOIN sub   USING(CIK, REPORT_DATE)          -- 제출 시점 메타
 - `DI818100/105` 보험계약 위험관리
 
 ## 7. 분석할 때 항상 의식할 것
-1. **결산 후 정정 가능** — 분석에 `as-of {SUBMISSION_DATETIME}` 표기 필수
-2. **66개사 중 상세 주석 제출은 소수** — 매 분기 데이터 가용성 먼저 확인 후 분석 (스크립트는 부재 시 명확히 경고)
-3. **동일 항목이라도 회사별로 다른 dimension(axis/member)으로 보고** — cntxt 풀 비교 필수
-4. **자사 내부 데이터는 절대 원격 전송 금지** — `data/user/`는 로컬 전용, .gitignore
+1. **★ 별도(separate) 기준만 사용 — 연결(consolidated)은 분석 대상에서 제외 ★**
+   사용자 결정 (2026-05-13). 보험사 본업 평가에는 별도가 표준.
+   - `QuerySpec(consolidation="separate", ...)` 기본값
+   - 별도 미제출 회사가 있으면 연결로 fallback (안전망) — 단, basis 컬럼에 'consolidated' 명시
+   - 모든 새 분석 함수·리포트·차트 default는 별도
+2. **결산 후 정정 가능** — 분석에 `as-of {SUBMISSION_DATETIME}` 표기 필수
+3. **66개사 중 상세 주석 제출은 소수** — 매 분기 데이터 가용성 먼저 확인 후 분석
+4. **동일 항목이라도 회사별로 다른 dimension(axis/member)으로 보고** — cntxt 풀 비교 필수
+5. **자사 내부 데이터는 절대 원격 전송 금지** — `data/user/`는 로컬 전용, .gitignore
 
 ## 8. 자주 쓰는 작업 → 어디로 가야 하나
 | 하고 싶은 것 | Skill 또는 코드 | 메모 |

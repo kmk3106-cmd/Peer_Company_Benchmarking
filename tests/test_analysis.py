@@ -29,7 +29,8 @@ def con():
 
 @pytest.fixture
 def spec():
-    return QuerySpec(report_date="20251231", consolidation="consolidated", peer_group="all_insurers")
+    # Project rule: 별도(separate) 기준 default (CLAUDE.md §7)
+    return QuerySpec(report_date="20251231", consolidation="separate", peer_group="all_insurers")
 
 
 def test_liability_balance_returns_all_peers(con, spec):

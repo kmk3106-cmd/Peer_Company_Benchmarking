@@ -215,15 +215,16 @@ def build_report(
     # Replace default sheet
     wb.remove(wb.active)
 
-    spec_life = QuerySpec(report_date=report_date, consolidation="consolidated", peer_group="life")
-    spec_all = QuerySpec(report_date=report_date, consolidation="consolidated", peer_group="all_insurers")
+    # 프로젝트 규칙: 별도(separate) 기준만 사용 (CLAUDE.md §7)
+    spec_life = QuerySpec(report_date=report_date, consolidation="separate", peer_group="life")
+    spec_all = QuerySpec(report_date=report_date, consolidation="separate", peer_group="all_insurers")
 
     # --- 1. Overview ---
     overview = wb.create_sheet("개요")
     row = _write_title(
         overview,
-        f"DART XBRL 동업사 비교분석 — {report_date[:4]}년 사업연도",
-        f"미래에셋생명 (CIK 00112332) 기준 · 작성: {report_date[:4]}-12-31 · KOSPI 상장 보험사 11개사",
+        f"DART XBRL 동업사 비교분석 — {report_date[:4]}년 사업연도 (별도 기준)",
+        f"미래에셋생명 (CIK 00112332) 기준 · {report_date[:4]}-12-31 · KOSPI 상장 보험사 11개사 · 별도(separate) 재무제표",
     )
 
     # Pull key metrics
@@ -243,7 +244,8 @@ def build_report(
         ("생보 4개사 중위 대비", f"{self_lib['value']/self_lib['median']:.2f}x" if "value" in self_lib else "N/A"),
         ("전체 11개사 중 순위", f"{self_lib_all.get('rank','?')} / {self_lib_all.get('n_peers','?')} (백분위 {self_lib_all.get('percentile',0):.1f}%)"),
         ("", ""),
-        ("주의사항", "결산 후 정정 가능 · 별도/연결 표시는 연결 기준"),
+        ("기준", "별도(separate) 재무제표 — 연결은 본 분석 대상에서 제외"),
+        ("주의사항", "결산 후 정정 가능 · 일부 회사는 별도 미제출 시 연결로 대체 (basis 컬럼 확인)"),
         ("데이터 출처", "DART 공시 XBRL 주석 (opendart.fss.or.kr)"),
     ]
     for k, v in fields:

@@ -193,8 +193,9 @@ def build_html_report(
         ├─ 차트 4: 보험서비스결과 (생보 4개사)
         └─ 차트 5: 회계모형 분포 (PAA vs Non-PAA, 11개사)
     """
-    spec_life = QuerySpec(report_date=report_date, consolidation="consolidated", peer_group="life")
-    spec_all = QuerySpec(report_date=report_date, consolidation="consolidated", peer_group="all_insurers")
+    # 프로젝트 규칙: 별도(separate) 기준만 사용 (CLAUDE.md §7)
+    spec_life = QuerySpec(report_date=report_date, consolidation="separate", peer_group="life")
+    spec_all = QuerySpec(report_date=report_date, consolidation="separate", peer_group="all_insurers")
 
     life_lib = cross_section.liability_balance(con, spec_life, period_instant=period_instant)
     all_lib = cross_section.liability_balance(con, spec_all, period_instant=period_instant)
@@ -238,14 +239,15 @@ def build_html_report(
     <!doctype html>
     <html lang='ko'>
     <head><meta charset='utf-8'>
-    <title>동업사 비교분석 — {report_date[:4]} 사업연도</title>
+    <title>동업사 비교분석 — {report_date[:4]} 사업연도 (별도 기준)</title>
     {PAGE_CSS}
     </head>
     <body>
-      <h1>DART XBRL 동업사 비교분석</h1>
+      <h1>DART XBRL 동업사 비교분석 <small style='color:#6b7280;font-weight:normal'>(별도 기준)</small></h1>
       <p class='meta'>
-        대상: 미래에셋생명 (CIK 00112332) · 기준: {report_date[:4]}-12-31<br>
+        대상: 미래에셋생명 (CIK 00112332) · 기준일: {report_date[:4]}-12-31<br>
         Peer: KOSPI 상장 보험사 11개사 (생보 4 · 손보 6 · 재보험 1)<br>
+        <b>기준: 별도(separate) 재무제표 — 연결은 본 분석 대상에서 제외</b><br>
         데이터: DART 공시 XBRL 주석 · 결산 후 정정 가능
       </p>
       <h2>핵심 요약</h2>

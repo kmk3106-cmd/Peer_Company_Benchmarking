@@ -31,12 +31,14 @@ class QuerySpec:
 
     Attributes:
         report_date: YYYYMMDD string (e.g. '20251231').
-        consolidation: 'consolidated' | 'separate' | 'both'.
+        consolidation: 'separate' | 'consolidated' | 'both'.
+            DEFAULT IS 'separate' — project rule: 별도만 사용, 연결은 분석 제외.
+            See CLAUDE.md §7 and memory/separate_only_rule.md.
         peer_group: peer_groups.yml group name (e.g. 'life', 'all_insurers').
     """
 
     report_date: str
-    consolidation: Consolidation = "consolidated"
+    consolidation: Consolidation = "separate"
     peer_group: str = "all_insurers"
 
     @property
