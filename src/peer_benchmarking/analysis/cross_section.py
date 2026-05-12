@@ -22,16 +22,25 @@ def liability_balance(
     spec: QuerySpec,
     item_name: str = "total_liability",
     period_instant: str | None = "2025-12-31",
+    fallback_to_separate: bool = True,
 ) -> pd.DataFrame:
-    """Cross-section of one balance-sheet item across peers.
+    """Cross-section of one balance-sheet top-line item across peers.
+
+    Uses `top_level_only=True` — only contexts whose sole axis is cons/sep.
+    This matches 사업보고서 BS values exactly (verified with 미래에셋 27.00조).
 
     Args:
         item_name: key in liability_items.yml `liability_balance` (e.g.
-            'total_liability', 'total_asset').
+            'total_liability', 'total_asset_held', 'total_assets_bs').
         period_instant: YYYY-MM-DD instant date filter.
+        fallback_to_separate: if consolidation='consolidated' but a peer has
+            no consolidated submission (e.g. 흥국화재, 롯데손해), fall back
+            to that peer's separate value so the cross-section isn't full of
+            zeros.
 
     Returns long DataFrame:
-        cik | name_ko | sector | item | amount_krw | period_instant
+        cik | name_ko | sector | item | amount_krw | period_instant | basis
+        where basis ∈ {'consolidated', 'separate'} indicates which was used.
     """
     d = liability_mapping.load()
     spec_item = d.liability_balance[item_name]
@@ -40,11 +49,44 @@ def liability_balance(
         spec,
         element_id=spec_item.element_id,
         require_period_instant=period_instant,
+        top_level_only=True,
     )
     df = collapse_to_one_per_cik(df, how="max_abs")
+    df["basis"] = spec.consolidation
+
+    # Fallback: for peers missing from consolidated, pull separate
+    if (
+        fallback_to_separate
+        and spec.consolidation == "consolidated"
+    ):
+        from peer_benchmarking.domain import peer_groups
+
+        peer_ciks = set(peer_groups.members_of(spec.peer_group))
+        present = set(df["cik"]) if not df.empty else set()
+        missing = peer_ciks - present
+        if missing:
+            sep_spec = QuerySpec(
+                report_date=spec.report_date,
+                consolidation="separate",
+                peer_group=spec.peer_group,
+            )
+            sep_df = fetch_element_values(
+                con,
+                sep_spec,
+                element_id=spec_item.element_id,
+                require_period_instant=period_instant,
+                top_level_only=True,
+            )
+            sep_df = collapse_to_one_per_cik(sep_df, how="max_abs")
+            sep_df = sep_df[sep_df["cik"].isin(missing)]
+            sep_df["basis"] = "separate"
+            df = pd.concat([df, sep_df], ignore_index=True)
+
     df["item"] = item_name
     df["ko_label"] = spec_item.ko_label
-    return df[["cik", "name_ko", "sector", "item", "ko_label", "amount_krw", "period_instant"]]
+    return df[
+        ["cik", "name_ko", "sector", "item", "ko_label", "amount_krw", "period_instant", "basis"]
+    ]
 
 
 def component_decomposition(
@@ -54,8 +96,9 @@ def component_decomposition(
 ) -> pd.DataFrame:
     """BEL/RA/CSM 분해 across peers.
 
-    For each peer, returns three rows (one per component) showing how
-    insurance contract liability is split into the IFRS17 building blocks.
+    Uses the *decomposition* element (Issued 없는 변형) because that is what
+    DART filers attach the components axis member to. The BS top-line uses
+    a different element (Issued 포함).
 
     Returns long DataFrame:
         cik | name_ko | sector | component | amount_krw | period_instant
@@ -66,7 +109,7 @@ def component_decomposition(
         df = fetch_element_values(
             con,
             spec,
-            element_id=d.liability_balance["total_liability"].element_id,
+            element_id=d.liability_balance["total_liability_for_decomposition"].element_id,
             extra_member_filter=member.element_id,
             require_period_instant=period_instant,
         )

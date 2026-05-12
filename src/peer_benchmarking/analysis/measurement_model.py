@@ -30,7 +30,7 @@ def by_standard_model(
         where model ∈ {'PAA', 'NonPAA'}.
     """
     d = liability_mapping.load()
-    total = d.liability_balance["total_liability"].element_id
+    total = d.liability_balance["total_liability_for_decomposition"].element_id
     parts = []
     for model_key in ("PAA", "NonPAA"):
         member = d.measurement_model_axis.members[model_key].element_id
@@ -107,7 +107,7 @@ def by_extended_model(
         )
 
     d = liability_mapping.load()
-    total = d.liability_balance["total_liability"].element_id
+    total = d.liability_balance["total_liability_for_decomposition"].element_id
     rows: list[dict] = []
     for _, m in members.iterrows():
         # Run a single-CIK fetch reusing fetch_element_values with peer_group hack:

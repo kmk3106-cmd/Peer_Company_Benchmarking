@@ -198,7 +198,7 @@ def build_html_report(
 
     life_lib = cross_section.liability_balance(con, spec_life, period_instant=period_instant)
     all_lib = cross_section.liability_balance(con, spec_all, period_instant=period_instant)
-    all_assets = cross_section.liability_balance(con, spec_all, item_name="total_asset",
+    all_assets = cross_section.liability_balance(con, spec_all, item_name="total_assets_bs",
                                                   period_instant=period_instant)
     rev = cross_section.pl_item(con, spec_life, "insurance_revenue", period_start, period_end)
     isr = cross_section.pl_item(con, spec_life, "insurance_service_result", period_start, period_end)

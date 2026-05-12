@@ -33,7 +33,11 @@ def test_liability_dictionary_load():
 
     # Balance items
     assert "total_liability" in d.liability_balance
-    assert d.liability_balance["total_liability"].element_id == "ifrs-full_InsuranceContractsThatAreLiabilities"
+    # The BS top-line element (Issued 포함) — 미래에셋 27.00조 매칭 검증
+    assert d.liability_balance["total_liability"].element_id == "ifrs-full_InsuranceContractsIssuedThatAreLiabilities"
+    # Separate decomposition element exists for axis breakdown
+    assert "total_liability_for_decomposition" in d.liability_balance
+    assert d.liability_balance["total_liability_for_decomposition"].element_id == "ifrs-full_InsuranceContractsThatAreLiabilities"
 
     # Components axis (BEL/RA/CSM)
     assert set(d.components_axis.members) == {"BEL", "RA", "CSM"}

@@ -229,7 +229,8 @@ def build_report(
     # Pull key metrics
     life_lib = cross_section.liability_balance(con, spec_life, period_instant=period_instant)
     all_lib = cross_section.liability_balance(con, spec_all, period_instant=period_instant)
-    all_assets = cross_section.liability_balance(con, spec_all, item_name="total_asset", period_instant=period_instant)
+    # BS-level 자산총계 (검증값: 미래에셋 32.92조)
+    all_assets = cross_section.liability_balance(con, spec_all, item_name="total_assets_bs", period_instant=period_instant)
 
     self_lib = ratios.self_percentile(life_lib)
     self_lib_all = ratios.self_percentile(all_lib)

@@ -59,6 +59,7 @@ def fetch_element_values(
     element_id: str,
     extra_member_filter: str | None = None,
     require_period_instant: str | None = None,
+    top_level_only: bool = False,
 ) -> pd.DataFrame:
     """Fetch all rows for one element across the peer group.
 
@@ -74,26 +75,56 @@ def fetch_element_values(
         require_period_instant: if given (YYYY-MM-DD), only contexts whose
             PERIOD_INSTANT matches are returned. Use for instant-period
             (balance-sheet) items.
+        top_level_only: if True, restrict to contexts whose ONLY axis is the
+            cons/sep one (no extra dimensions). Use for BS top-line items
+            ("보험계약부채", 자산총계, 부채총계). Mutually exclusive with
+            extra_member_filter — set one or the other.
 
     Returns:
         DataFrame with columns: cik, name_ko, sector, context_id, amount_krw,
         decimals, period_start, period_end, period_instant.
     """
+    if top_level_only and extra_member_filter:
+        raise ValueError("top_level_only and extra_member_filter are mutually exclusive")
+
     ciks = peer_groups.members_of(spec.peer_group)
     cik_in = _ciks_in_clause(ciks)
     cons_in = ", ".join(f"'{m}'" for m in spec.cons_members)
 
-    sql = f"""
-    WITH cons_ctx AS (
-      SELECT DISTINCT CIK, REPORT_DATE, CONTEXT_ID,
-             PERIOD_START_DATE, PERIOD_END_DATE, PERIOD_INSTANT
-      FROM cntxt_insurers
-      WHERE CIK IN ({cik_in})
-        AND REPORT_DATE = ?
-        AND AXIS_ELEMENT_ID = '{CONS_AXIS}'
-        AND MEMBER_ELEMENT_ID IN ({cons_in})
-    )
-    """
+    if top_level_only:
+        # Contexts where the ONLY axis present is the cons/sep one — this matches
+        # the BS top-line (no other dimension applied). Critical for direct
+        # comparison with 사업보고서 values like 27.00조 보험계약부채.
+        cons_cte = f"""
+        WITH cons_ctx AS (
+          SELECT CIK, REPORT_DATE, CONTEXT_ID,
+                 ANY_VALUE(PERIOD_START_DATE) AS PERIOD_START_DATE,
+                 ANY_VALUE(PERIOD_END_DATE)   AS PERIOD_END_DATE,
+                 ANY_VALUE(PERIOD_INSTANT)    AS PERIOD_INSTANT,
+                 ANY_VALUE(MEMBER_ELEMENT_ID) AS cons_member
+          FROM cntxt_insurers
+          WHERE CIK IN ({cik_in})
+            AND REPORT_DATE = ?
+          GROUP BY CIK, REPORT_DATE, CONTEXT_ID
+          HAVING COUNT(*) = 1
+             AND ANY_VALUE(AXIS_ELEMENT_ID) = '{CONS_AXIS}'
+             AND ANY_VALUE(MEMBER_ELEMENT_ID) IN ({cons_in})
+        )
+        """
+    else:
+        cons_cte = f"""
+        WITH cons_ctx AS (
+          SELECT DISTINCT CIK, REPORT_DATE, CONTEXT_ID,
+                 PERIOD_START_DATE, PERIOD_END_DATE, PERIOD_INSTANT
+          FROM cntxt_insurers
+          WHERE CIK IN ({cik_in})
+            AND REPORT_DATE = ?
+            AND AXIS_ELEMENT_ID = '{CONS_AXIS}'
+            AND MEMBER_ELEMENT_ID IN ({cons_in})
+        )
+        """
+
+    sql = cons_cte
     if extra_member_filter:
         sql += f"""
     , extra_ctx AS (
