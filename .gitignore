@@ -1,0 +1,39 @@
+# Raw XBRL data and DuckDB (대용량, 외부에서 재다운로드 가능)
+data/raw/
+data/db/
+data/user/
+
+# Original zip downloads
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude Code local settings (per-user)
+.claude/settings.local.json
+
+# Build/output
+report/*.xlsx
+report/*.html
+report/*.pdf
+!report/.gitkeep
+
+# Logs
+*.log

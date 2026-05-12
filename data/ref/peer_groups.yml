@@ -1,0 +1,53 @@
+# Peer groups for Mirae Asset Life Insurance benchmarking
+# Scope: KOSPI-listed Korean insurers (only set with DART XBRL footnote data)
+# Self: 00112332 미래에셋생명
+
+self_cik: "00112332"
+
+groups:
+  all_insurers:
+    label: 한국 상장 보험사 전체
+    description: KOSPI 상장 보험사 11개사 (생보·손보·재보험 통합 — 시장 분포 컨텍스트)
+    members:
+      - "00112332"  # 미래에셋생명
+      - "00126256"  # 삼성생명
+      - "00113058"  # 한화생명
+      - "00117267"  # 동양생명
+      - "00139214"  # 삼성화재
+      - "00164973"  # 현대해상
+      - "00159102"  # DB손해보험
+      - "00135917"  # 한화손해보험
+      - "00113562"  # 롯데손해보험
+      - "00103176"  # 흥국화재
+      - "00113191"  # 코리안리
+
+  life:
+    label: 생명보험 (자사 + 동업사)
+    description: 직접 비교 대상 — IFRS17 보험계약부채(특히 CSM·LRC) 핵심
+    members:
+      - "00112332"  # 미래에셋생명 (self)
+      - "00126256"  # 삼성생명
+      - "00113058"  # 한화생명
+      - "00117267"  # 동양생명
+
+  non_life:
+    label: 손해보험
+    description: 사업모델 다름 — LIC 중심, 1년 보장 위주. 시장 컨텍스트용
+    members:
+      - "00139214"  # 삼성화재
+      - "00164973"  # 현대해상
+      - "00159102"  # DB손해보험
+      - "00135917"  # 한화손해보험
+      - "00113562"  # 롯데손해보험
+      - "00103176"  # 흥국화재
+
+  reinsurance:
+    label: 재보험
+    description: 재보험계약자산부채(DI817200/205) 중심. 별도 분석
+    members:
+      - "00113191"  # 코리안리
+
+# 분석 기본 정책:
+# - 핵심 비교군: groups.life (자사 + 3개 동업사) — Top 5 / Comparable 5 구분 없이 통합
+# - 시장 컨텍스트: groups.all_insurers (11개 분포에서 자사 percentile)
+# - 손보/재보험은 별도 섹션 — 같은 도표에 혼합 비교 금지 (사업모델 차이)
