@@ -143,23 +143,41 @@ sub          ── 제출 메타 (CIK, REPORT_DATE)
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 2.1 기술 스택 (제안)
-| 영역 | 선택지 | 추천 |
-|---|---|---|
-| DB | DuckDB / SQLite / Postgres | **DuckDB** (단일 파일, 무서버, parquet/csv 네이티브, 100MB+ TSV 빠름) |
-| 처리 | pandas / polars | **polars** (대용량 elmt.tsv 836MB 효율) |
-| 시각화 | matplotlib / plotly / altair | **plotly** (인터랙티브, Streamlit 통합 좋음) |
-| UI | Jupyter / Streamlit / CLI+Excel | **Decision Point #2** 참조 |
-| 패키지 관리 | pip+venv / poetry / uv | **uv** (빠르고 Windows 친화적) |
+### 2.1 기술 스택 (확정)
+| 영역 | 선택 |
+|---|---|
+| DB | **DuckDB** (단일 파일, 무서버, GB급 TSV COPY 빠름) |
+| 처리 | **polars** (대용량 stream/lazy, val.tsv 2.93GB 처리) |
+| 시각화 | **plotly** (HTML interactive, 향후 웹 임베드 용이) |
+| 리포트 출력 | **openpyxl** (Excel) + **plotly.io.write_html** |
+| 패키지 관리 | **uv** (빠르고 Windows 친화적) |
+| 향후 통합 후보 | FastAPI/Flask (계리포탈 REST endpoint) |
 
-### **Decision Point #2**: UI 모드 선택
-| 안 | 장점 | 단점 |
-|---|---|---|
-| **Excel 자동 생성 + CLI** | 결산 산출물과 동일 포맷, 팀원 공유 쉬움 | 인터랙티브 탐색 어려움 |
-| **Streamlit 대시보드** | 인터랙티브, 차트 풍부 | localhost 실행 필요, 보안 검토 |
-| **Jupyter notebook** | 분석 코드와 결과 일체화 | 비개발자 사용 어려움 |
+### **Decision Point #2 (확정)**: Excel + plotly HTML + **library-first 아키텍처**
 
-**제안**: 핵심 출력은 **Excel + plotly HTML** 페어, 보조로 Streamlit 옵션. 팀장 의사결정·임원 보고에는 Excel/PDF가 결국 필요.
+향후 **계리포탈 연동 목적**이 있으므로 단순 스크립트가 아닌 **재사용 가능한 라이브러리 구조**로 작성:
+
+```
+src/
+├── analysis/          # 핵심 비즈니스 로직 — UI 종속 X
+│   ├── cross_section.py    # 함수 입력=인자/DataFrame, 출력=DataFrame/dict
+│   ├── time_series.py
+│   ├── ratios.py
+│   └── measurement_model.py  # IFRS17 GMM/VFA/PAA 분해
+├── domain/            # 도메인 매핑
+│   ├── peer_groups.py
+│   └── liability_mapping.py
+├── render/            # ★ View layer — 비즈니스 로직 절대 금지
+│   ├── excel.py            # openpyxl 출력
+│   └── plotly_html.py      # plotly HTML 출력
+└── api/               # (선택) 향후 계리포탈 endpoint
+    └── endpoints.py        # FastAPI router (v2)
+```
+
+**원칙**:
+- 모든 `analysis/*` 함수는 **pure function** — 입력 인자(또는 DataFrame), 출력 DataFrame/dict
+- 직렬화 가능한 형태로만 반환 (JSON-serializable) — REST 노출 시 wrapper만 추가하면 됨
+- Excel/plotly는 **마지막 단계의 변환** — 그 안에서 새 계산 금지
 
 ---
 
@@ -273,40 +291,59 @@ Peer_Company_Benchmarking/
 
 ---
 
-## 4. 부채 도메인 매핑 전략 (생보사 특화)
+## 4. 분석 우선순위 (사용자 확정) 및 도메인 매핑
 
-### 4.1 표준 IFRS element 중 부채 관련 후보
-- `ifrs-full_Liabilities` — 부채 합계
-- `ifrs-full_CurrentLiabilities` / `ifrs-full_NonCurrentLiabilities`
-- `ifrs-full_BondsIssued` — 사채
-- `ifrs-full_Borrowings` — 차입금
-- `ifrs-full_Provisions` — 충당부채
-- `ifrs-full_DeferredTaxLiabilities` — 이연법인세부채
-- `ifrs-full_NetDefinedBenefitLiabilityAsset` — 순확정급여부채
-- `ifrs-full_TradeAndOtherCurrentPayables`
-- `ifrs-full_InsuranceContractLiabilities` (IFRS 17 채택 회사 — **핵심**)
+### 4.1 분석 우선순위
+1. **보험부채 항목** (1순위)
+   - 보험계약부채 잔액·변동 (LRC, LIC, CSM, RA 구성요소별)
+   - 재보험계약자산부채
+   - 발생사고부채(LIC) 변동 — 손보 핵심
+2. **보험손익 항목** (2순위)
+   - 보험수익 (Insurance revenue)
+   - 보험서비스비용 (Insurance service expense)
+   - 보험서비스결과 (Insurance service result)
+   - 보험금융손익 (Insurance finance income/expense)
+3. **회계모형별** (3순위)
+   - **GMM** (일반모형) — 생보 주력
+   - **VFA** (변동수수료접근법) — 변액·연동상품
+   - **PAA** (보험료배분접근법) — 손보·단기 보장
+   - 측정모형별 보험계약부채 분해 → 회사별 사업 구성 비교
 
-### 4.2 보험사 특화 (K-IFRS 17)
-보험사 element는 다음을 우선 탐색:
-- `dart_InsuranceContractLiabilities*`
-- `dart_LiabilityForRemainingCoverage` (LRC)
-- `dart_LiabilityForIncurredClaims` (LIC)
-- `dart_ContractualServiceMargin` (CSM)
-- `dart_RiskAdjustment`
-- `dart_DiscountedEstimatedFutureCashFlows` (BEL)
-- entity 확장 element 중 라벨에 "보험계약부채", "책임준비금", "CSM", "위험조정", "BEL" 포함
+### 4.2 표준 IFRS17 role / element (실측 확인됨)
+**Role 코드**:
+- `DI817100/105` — 보험계약부채(자산) [변동/잔액]
+- `DI817200/205` — 재보험계약자산부채 [변동/잔액]
+- `DI817300/305` — 보험계약 정보 / 신계약·CSM 만기분석
+- `DI818100/105` — 보험계약 위험관리
 
-→ Phase 3에서 실제 데이터로 element 사전을 만들어 `liability_items.yml`에 정착.
+**Element 후보 (탐색 시작점)**:
+- `ifrs-full_InsuranceContractLiabilities` — 보험계약부채 합계
+- `dart_LiabilityForRemainingCoverage` — LRC 잔여보장부채
+- `dart_LiabilityForIncurredClaims` — LIC 발생사고부채
+- `dart_ContractualServiceMargin` — CSM
+- `dart_RiskAdjustment` — RA 위험조정
+- `dart_InsuranceRevenue` — 보험수익
+- `dart_InsuranceServiceExpense` — 보험서비스비용
+- `dart_InsuranceFinanceIncomeExpense` — 보험금융손익
 
-### 4.3 분석 지표 예시
-| 지표 | 식 | 인사이트 |
-|---|---|---|
-| 보험계약부채 / 총부채 | InsContractLib / Liab | 회사의 보험 사업 비중 |
-| 보험계약부채 / 자본 | InsContractLib / Equity | 레버리지·자본완충 |
-| CSM / 보험계약부채 | CSM / InsContractLib | 미실현 미래이익 강도 |
-| 위험조정 / BEL | RA / BEL | 위험관 |
-| 분기별 보험계약부채 변동률 | (Q_t − Q_{t-1}) / Q_{t-1} | 영업/할인율 변동 추이 |
-| 당사 / Peer 중위수 | Self / median(Peers) | 적정성 검증 핵심 지표 |
+**측정모형 dimension** (예상):
+- `dart_MeasurementModelOfInsuranceContractsAxis` (또는 entity 확장)
+- members: `GeneralModelMember`, `VariableFeeApproachMember`, `PremiumAllocationApproachMember`
+
+→ Phase 4(부채 사전)에서 lab.tsv 검색으로 실제 element 풀 확정, `liability_items.yml` 정착.
+
+### 4.3 핵심 분석 지표
+| 카테고리 | 지표 | 식 | 인사이트 |
+|---|---|---|---|
+| 부채 | 보험계약부채 / 총자산 | InsLib / Assets | 보험 사업 의존도 |
+| 부채 | CSM / 보험계약부채 | CSM / InsLib | 미실현 미래이익 강도 |
+| 부채 | RA / (LRC ex-CSM) | RA / (LRC−CSM) | 위험 인식 수준 |
+| 손익 | 보험서비스결과 / 보험수익 | ISR / Rev | 보험 영업 마진 |
+| 손익 | 보험금융손익 / 보험계약부채 | IFIE / InsLib | 자산-부채 매칭 효율 |
+| 모형 | GMM / 총 보험계약부채 | GMM share | 사업포트폴리오 구성 |
+| 모형 | VFA / 총 보험계약부채 | VFA share | 변액 비중 |
+| 검증 | 당사 / Peer 중위수 | Self / median(Peers) | **적정성 검증 핵심** |
+| 검증 | 당사 percentile | rank(Self) in Peers | 분포상 위치 |
 
 ---
 
@@ -348,26 +385,48 @@ Peer_Company_Benchmarking/
 
 | # | 항목 | 옵션 | 추천 |
 |---|---|---|---|
-| 1 | 데이터 전략 | ~~A: XBRL only / B: 수기 fallback~~ → **해소(A 확정)** | — |
-| 1a | 시계열 범위 (D1-a) | 2025 4Q만 (~13GB) / 2023 Q3 ~ 2025 Q4 전체 (~40GB) | 2025 4Q 우선 → v2에서 시계열 확장 |
-| 1b | 분기 보고서 처리 (D1-b) | 제외 / 본문 재무제표만 적재 | 일단 제외, 필요 시 후속 |
-| 2 | UI 모드 | Excel+CLI / Streamlit / Jupyter | **Excel + plotly HTML** 핵심, Streamlit 옵션 |
-| 3 | Peer group 정의 | ~~11개 CIK 중 선택~~ → **확정**: KOSPI 상장 보험사 11개 (생/손/재) | data/ref/peer_groups.yml |
-| 4 | 우선 분석 항목 순위 | 보험계약부채 / CSM / 위험조정 / 재보험계약부채 / 사채·차입금 | 1~3순위 지정 부탁 |
-| 5 | 자사 데이터 입력 방식 | Excel 템플릿 / YAML / DB 직접 | **Excel 템플릿** |
-| 6 | 자동화 수준 | 분기 데이터 자동 다운로드 / 수동 업로드 | v1은 수동, v2에서 자동화 |
-| 7 | 개발 위치 | 현 디렉토리 + `git init` | 권장 |
+| # | 항목 | 결정 |
+|---|---|---|
+| 1 | 데이터 전략 | ✓ XBRL only |
+| 1a | 시계열 범위 | ✓ **2025 사업연도(2025 4Q)만**, v2에서 시계열 확장 |
+| 1b | 분기 보고서 처리 | ✓ 제외 |
+| 2 | UI / 아키텍처 | ✓ **Excel + plotly HTML**, library-first 구조 (계리포탈 연동 대비) |
+| 3 | Peer group | ✓ KOSPI 상장 보험사 11개 (생/손/재) |
+| 4 | 분석 우선순위 | ✓ 1.부채 항목 → 2.손익 항목 → 3.회계모형(GMM/VFA/PAA) |
+| 5 | 자사 입력 방식 | Excel 템플릿 (Phase 6에서 정의) |
+| 6 | 자동화 수준 | v1 수동, v2에서 자동 다운로드 |
+| 7 | Git | ✓ init + push 완료 (github.com/kmk3106-cmd/Peer_Company_Benchmarking) |
 
 ---
 
-## 8. 다음 액션 (제안 순서)
+## 8. 다음 액션 (실행 가능)
 
-1. 사용자가 D1-a, 2, 3 (회사 후보 확인 후), 4 결정사항에 답변
-2. `git init` (실수 복구·이력관리)
-3. Python 환경 셋업 (`uv init`, dependencies 설치)
-4. **Phase 3 먼저**: 11개 보험 CIK 회사명 매핑 → 미래에셋생명 포함 여부 확인 → 생보사만 추리기
-5. Phase 2 적재 (2025 4Q zip → DuckDB) — val/cntxt가 GB급이므로 polars/DuckDB COPY 스트리밍 사용
-6. Phase 4 부채 사전 → Phase 5 분석 → Phase 7 첫 리포트 (생보사 보험계약부채 횡단)
+모든 결정 확정. 다음 순서로 진행:
+
+1. **Phase 1 환경 셋업** (반나절):
+   - `uv init` + dependencies: duckdb, polars, plotly, openpyxl, pyyaml, pandas
+   - `src/`, `tests/`, `notebooks/`, `report/` 디렉토리 골격
+
+2. **Phase 2 적재** (1.5일):
+   - 2025 4Q zip → DuckDB 스트리밍 import (val 2.93GB, cntxt 2.67GB는 polars LazyFrame + DuckDB COPY)
+   - 무결성 검증 쿼리 (행 수, 키 중복, UNIT/DECIMALS 분포)
+   - 11개 보험 CIK 데이터만 별도 materialized view 생성 (성능)
+
+3. **Phase 4 부채 사전** (1~2일):
+   - `DI817xxx`·`DI818xxx` role의 lab.tsv·pre.tsv 스캔
+   - 보험계약부채 / 손익 / 회계모형(GMM/VFA/PAA) element 풀 확정
+   - `data/ref/liability_items.yml` 작성 (한국어 라벨 + element_id + 카테고리)
+
+4. **Phase 5 분석 엔진** (3일):
+   - `src/analysis/` library 구축 — 입출력 pure (DataFrame in/out, JSON-serializable)
+   - cross-section, time-series, ratio, measurement model 분해
+   - pytest 단위 테스트
+
+5. **Phase 7 첫 리포트** (2일):
+   - `src/render/excel.py` + `src/render/plotly_html.py`
+   - 생보 4개사 보험계약부채 횡단 비교 → 자사 위치 보고
+
+이후 Phase 6(자사 입력)·8(시계열 확장)·9(.claude/agents·skills)·10(Streamlit) 순.
 
 ---
 

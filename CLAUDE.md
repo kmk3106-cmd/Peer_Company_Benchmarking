@@ -4,7 +4,18 @@
 > 상세 설계·로드맵은 [PLAN.md](PLAN.md)를 참조하세요. 이 파일은 **운영 시 매번 필요한 핵심**만 담습니다.
 
 ## 1. 프로젝트 한 줄
-미래에셋생명 계리결산팀이 DART XBRL 주석 데이터로 동업사(생보사) **부채 항목**을 횡단·시계열 비교해 자사 산출의 적정성을 검증한다.
+미래에셋생명 계리결산팀이 DART XBRL 주석 데이터로 KOSPI 상장 보험사 11개를 횡단 비교해 자사 산출의 적정성을 검증한다. **향후 계리포탈 연동 예정** → 분석 로직은 library 형태로 분리.
+
+## 1.1 분석 우선순위
+1. 보험부채 항목 (LRC·LIC·CSM·RA·재보험)
+2. 보험손익 항목 (보험수익·서비스비용·서비스결과·금융손익)
+3. 회계모형별 (GMM·VFA·PAA 분해)
+
+## 1.2 비교 대상 (KOSPI 상장 보험사 11개)
+- **생보 4** (직접 비교 핵심): 미래에셋생명(자사, CIK 00112332)·삼성생명·한화생명·동양생명
+- **손보 6**: 삼성화재·현대해상·DB손해보험·한화손해보험·롯데손해보험·흥국화재
+- **재보험 1**: 코리안리
+- 매핑: `data/ref/companies.csv`, 그룹 정의: `data/ref/peer_groups.yml`
 
 ## 2. 디렉토리 (요점)
 ```
@@ -48,21 +59,40 @@ val JOIN sub   USING(CIK, REPORT_DATE)          -- 제출 시점 메타
 - prefix가 `ifrs-full_`, `dart_`, `dart-gcd_`, `ias_*_` → **표준, 횡단 비교 가능**
 - prefix가 `entity{CIK}_` → **회사 확장, 횡단 비교 불가** (라벨 매칭으로 후처리)
 
-## 6. 도메인 용어 (보험사 부채)
-| 한국어 | 영문 / XBRL prefix 후보 |
+## 6. 도메인 용어 (보험사 부채·손익·회계모형)
+**부채**
+| 한국어 | 영문 / XBRL element 후보 |
 |---|---|
 | 보험계약부채 | InsuranceContractLiabilities |
-| 책임준비금 | (구 K-IFRS) Policy reserves |
 | 잔여보장부채 LRC | LiabilityForRemainingCoverage |
 | 발생사고부채 LIC | LiabilityForIncurredClaims |
 | 보험계약마진 CSM | ContractualServiceMargin |
 | 위험조정 RA | RiskAdjustment |
 | 최선추정부채 BEL | DiscountedEstimatedFutureCashFlows |
-| 사채 | BondsIssued |
-| 차입금 | Borrowings |
-| 충당부채 | Provisions |
-| 이연법인세부채 | DeferredTaxLiabilities |
-| 순확정급여부채 | NetDefinedBenefitLiabilityAsset |
+| 재보험계약자산부채 | ReinsuranceContractAssetsLiabilities |
+
+**손익**
+| 한국어 | 영문 / XBRL element 후보 |
+|---|---|
+| 보험수익 | InsuranceRevenue |
+| 보험서비스비용 | InsuranceServiceExpense |
+| 보험서비스결과 | InsuranceServiceResult |
+| 보험금융손익 | InsuranceFinanceIncomeExpense |
+
+**회계모형 (IFRS 17 측정모형)**
+| 약어 | 한국어 | 영문 |
+|---|---|---|
+| **GMM** | 일반모형 | General Measurement Model |
+| **VFA** | 변동수수료접근법 | Variable Fee Approach (직접참여특성·변액보험 등) |
+| **PAA** | 보험료배분접근법 | Premium Allocation Approach (1년 미만 단기·손보 위주) |
+
+→ XBRL에서 보통 axis(예: `MeasurementModelOfInsuranceContractsAxis`)에 member로 GMM/VFA/PAA가 붙음. cntxt.tsv의 dimension에서 확인.
+
+**관련 role 코드 (실측)**
+- `DI817100/105` 보험계약부채(자산) 변동/잔액
+- `DI817200/205` 재보험계약자산부채 변동/잔액
+- `DI817300/305` 보험계약 정보·CSM 만기분석
+- `DI818100/105` 보험계약 위험관리
 
 ## 7. 분석할 때 항상 의식할 것
 1. **결산 후 정정 가능** — 분석에 `as-of {SUBMISSION_DATETIME}` 표기 필수
@@ -91,6 +121,19 @@ val JOIN sub   USING(CIK, REPORT_DATE)          -- 제출 시점 메타
 - 스타일: 함수형 우선, 부수효과 최소, 단위 KRW(원) 절대값으로 정규화
 - 출력: 사용자가 한국어 결과 선호 — 표/차트 라벨 한국어, 코드 주석은 영문 OK
 - 보안: `data/user/` 절대 외부 전송 금지, API 키는 환경변수
+
+## 10.1 아키텍처 원칙 (계리포탈 연동 대비)
+- **library-first**: `src/analysis/*` 함수는 pure (DataFrame in / DataFrame·dict out)
+- **render layer 분리**: Excel/plotly는 `src/render/*` — 그 안에 비즈니스 로직 절대 금지
+- **JSON-serializable 반환**: 분석 결과는 향후 REST endpoint(FastAPI 등)에 그대로 노출 가능해야 함
+- **UI 종속 X**: 분석 코드에서 `print`, `plt.show`, `st.write` 사용 금지 — 로깅만 허용
+- 디렉토리:
+  ```
+  src/analysis/   # 비즈니스 로직 (cross_section, time_series, ratios, measurement_model)
+  src/domain/     # 도메인 매핑 (peer_groups, liability_mapping)
+  src/render/     # ★ View layer (excel.py, plotly_html.py)
+  src/api/        # (v2) FastAPI endpoint
+  ```
 
 ## 11. 모를 때 먼저 볼 것
 1. [PLAN.md](PLAN.md) §1 데이터 모델 / §3 자산 설계 / §6 리스크
