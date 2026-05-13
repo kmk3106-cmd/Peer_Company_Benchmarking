@@ -12,17 +12,22 @@ def test_peer_groups_load():
 
     life = peer_groups.members_of("life")
     assert self_cik in life
-    assert len(life) == 4
+    # 자사 + 동업사 7 = 8개 (생보 비교군 확정 2026-05-13)
+    assert len(life) == 8
 
     all_ = peer_groups.members_of("all_insurers")
-    assert len(all_) == 11
+    assert len(all_) == 14  # 생보 8 + 손보 6
+
+    # IFRS17 분해 가능한 회사만 (BEL/RA/CSM 등)
+    detailed = peer_groups.members_of("ifrs17_detailed")
+    assert len(detailed) == 9
 
 
 def test_companies_load():
     companies = peer_groups.load_companies()
-    assert len(companies) == 11
+    assert len(companies) == 14
     sectors = {c.sector for c in companies.values()}
-    assert sectors == {"life", "non_life", "reinsurance"}
+    assert sectors == {"life", "non_life"}  # 재보험 제외됨
 
     self_co = next(c for c in companies.values() if c.is_self)
     assert self_co.cik == "00112332"

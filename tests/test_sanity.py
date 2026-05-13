@@ -38,7 +38,7 @@ def test_companies_csv_loadable():
     with csv_path.open(encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
-    assert len(rows) == 11, f"expected 11 KOSPI insurers, got {len(rows)}"
+    assert len(rows) == 14, f"expected 14 insurers (8 life + 6 non-life), got {len(rows)}"
     ciks = {r["cik"] for r in rows}
     assert "00112332" in ciks, "self CIK 00112332 (미래에셋생명) missing"
 
@@ -57,6 +57,6 @@ def test_peer_groups_yaml_loadable():
         cfg = yaml.safe_load(f)
 
     assert cfg["self_cik"] == "00112332"
-    assert set(cfg["groups"]) == {"all_insurers", "life", "non_life", "reinsurance"}
-    assert len(cfg["groups"]["all_insurers"]["members"]) == 11
-    assert len(cfg["groups"]["life"]["members"]) == 4
+    assert {"all_insurers", "life", "non_life", "ifrs17_detailed"} <= set(cfg["groups"])
+    assert len(cfg["groups"]["all_insurers"]["members"]) == 14
+    assert len(cfg["groups"]["life"]["members"]) == 8

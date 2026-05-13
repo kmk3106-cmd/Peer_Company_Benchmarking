@@ -1,12 +1,15 @@
-cik,name_ko,name_en,sector,is_self,listing
-00112332,미래에셋생명,Mirae Asset Life Insurance,life,true,KOSPI
-00126256,삼성생명,Samsung Life Insurance,life,false,KOSPI
-00113058,한화생명,Hanwha Life Insurance,life,false,KOSPI
-00117267,동양생명,Tongyang Life Insurance,life,false,KOSPI
-00139214,삼성화재,Samsung Fire & Marine Insurance,non_life,false,KOSPI
-00164973,현대해상,Hyundai Marine & Fire Insurance,non_life,false,KOSPI
-00159102,DB손해보험,DB Insurance,non_life,false,KOSPI
-00135917,한화손해보험,Hanwha General Insurance,non_life,false,KOSPI
-00113562,롯데손해보험,Lotte Non-life Insurance,non_life,false,KOSPI
-00103176,흥국화재,Heungkuk Fire & Marine Insurance,non_life,false,KOSPI
-00113191,코리안리,Korean Reinsurance Company,reinsurance,false,KOSPI
+cik,name_ko,name_en,sector,is_self,listing,ifrs17_detailed,has_bs_insurance_liability
+00112332,미래에셋생명,Mirae Asset Life Insurance,life,true,KOSPI,true,true
+00126256,삼성생명,Samsung Life Insurance,life,false,KOSPI,true,true
+00113058,한화생명,Hanwha Life Insurance,life,false,KOSPI,true,true
+00117267,동양생명,Tongyang Life Insurance,life,false,KOSPI,true,true
+00112882,교보생명,Kyobo Life Insurance,life,false,Unlisted,false,true
+00137517,신한라이프,Shinhan Life Insurance,life,false,Unlisted,false,true
+00167068,흥국생명,Heungkuk Life Insurance,life,false,Unlisted,false,true
+00160393,KB라이프,KB Life Insurance,life,false,Unlisted,false,false
+00139214,삼성화재,Samsung Fire & Marine Insurance,non_life,false,KOSPI,true,true
+00164973,현대해상,Hyundai Marine & Fire Insurance,non_life,false,KOSPI,true,true
+00159102,DB손해보험,DB Insurance,non_life,false,KOSPI,true,true
+00135917,한화손해보험,Hanwha General Insurance,non_life,false,KOSPI,true,true
+00103176,흥국화재,Heungkuk Fire & Marine Insurance,non_life,false,KOSPI,true,true
+00117744,메리츠화재,Meritz Fire & Marine Insurance,non_life,false,Unlisted,false,true
