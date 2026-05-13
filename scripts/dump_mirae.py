@@ -19,8 +19,6 @@ from pathlib import Path
 import duckdb
 import pandas as pd
 
-from peer_benchmarking.render.formatters import to_trillion
-
 CIK = "00112332"
 log = logging.getLogger(__name__)
 
