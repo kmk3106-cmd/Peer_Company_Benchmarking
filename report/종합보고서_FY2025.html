@@ -78,6 +78,52 @@
   .badge.blue { background: #d4dff5; color: #1a3870; }
   .badge.purple { background: #ead5f0; color: #5a1a70; }
   .badge.yellow { background: #f5ead4; color: #6a5a1a; }
+
+  /* ─── 목차 (TOC) ─── */
+  .toc-container {
+    background: #fff; border: 1px solid #ccc; border-radius: 8px;
+    padding: 14px 18px; margin: 16px 0 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .toc-toggle {
+    background: #4a76d8; color: white; border: none;
+    padding: 8px 14px; border-radius: 6px; font-size: clamp(10pt, 2.5vw, 12pt);
+    cursor: pointer; font-weight: 600; margin-bottom: 8px;
+  }
+  .toc-toggle:hover { background: #1a3870; }
+  .toc-list {
+    display: none; margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4px 12px;
+  }
+  .toc-list.open { display: grid; }
+  .toc-list a {
+    color: #1a3870; text-decoration: none; padding: 6px 8px;
+    border-radius: 4px; font-size: clamp(9.5pt, 2.2vw, 11pt);
+    border-left: 3px solid transparent; line-height: 1.4;
+  }
+  .toc-list a:hover { background: #f0f5fb; border-left-color: #4a76d8; }
+  .toc-list a.toc-h2 { font-weight: 600; }
+  .toc-list a.toc-h3 { padding-left: 24px; color: #555; font-size: clamp(9pt, 2vw, 10.5pt); }
+
+  /* ─── 맨 위로 버튼 ─── */
+  .back-to-top {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #1a3870; color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000; opacity: 0.85; transition: opacity 0.2s;
+  }
+  .back-to-top:hover { opacity: 1; background: #4a76d8; }
+
+  /* anchor 점프시 sticky header offset */
+  h2[id], h3[id] { scroll-margin-top: 16px; }
+
+  @media (max-width: 600px) {
+    .back-to-top { bottom: 16px; right: 16px; width: 44px; height: 44px; font-size: 20px; }
+    .toc-list { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -91,7 +137,45 @@
 </div>
 
 <!-- ━━━━━━━━━━━━━━━ § 1 검토 결론 ━━━━━━━━━━━━━━━ -->
-<h2>1. 검토 결론</h2>
+
+<!-- TOC: 책갈피 -->
+<div class="toc-container">
+  <button class="toc-toggle" onclick="document.getElementById('toc-list').classList.toggle('open');">
+    📑 목차 보기/숨기기
+  </button>
+  <nav id="toc-list" class="toc-list open">
+    <a href="#sec-1-검토-결론" class="toc-h2">1. 검토 결론</a>
+    <a href="#sec-2-식별된-주석공시-카테고리" class="toc-h2">2. 식별된 주석공시 카테고리</a>
+    <a href="#sec-3-작성-가능-자료-매트릭스-14개사--4-role" class="toc-h2">3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</a>
+    <a href="#sec-4-표준-라인-매핑-효과-v1--v2" class="toc-h2">4. 표준 라인 매핑 효과 (v1 → v2)</a>
+    <a href="#sec-4-B-식별된-7-role-차례-추출-결과" class="toc-h2">4-B. 식별된 7 role 차례 추출 결과</a>
+    <a href="#sec-5-추출된-자료--BELRACSM-잔액-비교-8개사" class="toc-h2">5. 추출된 자료 — BEL/RA/CSM 잔액 비교 (8개사)</a>
+    <a href="#sec-5-B-DI817105-잔액--미래에셋-5상품군--LRCLIC-BS-100-검증" class="toc-h2">5-B. DI817105 잔액 — 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</a>
+    <a href="#sec-5-C-자산-부채-매칭-DI818200-8개사-완전-추출" class="toc-h2">5-C. 자산-부채 매칭 (DI818200, 8개사 완전 추출)</a>
+    <a href="#sec-5-D-CSM-만기별-인식-기대액-DI817300-7개사-정규화" class="toc-h2">5-D. CSM 만기별 인식 기대액 (DI817300, 7개사 정규화)</a>
+    <a href="#sec-5-E-손보-4개사-상품군-mix-DI817105" class="toc-h2">5-E. 손보 4개사 상품군 mix (DI817105)</a>
+    <a href="#sec-5-F-계리적-metric--위험보험료예상보험금예정예상유지비-DI817305" class="toc-h2">5-F. 계리적 metric — 위험보험료·예상보험금·예정·예상유지비 (DI817305)</a>
+    <a href="#sec-5-G-변동표--기시기말-잔액--8개사-횡단비교-FY2025-별도발행-단위-억원" class="toc-h2">5-G. 변동표 + 기시/기말 잔액 × 8개사 횡단비교 (FY2025 별도·발행, 단위 억원)</a>
+    <a href="#sec-5-H-사업비-영역--손익-기반-FY2025-별도-DI320000" class="toc-h2">5-H. 사업비 영역 — 손익 기반 (FY2025 별도, DI320000)</a>
+    <a href="#sec-5-I-예실차-Expected-vs-Actual-Claims--보험금-가정-정확도" class="toc-h2">5-I. 예실차 (Expected vs Actual Claims) — 보험금 가정 정확도</a>
+    <a href="#sec-5-J-CSM-변동-무브먼트--8개사-FY2025-별도-억원" class="toc-h2">5-J. CSM 변동 무브먼트 — 8개사 (FY2025 별도, 억원)</a>
+    <a href="#sec-6-IFRS17-회계가정-적용-사항" class="toc-h2">6. IFRS17 회계가정 적용 사항</a>
+    <a href="#sec-7-자사미래에셋생명-인사이트" class="toc-h2">7. 자사(미래에셋생명) 인사이트</a>
+    <a href="#sec-8-분석-한계-및-다음-단계" class="toc-h2">8. 분석 한계 및 다음 단계</a>
+    <a href="#sec-라인별-보고-매트릭스-8개사--20-표준-라인" class="toc-h3">라인별 보고 매트릭스 (8개사 × 20 표준 라인)</a>
+    <a href="#sec-5-F-연도별-위험보험료--예상보험금--예정예상유지비--Maturity-분해-FY2025-" class="toc-h3">5-F-(연도별) 위험보험료 / 예상보험금 / 예정·예상유지비 — Maturity 분해 (FY2025 별도, 억원)</a>
+    <a href="#sec-방법-A--1년-만기-예상보험금-vs-당기-실제-발생사고비용" class="toc-h3">방법 A · ≤1년 만기 예상보험금 vs 당기 실제 발생사고비용</a>
+    <a href="#sec-방법-B--경험조정-IFRS17-103--보험수익" class="toc-h3">방법 B · 경험조정 (IFRS17 §103) ÷ 보험수익</a>
+    <a href="#sec-자사-미래에셋-CSM-흐름-요약" class="toc-h3">자사 미래에셋 CSM 흐름 요약</a>
+    <a href="#sec-6-A-측정모형-분포-단위-조원" class="toc-h3">6-A. 측정모형 분포 (단위 조원)</a>
+    <a href="#sec-6-B-CSM-Transition-Approach-적용-비중" class="toc-h3">6-B. CSM Transition Approach 적용 비중</a>
+    <a href="#sec-6-C-보험금융손익-PL-vs-OCI-회계정책" class="toc-h3">6-C. 보험금융손익 PL vs OCI 회계정책</a>
+    <a href="#sec-6-D-IFRS17-가정-요약--자사-vs-동업사" class="toc-h3">6-D. IFRS17 가정 요약 — 자사 vs 동업사</a>
+    <a href="#sec-한계" class="toc-h3">한계</a>
+    <a href="#sec-다음-단계-우선순위" class="toc-h3">다음 단계 (우선순위)</a>
+  </nav>
+</div>
+<h2 id="sec-1-검토-결론">1. 검토 결론</h2>
 
 <div class="cards">
   <div class="card info">
@@ -128,7 +212,7 @@
 </div>
 
 <!-- ━━━━━━━━━━━━━━━ § 2 식별된 보고서 ━━━━━━━━━━━━━━━ -->
-<h2>2. 식별된 주석공시 카테고리</h2>
+<h2 id="sec-2-식별된-주석공시-카테고리">2. 식별된 주석공시 카테고리</h2>
 <p>DART XBRL taxonomy에서 부채 관련 주요 role 8종을 식별. 1차 분석 범위는 보험계약부채(원수) 변동·잔액 중심:</p>
 
 <div class="table-wrap">
@@ -150,14 +234,14 @@
 </div>
 
 <!-- ━━━━━━━━━━━━━━━ § 3 작성 가능 자료 매트릭스 ━━━━━━━━━━━━━━━ -->
-<h2>3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</h2>
+<h2 id="sec-3-작성-가능-자료-매트릭스-14개사--4-role">3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</h2>
 <p>회사별 별도(Separate) 기준 보고 여부 + LRC/LIC·BEL/RA/CSM axis 분해 보고 여부:</p>
 
 <div class="table-wrap">
 <table>
 <thead>
 <tr><th>회사</th><th>DI817100</th><th>DI817105</th><th>DI817300</th><th>DI817305</th></tr></thead><tbody><tr class=""><td class="company">DB손해보험</td><td class="pass-cell">35187 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">26516 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">2112 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">2608 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">KB라이프</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td></tr><tr class=""><td class="company">교보생명</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td></tr><tr class=""><td class="company">동양생명</td><td class="pass-cell">28137 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">28137 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">6180 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">6180 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">메리츠화재</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td></tr><tr class="self"><td class="company">미래에셋생명 <span class="badge yellow">자사</span></td><td class="pass-cell">18243 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">18243 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">3232 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">3232 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">삼성생명</td><td class="pass-cell">9846 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">9846 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">20126 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">20126 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">삼성화재</td><td class="pass-cell">9985 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">9985 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">5504 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">5504 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">신한라이프</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td></tr><tr class=""><td class="company">한화생명</td><td class="pass-cell">22920 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">18428 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">35647 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">24920 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">한화손해보험</td><td class="pass-cell">14540 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">14540 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">4940 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">4940 fact<br><span class="badge green">별도</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">현대해상</td><td class="pass-cell">20900 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">20900 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">20992 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="pass-cell">20992 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td></tr><tr class=""><td class="company">흥국생명</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td><td class="fail-cell">미보고</td></tr><tr class=""><td class="company">흥국화재</td><td class="fail-cell">미보고</td><td class="pass-cell">5024 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td><td class="fail-cell">미보고</td><td class="pass-cell">3175 fact<br><span class="badge green">별도</span> <span class="badge blue">LRC/LIC</span> <span class="badge purple">BEL/RA/CSM</span></td></tr></tbody></table></div>
-<h2>4. 표준 라인 매핑 효과 (v1 → v2)</h2>
+<h2 id="sec-4-표준-라인-매핑-효과-v1--v2">4. 표준 라인 매핑 효과 (v1 → v2)</h2>
 <p>회사마다 같은 IFRS 개념을 다른 ko_label로 보고 (예: "과거서비스 변동" vs "발생사고자산과 관련된 이행현금흐름 변동"). <b>라벨 매칭 → element_id 패턴 매칭</b>으로 전환 시 보고율이 극적으로 개선:</p>
 
 <div class="table-wrap">
@@ -171,7 +255,7 @@
 </tbody></table>
 </div>
 
-<h3>라인별 보고 매트릭스 (8개사 × 20 표준 라인)</h3>
+<h3 id="sec-라인별-보고-매트릭스-8개사--20-표준-라인">라인별 보고 매트릭스 (8개사 × 20 표준 라인)</h3>
 <div class="table-wrap">
 <table>
 <thead>
@@ -185,7 +269,7 @@
 </tr></thead>
 <tbody>
 <tr class="ct-pass"><td class="label">기초잔액_자산</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">기초잔액_부채</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">보험수익</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>7</b>/8 (3/4)</td></tr><tr class="ct-pass"><td class="label">신계약인식</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">CSM조정추정변동</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">CSM미조정추정변동</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">위험조정변동</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">경험조정</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">과거서비스변동</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">손실부담계약손실</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="num"><b>6</b>/8 (4/2)</td></tr><tr class="ct-mid"><td class="label">발생사고요소조정</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="num"><b>5</b>/8 (3/2)</td></tr><tr class="ct-pass"><td class="label">발생사고비용</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>7</b>/8 (3/4)</td></tr><tr class="ct-pass"><td class="label">수취보험료</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">지급보험금</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">보험취득CF지급</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">보험취득CF상각</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>7</b>/8 (3/4)</td></tr><tr class="ct-pass"><td class="label">투자요소</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-pass"><td class="label">금융손익_PL</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>8</b>/8 (4/4)</td></tr><tr class="ct-mid"><td class="label">금융손익_OCI</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="num"><b>5</b>/8 (2/3)</td></tr><tr class="ct-mid"><td class="label">기타증감</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="pass-cell">✓</td><td class="fail-cell">·</td><td class="fail-cell">·</td><td class="num"><b>5</b>/8 (3/2)</td></tr></tbody></table></div>
-<h2>4-B. 식별된 7 role 차례 추출 결과</h2>
+<h2 id="sec-4-B-식별된-7-role-차례-추출-결과">4-B. 식별된 7 role 차례 추출 결과</h2>
 <p>§2에서 식별한 부채 관련 7 role에 대해 8개사 모두 별도·발행 기준 보고 확인:</p>
 <div class="table-wrap">
 <table>
@@ -200,7 +284,7 @@
 </tbody></table>
 </div>
 
-<h2>5. 추출된 자료 — BEL/RA/CSM 잔액 비교 (8개사)</h2>
+<h2 id="sec-5-추출된-자료--BELRACSM-잔액-비교-8개사">5. 추출된 자료 — BEL/RA/CSM 잔액 비교 (8개사)</h2>
 <p>각 회사 별도·발행 기준 기말(2025-12-31) 잔액을 BEL/RA/CSM 구성요소로 분해. <b>n_axes-safe + fingerprint dedup + CSM transition priority</b> 적용. BS 잔액과 합계 정확도 검증:</p>
 
 <div class="table-wrap">
@@ -212,7 +296,7 @@
 <th>RA/BEL</th><th>CSM/BEL</th><th>CSM 증가율</th>
 </tr></thead><tbody>
 <tr class="self"><td class="company">미래에셋생명 <span class="badge yellow">자사</span></td><td>생보</td><td class="num">241,233억</td><td class="num">4,028억</td><td class="num">20,584억</td><td class="num"><b>265,845억</b></td><td class="num">27조</td><td class="num pass-cell">98%</td><td class="num">1.7%</td><td class="num">8.5%</td><td class="num">-1.0%</td></tr><tr class=""><td class="company">삼성생명</td><td>생보</td><td class="num">1,844,633억</td><td class="num">31,652억</td><td class="num">132,179억</td><td class="num"><b>2,008,463억</b></td><td class="num">200조</td><td class="num pass-cell">100%</td><td class="num">1.7%</td><td class="num">7.2%</td><td class="num">2.4%</td></tr><tr class=""><td class="company">한화생명</td><td>생보</td><td class="num">862,225억</td><td class="num">19,939억</td><td class="num">87,137억</td><td class="num"><b>969,300억</b></td><td class="num">100조</td><td class="num pass-cell">97%</td><td class="num">2.3%</td><td class="num">10.1%</td><td class="num">-4.3%</td></tr><tr class=""><td class="company">동양생명</td><td>생보</td><td class="num">252,113억</td><td class="num">4,767억</td><td class="num">24,571억</td><td class="num"><b>281,451억</b></td><td class="num">28조</td><td class="num pass-cell">101%</td><td class="num">1.9%</td><td class="num">9.7%</td><td class="num">-8.0%</td></tr><tr class=""><td class="company">삼성화재</td><td>손보</td><td class="num">250,475억</td><td class="num">18,957억</td><td class="num">141,677억</td><td class="num"><b>411,108억</b></td><td class="num">49조</td><td class="num warn-cell">84%</td><td class="num">7.6%</td><td class="num">56.6%</td><td class="num">0.7%</td></tr><tr class=""><td class="company">현대해상</td><td>손보</td><td class="num">203,186억</td><td class="num">20,793억</td><td class="num">89,778억</td><td class="num"><b>313,757억</b></td><td class="num">35조</td><td class="num warn-cell">90%</td><td class="num">10.2%</td><td class="num">44.2%</td><td class="num">8.1%</td></tr><tr class=""><td class="company">DB손해보험</td><td>손보</td><td class="num">137,295억</td><td class="num">16,362억</td><td class="num">108,695억</td><td class="num"><b>262,353억</b></td><td class="num">50조</td><td class="num fail-cell">52%</td><td class="num">11.9%</td><td class="num">79.2%</td><td class="num">0.6%</td></tr><tr class=""><td class="company">한화손해보험</td><td>손보</td><td class="num">85,941억</td><td class="num">9,808억</td><td class="num">40,694억</td><td class="num"><b>136,443억</b></td><td class="num">25조</td><td class="num fail-cell">55%</td><td class="num">11.4%</td><td class="num">47.4%</td><td class="num">7.0%</td></tr></tbody></table></div>
-<h2>5-B. DI817105 잔액 — 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</h2>
+<h2 id="sec-5-B-DI817105-잔액--미래에셋-5상품군--LRCLIC-BS-100-검증">5-B. DI817105 잔액 — 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</h2>
 <p>DI817105 (보험계약부채 잔액) 에서 미래에셋생명 5상품군 × LRC/LIC 분해. 합계가 BS 27조와 정확히 일치 (단위 억원):</p>
 <div class="table-wrap">
 <table>
@@ -228,7 +312,7 @@
 </div>
 <p><b>미래에셋 사업 mix 인사이트</b>: 연금 35.7% (최대), 저축 26.2%, 사망 25.1%, 건강 12.8%, 기타 0.2%. <b>저축성(연금+저축) = 61.9%</b>로 보장성(사망+건강 = 37.9%) 보다 우위.</p>
 
-<h2>5-C. 자산-부채 매칭 (DI818200, 8개사 완전 추출)</h2>
+<h2 id="sec-5-C-자산-부채-매칭-DI818200-8개사-완전-추출">5-C. 자산-부채 매칭 (DI818200, 8개사 완전 추출)</h2>
 <p>각 회사 총 금융자산(DI818200) vs 보험계약부채(DI817105 별도·발행) 비율. Coverage = 자산 / 부채:</p>
 <div class="table-wrap">
 <table>
@@ -246,7 +330,7 @@
 </div>
 <p><b>핵심 시그널</b>: 현대해상 Coverage 102.5% — 자산-부채 매칭 buffer 거의 없음. 미래에셋은 생보 4개사 중 2위 (삼성 다음).</p>
 
-<h2>5-D. CSM 만기별 인식 기대액 (DI817300, 7개사 정규화)</h2>
+<h2 id="sec-5-D-CSM-만기별-인식-기대액-DI817300-7개사-정규화">5-D. CSM 만기별 인식 기대액 (DI817300, 7개사 정규화)</h2>
 <p>표준 IFRS Maturity axis 사용 7개사 비교. 미래에셋은 entity 7구간 사용 (정규화 매핑 대상):</p>
 <div class="table-wrap">
 <table>
@@ -263,7 +347,7 @@
 </div>
 <p><b>시그널</b>: 생보 한화·동양 30년 초과 45% — 초장기 CSM. 손보는 10년 이내 단기 비중 우위. 미래에셋은 표준 axis 미사용으로 별도 매핑 필요.</p>
 
-<h2>5-E. 손보 4개사 상품군 mix (DI817105)</h2>
+<h2 id="sec-5-E-손보-4개사-상품군-mix-DI817105">5-E. 손보 4개사 상품군 mix (DI817105)</h2>
 <div class="table-wrap">
 <table>
 <thead><tr><th>회사</th><th>장기</th><th>자동차</th><th>일반</th><th>합계</th><th>장기 비중 ranking</th></tr></thead>
@@ -276,7 +360,7 @@
 </div>
 <p>4개사 모두 장기 88~95% 위주. 자동차 DB 8.8% &gt; 현대 8.3% &gt; 삼성 7.7% &gt; 한화 3.5%.</p>
 
-<h2>5-F. 계리적 metric — 위험보험료·예상보험금·예정·예상유지비 (DI817305)</h2>
+<h2 id="sec-5-F-계리적-metric--위험보험료예상보험금예정예상유지비-DI817305">5-F. 계리적 metric — 위험보험료·예상보험금·예정·예상유지비 (DI817305)</h2>
 <p>4개사만 라벨 매칭 성공 (회사별 entity 확장 element 다양). 추가 매핑 보강 필요:</p>
 <div class="table-wrap">
 <table>
@@ -291,7 +375,7 @@
 <p><b>시그널</b>: 미래에셋 예상유지비/예정유지비 = 212% — 예상이 예정의 2배. 사업비 실제가 예정 대비 크게 증가. <b>예정사업비율 점검 필요</b>. (한화생명·동양생명·삼성화재·현대해상은 element 매핑 한계로 미추출)</p>
 
 
-<h3>5-F-(연도별) 위험보험료 / 예상보험금 / 예정·예상유지비 — Maturity 분해 (FY2025 별도, 억원)</h3>
+<h3 id="sec-5-F-연도별-위험보험료--예상보험금--예정예상유지비--Maturity-분해-FY2025-">5-F-(연도별) 위험보험료 / 예상보험금 / 예정·예상유지비 — Maturity 분해 (FY2025 별도, 억원)</h3>
 <p>각 metric을 만기 구간별로 분해. 보험계약 기간별 부채 인식 패턴 비교:</p>
 <h4>위험보험료</h4>
 <div class="table-wrap"><table><thead><tr><th>회사</th><th>≤1년</th><th>1-2년</th><th>2-3년</th><th>3-4년</th><th>4-5년</th><th>5-10년</th><th>10-15년</th><th>15-20년</th><th>20-25년</th><th>25-30년</th><th>>30년</th><th>합계</th></tr></thead><tbody><tr class="self"><td class="company">미래에셋</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">55,618</td><td class="num">26,824</td><td class="num">25,883</td><td class="num">24,018</td><td class="num">21,778</td><td class="num">66,539</td><td class="num"><b>220,660</b></td></tr><tr class=""><td class="company">삼성생명</td><td class="num">45,711</td><td class="num">45,717</td><td class="num">44,642</td><td class="num">43,136</td><td class="num">41,848</td><td class="num">239,643</td><td class="num">191,603</td><td class="num">179,055</td><td class="num">161,506</td><td class="num">—</td><td class="num">536,089</td><td class="num"><b>1,528,950</b></td></tr><tr class=""><td class="company">한화생명</td><td class="num">32,757</td><td class="num">31,917</td><td class="num">30,838</td><td class="num">30,073</td><td class="num">29,436</td><td class="num">144,937</td><td class="num">145,286</td><td class="num">146,489</td><td class="num">147,883</td><td class="num">—</td><td class="num">765,042</td><td class="num"><b>1,504,658</b></td></tr><tr class=""><td class="company">동양생명</td><td class="num">5,746</td><td class="num">5,639</td><td class="num">5,477</td><td class="num">5,381</td><td class="num">5,311</td><td class="num">25,909</td><td class="num">25,132</td><td class="num">24,223</td><td class="num">22,862</td><td class="num">—</td><td class="num">102,794</td><td class="num"><b>228,475</b></td></tr><tr class=""><td class="company">삼성화재</td><td class="num">58,408</td><td class="num">54,254</td><td class="num">50,331</td><td class="num">47,551</td><td class="num">44,690</td><td class="num">196,026</td><td class="num">157,801</td><td class="num">151,694</td><td class="num">141,453</td><td class="num">—</td><td class="num">716,168</td><td class="num"><b>1,618,374</b></td></tr><tr class=""><td class="company">현대해상</td><td class="num">55,483</td><td class="num">53,412</td><td class="num">50,325</td><td class="num">46,792</td><td class="num">44,068</td><td class="num">198,596</td><td class="num">162,819</td><td class="num">152,774</td><td class="num">141,594</td><td class="num">127,276</td><td class="num">709,429</td><td class="num"><b>1,742,567</b></td></tr><tr class=""><td class="company">DB손보</td><td class="num">114,505</td><td class="num">109,816</td><td class="num">105,110</td><td class="num">101,124</td><td class="num">96,780</td><td class="num">460,058</td><td class="num">434,290</td><td class="num">423,971</td><td class="num">390,550</td><td class="num">357,887</td><td class="num">1,901,367</td><td class="num"><b>4,495,460</b></td></tr><tr class=""><td class="company">한화손보</td><td class="num">55,327</td><td class="num">53,975</td><td class="num">52,139</td><td class="num">49,628</td><td class="num">47,740</td><td class="num">—</td><td class="num">205,662</td><td class="num">196,067</td><td class="num">182,760</td><td class="num">—</td><td class="num">—</td><td class="num"><b>843,297</b></td></tr></tbody></table></div>
@@ -314,7 +398,7 @@
     </ul>
 </li>
 </ul>
-<h2>5-G. 변동표 + 기시/기말 잔액 × 8개사 횡단비교 (FY2025 별도·발행, 단위 억원)</h2>
+<h2 id="sec-5-G-변동표--기시기말-잔액--8개사-횡단비교-FY2025-별도발행-단위-억원">5-G. 변동표 + 기시/기말 잔액 × 8개사 횡단비교 (FY2025 별도·발행, 단위 억원)</h2>
 <p>17 변동 라인 + 기시(2024-12-31)·기말(2025-12-31) 잔액. 잔액 행은 노란색 강조:</p>
 <div class="table-wrap"><table><thead><tr><th>라인</th><th class="self">미래에셋</th><th class="">삼성생명</th><th class="">한화생명</th><th class="">동양생명</th><th class="">삼성화재</th><th class="">현대해상</th><th class="">DB손보</th><th class="">한화손보</th></tr></thead><tbody><tr style="background:#fff7e0;font-weight:600"><td class="label">기초 잔액 (2024-12-31)</td><td class="num self">+262,484</td><td class="num">+2,021,563</td><td class="num">+971,522</td><td class="num">+282,215</td><td class="num">+516,095</td><td class="num">+348,019</td><td class="num">+319,373</td><td class="num">+151,976</td></tr><tr><td class="label">보험수익</td><td class="num self">-10,804</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">신계약인식</td><td class="num self">—</td><td class="num">+755</td><td class="num">+20,663</td><td class="num">+93</td><td class="num">+57,967</td><td class="num">+23,309</td><td class="num">+411</td><td class="num">+478</td></tr><tr><td class="label">CSM조정추정변동</td><td class="num self">+583</td><td class="num">—</td><td class="num">-20,322</td><td class="num">+790</td><td class="num">-33,722</td><td class="num">-7,190</td><td class="num">—</td><td class="num">-565</td></tr><tr><td class="label">CSM미조정추정변동</td><td class="num self">+667</td><td class="num">-5,642</td><td class="num">-95</td><td class="num">+790</td><td class="num">-605</td><td class="num">+2,934</td><td class="num">-327</td><td class="num">-565</td></tr><tr><td class="label">위험조정변동</td><td class="num self">-191</td><td class="num">-6,911</td><td class="num">-1,091</td><td class="num">-436</td><td class="num">-1,648</td><td class="num">-722</td><td class="num">-1,591</td><td class="num">-421</td></tr><tr><td class="label">경험조정</td><td class="num self">+269</td><td class="num">+3,219</td><td class="num">+3,816</td><td class="num">+460</td><td class="num">+2,609</td><td class="num">+4,388</td><td class="num">-1,023</td><td class="num">+1,069</td></tr><tr><td class="label">과거서비스변동</td><td class="num self">+196</td><td class="num">+2,727</td><td class="num">-1,114</td><td class="num">+258</td><td class="num">-1,005</td><td class="num">+2,224</td><td class="num">-5,674</td><td class="num">+383</td></tr><tr><td class="label">손실부담계약손실</td><td class="num self">+84</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">+897</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">발생사고비용</td><td class="num self">+5,887</td><td class="num">—</td><td class="num">+36,477</td><td class="num">+8,212</td><td class="num">+139,516</td><td class="num">+46,747</td><td class="num">+63,140</td><td class="num">—</td></tr><tr><td class="label">수취보험료</td><td class="num self">+69,104</td><td class="num">+417,990</td><td class="num">+166,870</td><td class="num">+40,617</td><td class="num">+358,007</td><td class="num">+60,857</td><td class="num">+65,182</td><td class="num">+15,629</td></tr><tr><td class="label">지급보험금</td><td class="num self">-85,939</td><td class="num">-428,964</td><td class="num">-135,186</td><td class="num">-36,212</td><td class="num">-309,902</td><td class="num">-48,406</td><td class="num">-52,274</td><td class="num">-11,067</td></tr><tr><td class="label">보험취득CF지급</td><td class="num self">-181,390</td><td class="num">-495,122</td><td class="num">-164,788</td><td class="num">-42,114</td><td class="num">-362,070</td><td class="num">-48,478</td><td class="num">-56,972</td><td class="num">-50,525</td></tr><tr><td class="label">보험취득CF상각</td><td class="num self">+2,384</td><td class="num">—</td><td class="num">+10,081</td><td class="num">+1,590</td><td class="num">+22,641</td><td class="num">+5,875</td><td class="num">-13,742</td><td class="num">+992</td></tr><tr><td class="label">투자요소</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">금융손익_PL</td><td class="num self">-22,728</td><td class="num">+74,339</td><td class="num">—</td><td class="num">-12,992</td><td class="num">-13,046</td><td class="num">—</td><td class="num">—</td><td class="num">-4,433</td></tr><tr><td class="label">금융손익_OCI</td><td class="num self">-333</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">기타증감</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr style="background:#fff7e0;font-weight:600"><td class="label">기말 잔액 (2025-12-31)</td><td class="num self">+269,967</td><td class="num">+2,008,463</td><td class="num">+969,358</td><td class="num">+281,451</td><td class="num">+487,348</td><td class="num">+348,529</td><td class="num">+315,801</td><td class="num">+153,485</td></tr></tbody></table></div>
 <p><b>잔액 변동 핵심</b>:</p>
@@ -336,7 +420,7 @@
 <li><b>금융손익(PL)</b>: 삼성생명 +74천억 (이익), 미래에셋 −22천억 (손실), 손보 −4~13천억</li>
 <li><b>위험조정 변동</b>: 미래에셋 −191억 (절대값 최소) — RA 변동 가장 작음</li>
 </ul>
-<h2>5-H. 사업비 영역 — 손익 기반 (FY2025 별도, DI320000)</h2>
+<h2 id="sec-5-H-사업비-영역--손익-기반-FY2025-별도-DI320000">5-H. 사업비 영역 — 손익 기반 (FY2025 별도, DI320000)</h2>
 <p>판매비·관리비, 보험영업비용, 투자영업비용 등 사업비 항목 8개사 비교. 사업비율 = (판관비 + 보험영업비용) / 보험수익:</p>
 <div class="table-wrap">
 <table>
@@ -371,10 +455,10 @@
 <li><b>투자영업비용 38,735억</b> — 보험영업비용 9,921억의 약 4배. 자산운용 비중 큼 (VFA 위주 사업 mix와 일관)</li>
 </ul>
 </div>
-<h2>5-I. 예실차 (Expected vs Actual Claims) — 보험금 가정 정확도</h2>
+<h2 id="sec-5-I-예실차-Expected-vs-Actual-Claims--보험금-가정-정확도">5-I. 예실차 (Expected vs Actual Claims) — 보험금 가정 정확도</h2>
 <p>실제 발생한 보험금이 예상 대비 어떻게 차이나는지. 두 방법:</p>
 
-<h3>방법 A · ≤1년 만기 예상보험금 vs 당기 실제 발생사고비용</h3>
+<h3 id="sec-방법-A--1년-만기-예상보험금-vs-당기-실제-발생사고비용">방법 A · ≤1년 만기 예상보험금 vs 당기 실제 발생사고비용</h3>
 <p>만기 1년 이내 예상금액과 당기 실제값 비교. 비율 100% 초과 → 실제 &gt; 예상 (위험):</p>
 <div class="table-wrap">
 <table>
@@ -382,7 +466,7 @@
 <tbody>
 <tr class="self"><td class="company">미래에셋</td><td class="num">—</td><td class="num">5,887억</td><td class="num">—</td><td class="num">—</td><td>보고 부분</td></tr><tr class=""><td class="company">삼성생명</td><td class="num">45,711억</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>보고 부분</td></tr><tr class=""><td class="company">한화생명</td><td class="num">25,275억</td><td class="num">36,477억</td><td class="num">11,203억</td><td class="num fail-cell">144.3%</td><td>⚠ 실제 &gt; 예상 위험</td></tr><tr class=""><td class="company">동양생명</td><td class="num">4,988억</td><td class="num">8,212억</td><td class="num">3,224억</td><td class="num fail-cell">164.6%</td><td>⚠ 실제 &gt; 예상 위험</td></tr><tr class=""><td class="company">삼성화재</td><td class="num">58,408억</td><td class="num">139,516억</td><td class="num">81,108억</td><td class="num fail-cell">238.9%</td><td>⚠ 실제 &gt; 예상 위험</td></tr><tr class=""><td class="company">현대해상</td><td class="num">54,972억</td><td class="num">46,747억</td><td class="num">-8,225억</td><td class="num pass-cell">85.0%</td><td>✓ 실제 ≈ 예상</td></tr><tr class=""><td class="company">DB손보</td><td class="num">114,505억</td><td class="num">63,140억</td><td class="num">-51,366억</td><td class="num pass-cell">55.1%</td><td>✓ 실제 &lt;&lt; 예상 (보수적)</td></tr><tr class=""><td class="company">한화손보</td><td class="num">55,327억</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>보고 부분</td></tr></tbody></table></div>
 
-<h3>방법 B · 경험조정 (IFRS17 §103) ÷ 보험수익</h3>
+<h3 id="sec-방법-B--경험조정-IFRS17-103--보험수익">방법 B · 경험조정 (IFRS17 §103) ÷ 보험수익</h3>
 <p>경험조정 = 실제 − 예상. 양수면 실제가 예상 초과(보험금 더 발생). 보험수익 대비 비율로 정규화:</p>
 <div class="table-wrap">
 <table>
@@ -405,7 +489,7 @@
 <li><b>DB손보 −0.67% 사례</b> 참고 가치 — 유일하게 예상 보험금이 실제 초과 (회사가 보수적으로 가정)</li>
 </ul>
 </div>
-<h2>5-J. CSM 변동 무브먼트 — 8개사 (FY2025 별도, 억원)</h2>
+<h2 id="sec-5-J-CSM-변동-무브먼트--8개사-FY2025-별도-억원">5-J. CSM 변동 무브먼트 — 8개사 (FY2025 별도, 억원)</h2>
 <p>CSM(보험계약마진) 기시 → 변동 → 기말 흐름. ComponentsAxis=CSM 분해 합산. <b>검증식 오차 = (기시 + Σ변동) − 기말</b>:</p>
 <div class="table-wrap">
 <table>
@@ -430,7 +514,7 @@
 </ul>
 </div>
 
-<h3>자사 미래에셋 CSM 흐름 요약</h3>
+<h3 id="sec-자사-미래에셋-CSM-흐름-요약">자사 미래에셋 CSM 흐름 요약</h3>
 <table>
 <tr><td class="label">기시 CSM (2024-12-31)</td><td class="num">+20,782억</td></tr>
 <tr><td class="label">+ 신계약 인식</td><td class="num">+10,513억</td></tr>
@@ -441,9 +525,9 @@
 <tr style="background:#fff7e0;font-weight:600"><td class="label">기말 CSM (2025-12-31)</td><td class="num">+20,584억 (변동 −198, −1.0%)</td></tr>
 </table>
 <p>자사 CSM은 신계약 +1.05조와 상각 −1.36조가 거의 상쇄, 결과적으로 잔액 안정. 다만 절대 규모 2.06조는 동업사 중 가장 작음 — 신계약 영업 확대 여부 검토 가치.</p>
-<h2>6. IFRS17 회계가정 적용 사항</h2>
+<h2 id="sec-6-IFRS17-회계가정-적용-사항">6. IFRS17 회계가정 적용 사항</h2>
 
-<h3>6-A. 측정모형 분포 (단위 조원)</h3>
+<h3 id="sec-6-A-측정모형-분포-단위-조원">6-A. 측정모형 분포 (단위 조원)</h3>
 <p>IFRS17 측정모형: <b>PAA</b>(보험료배분, 단기) · <b>GMM</b>(일반모형, 보장성) · <b>VFA</b>(변동수수료, 변액·직접참여):</p>
 <div class="table-wrap">
 <table>
@@ -466,7 +550,7 @@
 <li><b>자사 시사</b>: 미래에셋 VFA 위주 — 변액·직접참여계약 비중 큼. 기초항목 공정가치 변동이 CSM에 직접 영향</li>
 </ul>
 
-<h3>6-B. CSM Transition Approach 적용 비중</h3>
+<h3 id="sec-6-B-CSM-Transition-Approach-적용-비중">6-B. CSM Transition Approach 적용 비중</h3>
 <p>IFRS17 첫 적용시 기존 보험계약의 CSM 산정 방법 — 회계정책 선택의 핵심:</p>
 <div class="table-wrap">
 <table>
@@ -490,7 +574,7 @@
 <li><b>자사 시사</b>: <b>미래에셋 FairValue 41.2% — 동업사 중 최대</b>. 전환시점 다수 계약을 공정가치법으로 인식 → 시장가격 가정 의존도 큼. 시장 변동시 CSM 변동성 노출</li>
 </ul>
 
-<h3>6-C. 보험금융손익 PL vs OCI 회계정책</h3>
+<h3 id="sec-6-C-보험금융손익-PL-vs-OCI-회계정책">6-C. 보험금융손익 PL vs OCI 회계정책</h3>
 <p>IFRS17 §88 회계정책 선택: 보험금융손익을 <b>PL 일괄</b> 또는 <b>PL+OCI 분리</b>(자산-부채 매칭 위해):</p>
 <div class="table-wrap">
 <table>
@@ -514,7 +598,7 @@
 <li><b>자사 시사</b>: <b>미래에셋 PL 98.6% — 가장 보수적 회계정책</b>. 시장이율·기초항목 변동시 PL 변동성 큰 노출. OCI 옵션 적용 검토 가치 있음 (단, 회계정책 변경은 일관성 영향 — 별도 검토)</li>
 </ul>
 
-<h3>6-D. IFRS17 가정 요약 — 자사 vs 동업사</h3>
+<h3 id="sec-6-D-IFRS17-가정-요약--자사-vs-동업사">6-D. IFRS17 가정 요약 — 자사 vs 동업사</h3>
 <div class="conclusion warning">
 <h4>⚠️ 미래에셋 IFRS17 가정 종합 시사점</h4>
 <ul>
@@ -525,7 +609,7 @@
 </ul>
 </div>
 
-<h2>7. 자사(미래에셋생명) 인사이트</h2>
+<h2 id="sec-7-자사미래에셋생명-인사이트">7. 자사(미래에셋생명) 인사이트</h2>
 
 <div class="cards">
 <div class="card info">
@@ -561,9 +645,9 @@
 </div>
 
 <!-- ━━━━━━━━━━━━━━━ § 7 한계 및 다음 단계 ━━━━━━━━━━━━━━━ -->
-<h2>8. 분석 한계 및 다음 단계</h2>
+<h2 id="sec-8-분석-한계-및-다음-단계">8. 분석 한계 및 다음 단계</h2>
 
-<h3>한계</h3>
+<h3 id="sec-한계">한계</h3>
 <ul>
   <li><b>미보고 6개사</b>: 비상장 4개사(KB라이프·교보·신한·흥국생명), 메리츠화재, 흥국화재(잔액만). DART 적재본에 부재 — 별도 자료 확보 필요.</li>
   <li><b>WARNING 3 라인</b> (3~5/8 보고): 발생사고요소 조정, 금융손익 OCI, 기타증감 — 회사별 disclosure 정책 차이로 일부 회사 미보고. 매핑 룰 추가 보강 여지.</li>
@@ -572,7 +656,7 @@
   <li><b>상품군 5분류 손보 misfit</b>: 손보는 사망/연금/저축 거의 0 — 장기/자동차/일반 분류로 별도 적용 필요. 손보 axis는 보강 룰로 4개사 모두 매핑 가능 확인.</li>
 </ul>
 
-<h3>다음 단계 (우선순위)</h3>
+<h3 id="sec-다음-단계-우선순위">다음 단계 (우선순위)</h3>
 <ol>
   <li><b>변동표 라인별 8개사 횡단 비교</b> — 자동 PASS 17 라인을 실제 수치로 dump. 자사 vs 동업사 라인별 percentile 산출.</li>
   <li><b>상품군 view (생보 5분류 / 손보 4분류) 분리 비교</b> — TypesOfContractsAxis 매핑 결과 활용.</li>
@@ -601,6 +685,9 @@
     <li><code>src/peer_benchmarking/analysis/fact_fetcher.py</code> — n_axes-safe fact fetcher (재사용 모듈)</li>
   </ol>
 </div>
+
+
+<a href="#" class="back-to-top" title="맨 위로">↑</a>
 
 </body>
 </html>
