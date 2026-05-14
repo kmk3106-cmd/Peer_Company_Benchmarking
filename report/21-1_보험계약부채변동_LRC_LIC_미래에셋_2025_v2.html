@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>21-1. 보험계약부채(자산) 변동분 — LRC/LIC × 상품군 (값 채움 v2)</title>
+<style>
+  body {
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+    margin: 20px;
+    color: #222;
+    background: #fafafa;
+  }
+  h1 {
+    font-size: 16pt;
+    border-bottom: 2px solid #333;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  .meta {
+    font-size: 9pt;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  .meta span { margin-right: 16px; }
+  .scroll { overflow-x: auto; }
+  table {
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 9.5pt;
+    min-width: 100%;
+  }
+  caption {
+    text-align: left;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 8px 0;
+  }
+  th, td {
+    border: 1px solid #888;
+    padding: 5px 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  thead th {
+    background: #e8eef5;
+    text-align: center;
+    font-weight: 600;
+  }
+  thead th.product-death   { background: #fde9e9; }
+  thead th.product-health  { background: #e9f3df; }
+  thead th.product-pension { background: #e3edfa; }
+  thead th.product-savings { background: #d8eff5; }
+  thead th.product-other   { background: #f0efe6; }
+  thead th.product-total   { background: #fff3c2; }
+
+  tbody td.label { text-align: left; background: #fff; min-width: 260px; }
+  tbody td.label.indent { padding-left: 22px; font-weight: normal; }
+  tbody td.label.section { font-weight: 600; background: #f4f4f0; }
+  tbody td.num {
+    text-align: right;
+    color: #aaa;
+    font-variant-numeric: tabular-nums;
+    min-width: 92px;
+  }
+  tbody tr.balance td { background: #fff7e0; font-weight: 600; }
+  tbody tr.subtotal td { background: #f0f4f8; font-weight: 600; }
+  tbody td.total-col { background: #fffceb; }
+
+  .note {
+    margin-top: 14px;
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.55;
+  }
+  .unit { text-align: right; font-size: 9pt; color: #666; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<h1>21-1. 보험계약부채(자산) 변동분 차이 공시 — LRC/LIC × 상품군 (미래에셋생명 2025, v2)</h1>
+<div class="meta">
+  <span><b>회사</b>: 미래에셋생명보험(주)</span>
+  <span><b>CIK</b>: 00112332</span>
+  <span><b>기준</b>: 별도(Separate)</span>
+  <span><b>대상기간</b>: 2025-01-01 ~ 2025-12-31</span>
+  <span><b>역할</b>: DI817100</span>
+</div>
+
+<div class="unit">(단위: 억원 — 5천만 미만 빈칸, 부호: 부채 증가 +, 감소 −)</div>
+
+<div class="scroll">
+<table>
+  <caption>발행보험계약 부채(자산) 변동 — 상품군별 LRC / LIC 분해</caption>
+  <thead>
+    <tr>
+      <th rowspan="2" style="width:260px">구분</th>
+      <th colspan="2" class="product-death">사망</th>
+      <th colspan="2" class="product-health">건강</th>
+      <th colspan="2" class="product-pension">연금</th>
+      <th colspan="2" class="product-savings">저축</th>
+      <th colspan="2" class="product-other">기타</th>
+      <th colspan="3" class="product-total">합계</th>
+    </tr>
+    <tr>
+      <th class="product-death">잔여보장부채</th><th class="product-death">발생사고부채</th>
+      <th class="product-health">잔여보장부채</th><th class="product-health">발생사고부채</th>
+      <th class="product-pension">잔여보장부채</th><th class="product-pension">발생사고부채</th>
+      <th class="product-savings">잔여보장부채</th><th class="product-savings">발생사고부채</th>
+      <th class="product-other">잔여보장부채</th><th class="product-other">발생사고부채</th>
+      <th class="product-total">잔여보장부채</th><th class="product-total">발생사고부채</th><th class="product-total">총합계</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="balance"><td class="label">기초 잔액 (2024-12-31)</td><td class="num">+58,526</td><td class="num">+1,169</td><td class="num">+31,702</td><td class="num">+1,133</td><td class="num">+94,491</td><td class="num">+1,311</td><td class="num">+62,740</td><td class="num">+438</td><td class="num">+169</td><td class="num">+1</td><td class="num total-col">+247,628</td><td class="num total-col">+4,052</td><td class="num total-col">+251,680</td></tr>
+<tr><td class="label">보험수익</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num total-col">&minus;10,804</td><td class="num total-col">&mdash;</td><td class="num total-col">&minus;10,804</td></tr>
+<tr><td class="label">신계약 인식 효과</td><td class="num">+470</td><td class="num">&mdash;</td><td class="num">+4,856</td><td class="num">&mdash;</td><td class="num">+7</td><td class="num">&mdash;</td><td class="num">+3</td><td class="num">&mdash;</td><td class="num">+39</td><td class="num">&mdash;</td><td class="num total-col">+5,376</td><td class="num total-col">&mdash;</td><td class="num total-col">+5,376</td></tr>
+<tr><td class="label">CSM 조정하는 추정치 변동</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num total-col">&nbsp;</td><td class="num total-col">&mdash;</td><td class="num total-col">&nbsp;</td></tr>
+<tr><td class="label">CSM 미조정 추정치 변동</td><td class="num">+310</td><td class="num">&mdash;</td><td class="num">+28</td><td class="num">&mdash;</td><td class="num">+262</td><td class="num">&mdash;</td><td class="num">&minus;17</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num total-col">+583</td><td class="num total-col">&mdash;</td><td class="num total-col">+583</td></tr>
+<tr><td class="label">위험조정 변동분 (비금융위험)</td><td class="num">&minus;141</td><td class="num">&mdash;</td><td class="num">&minus;126</td><td class="num">&mdash;</td><td class="num">&minus;55</td><td class="num">&mdash;</td><td class="num">&minus;54</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num total-col">&minus;376</td><td class="num total-col">&mdash;</td><td class="num total-col">&minus;376</td></tr>
+<tr><td class="label">경험조정</td><td class="num">+59</td><td class="num">&mdash;</td><td class="num">+177</td><td class="num">&mdash;</td><td class="num">+16</td><td class="num">&mdash;</td><td class="num">&minus;108</td><td class="num">&mdash;</td><td class="num">&minus;4</td><td class="num">&mdash;</td><td class="num total-col">+139</td><td class="num total-col">&mdash;</td><td class="num total-col">+139</td></tr>
+<tr><td class="label">과거 서비스 관련 변동</td><td class="num">&mdash;</td><td class="num">&minus;3</td><td class="num">&mdash;</td><td class="num">+203</td><td class="num">&mdash;</td><td class="num">+8</td><td class="num">&mdash;</td><td class="num">&minus;12</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num total-col">&mdash;</td><td class="num total-col">+196</td><td class="num total-col">+196</td></tr>
+<tr><td class="label">손실부담계약 관련 손실(환입)</td><td class="num">&minus;5,601</td><td class="num">+5,601</td><td class="num">&minus;1,309</td><td class="num">+1,309</td><td class="num">&minus;14,715</td><td class="num">+14,715</td><td class="num">&minus;15,195</td><td class="num">+15,195</td><td class="num">&minus;43</td><td class="num">+43</td><td class="num total-col">&minus;36,862</td><td class="num total-col">+36,862</td><td class="num total-col">&nbsp;</td></tr>
+<tr><td class="label">발생사고요소의 조정</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num total-col">&mdash;</td><td class="num total-col">&mdash;</td><td class="num total-col">&mdash;</td></tr>
+<tr><td class="label">발생한 보험금·서비스비용</td><td class="num">&mdash;</td><td class="num">+2,103</td><td class="num">&mdash;</td><td class="num">+3,090</td><td class="num">&mdash;</td><td class="num">+364</td><td class="num">&mdash;</td><td class="num">+140</td><td class="num">&mdash;</td><td class="num">+2</td><td class="num total-col">&mdash;</td><td class="num total-col">+5,698</td><td class="num total-col">+5,698</td></tr>
+<tr><td class="label">수취 보험료</td><td class="num">+12,195</td><td class="num">&mdash;</td><td class="num">+6,066</td><td class="num">&mdash;</td><td class="num">+9,631</td><td class="num">&mdash;</td><td class="num">+12,289</td><td class="num">&mdash;</td><td class="num">+320</td><td class="num">&mdash;</td><td class="num total-col">+40,500</td><td class="num total-col">&mdash;</td><td class="num total-col">+40,500</td></tr>
+<tr><td class="label">지급 보험금·서비스비용</td><td class="num">&mdash;</td><td class="num">&minus;7,717</td><td class="num">&mdash;</td><td class="num">&minus;4,573</td><td class="num">&mdash;</td><td class="num">&minus;15,130</td><td class="num">&mdash;</td><td class="num">&minus;15,503</td><td class="num">&mdash;</td><td class="num">&minus;47</td><td class="num total-col">&mdash;</td><td class="num total-col">&minus;42,970</td><td class="num total-col">&minus;42,970</td></tr>
+<tr><td class="label">보험취득 현금흐름 (지급)</td><td class="num">&minus;1,567</td><td class="num">&mdash;</td><td class="num">&minus;3,592</td><td class="num">&mdash;</td><td class="num">&minus;580</td><td class="num">&mdash;</td><td class="num">&minus;204</td><td class="num">&mdash;</td><td class="num">&minus;5</td><td class="num">&mdash;</td><td class="num total-col">&minus;5,948</td><td class="num total-col">&mdash;</td><td class="num total-col">&minus;5,948</td></tr>
+<tr><td class="label">보험취득 현금흐름 (상각)</td><td class="num">&minus;3</td><td class="num">&mdash;</td><td class="num">+203</td><td class="num">&mdash;</td><td class="num">+8</td><td class="num">&mdash;</td><td class="num">&minus;12</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num total-col">+196</td><td class="num total-col">&mdash;</td><td class="num total-col">+196</td></tr>
+<tr><td class="label">투자요소 및 보험료환급</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num total-col">&mdash;</td><td class="num total-col">+36,862</td><td class="num total-col">+36,862</td></tr>
+<tr><td class="label">당기손익인식 보험금융손익</td><td class="num">+4,106</td><td class="num">&mdash;</td><td class="num">+1,076</td><td class="num">&mdash;</td><td class="num">+6,809</td><td class="num">&mdash;</td><td class="num">+10,710</td><td class="num">&mdash;</td><td class="num">+26</td><td class="num">&mdash;</td><td class="num total-col">+22,728</td><td class="num total-col">&mdash;</td><td class="num total-col">+22,728</td></tr>
+<tr><td class="label">기타포괄손익인식 보험금융손익 (OCI)</td><td class="num">&minus;188</td><td class="num">&mdash;</td><td class="num">&minus;13</td><td class="num">&mdash;</td><td class="num">+19</td><td class="num">&mdash;</td><td class="num">+16</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num total-col">&minus;166</td><td class="num total-col">&mdash;</td><td class="num total-col">&minus;166</td></tr>
+<tr><td class="label">기타 증감</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num">+19</td><td class="num">&mdash;</td><td class="num">+16</td><td class="num">&mdash;</td><td class="num">&nbsp;</td><td class="num">&mdash;</td><td class="num total-col">+35</td><td class="num total-col">&mdash;</td><td class="num total-col">+35</td></tr>
+<tr class="balance"><td class="label">기말 잔액 (2025-12-31)</td><td class="num">+66,527</td><td class="num">+1,199</td><td class="num">+33,380</td><td class="num">+1,282</td><td class="num">+95,106</td><td class="num">+1,307</td><td class="num">+70,366</td><td class="num">+334</td><td class="num">+466</td><td class="num">+1</td><td class="num total-col">+265,845</td><td class="num total-col">+4,122</td><td class="num total-col">+269,967</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+  <p><b>표시 규칙 (Format Rules)</b></p>
+  <ol>
+    <li><b>잔여보장부채(LRC)·발생사고부채(LIC) 분리 표기</b> — 각 상품군마다 LRC, LIC 2개 열로 구분.</li>
+    <li><b>LRC = 손실요소외 + 손실요소 합산</b> — Loss Component를 별도 열로 분리하지 않고 LRC 한 열에 합산. 손실요소 인식·환입은 Ⅰ-2-4 행으로 표시되지만 열은 LRC에 귀속.</li>
+    <li><b>상품군별 분해</b> — 사망보장 · 건강보장 · 저축성 · 변액 · 기타 (생보 표준 5분류). 각 상품군은 색상으로 구분.</li>
+    <li><b>잔액 표시 순서</b> — 기초잔액은 항상 표 최상단, 기말잔액은 항상 표 최하단.</li>
+  </ol>
+
+  <p><b>주석</b></p>
+  <ol>
+    <li>DART XBRL 역할 <code>DI817100</code> (IFRS17 §104 LRC/LIC 변동분 차이조정)의 <b>상품별 구분 sub-table</b>. 발행보험계약, 별도(SeparateMember) 기준.</li>
+    <li><b>잔액 검증</b>: 기말 잔액 합계 269,967억원 ≈ <b>27.00조원</b> = 미래에셋생명 제39기 BS 보험계약부채와 일치 ✓</li>
+    <li><b>상품군 매핑</b> (pre.xml에서 확정):
+      사망=<code>dart_LifeInsuranceMember</code>, 건강=<code>dart_HealthInsuranceMember</code>,
+      연금=<code>entity Pension...IDeathTable</code>, 저축=<code>entity Savings...IDeathTable</code>,
+      기타=<code>dart_OtherInsuranceMember</code>.</li>
+    <li><b>각 라인은 LRC 또는 LIC 한 쪽에 자연 귀속</b> — 손실부담계약(환입)만 LRC(−)·LIC(+) 양쪽 분해, 잔액 행도 분해. 그 외 라인은 한쪽 col에만 값.</li>
+    <li><b>보험수익·투자요소·OCI 일부 라인</b>은 미래에셋이 <b>상품별이 아닌 배당여부별</b>(유배당계약/유배당 외 계약)로만 공시 → 5상품군 cell은 빈 칸, 합계 열에 (유배당+유배당외) 합산값 표시. DI817100의 별도 sub-table(Table 1, 배당여부별 구분)에 동일 데이터가 분해되어 있음.</li>
+    <li><b>발생사고요소 조정</b>은 INSTANT 시점(잔액성) element로 보고됨 — duration 변동 cell에는 안 나타남 (별도 처리 필요).</li>
+    <li><b>지급 보험금·서비스비용</b>은 element가 <code>...PaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset</code> (취득CF 제외분).</li>
+    <li>금액 부호: 부채 증가(+), 감소(−). 합계 = 5상품군 단순 산술합. 5천만 미만은 빈 칸.</li>
+  </ol>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2277 @@
+{
+  "00112332": {
+    "company": "미래에셋생명",
+    "sector": "life",
+    "types_members": [
+      {
+        "member": "dart_OtherInsuranceMember",
+        "ko_label": "사망보험 외",
+        "n_ctx": 1912,
+        "std_group": "기타",
+        "confidence": 5
+      },
+      {
+        "member": "dart_HealthInsuranceMember",
+        "ko_label": "건강보험 [구성요소]",
+        "n_ctx": 956,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "dart_LifeInsuranceMember",
+        "ko_label": "사망보험 [구성요소]",
+        "n_ctx": 956,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00112332_ContractsOtherThanDividendsOfTypesOfContractsMemberOfDisclosureOfNatureAndExtentOfRisksThatAriseFromContractsWithinScopeOfIFRS17TableOfMember",
+        "ko_label": "유배당 외 계약",
+        "n_ctx": 803,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00112332_DividendContractOfTypesOfContractsMemberOfDisclosureOfNatureAndExtentOfRisksThatAriseFromContractsWithinScopeOfIFRS17TableOfMember",
+        "ko_label": "유배당계약",
+        "n_ctx": 803,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00112332_SavingsInsuranceOfInsuranceContractsMemberOfIDeathTableOfMember",
+        "ko_label": "저축보험",
+        "n_ctx": 786,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00112332_PensionInsuranceOfInsuranceContractsMemberOfIDeathTableOfMember",
+        "ko_label": "연금보험",
+        "n_ctx": 786,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00112332_SavingsInsuranceOfTypesOfContractsMemberOfOne66DisclosureOfReconciliationOfChangesInInsuranceIncomeTableOfMember",
+        "ko_label": "저축보험",
+        "n_ctx": 114,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "entity00112332_PensionInsuranceOfTypesOfContractsMemberOfOne66DisclosureOfReconciliationOfChangesInInsuranceIncomeTableOfMember",
+        "ko_label": "연금보험",
+        "n_ctx": 114,
+        "std_group": "연금",
+        "confidence": 10
+      },
+      {
+        "member": "entity00112332_SavingsInsuranceOfTypesOfContractsMemberOfDisclosureOfEffectOfInsuranceContractsInitiallyRecognisedTableOfMember",
+        "ko_label": "저축보험",
+        "n_ctx": 40,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "entity00112332_PensionInsuranceOfTypesOfContractsMemberOfDisclosureOfEffectOfInsuranceContractsInitiallyRecognisedTableOfMember",
+        "ko_label": "연금보험",
+        "n_ctx": 40,
+        "std_group": "연금",
+        "confidence": 10
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 1226,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 1130,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 1092,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 964,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 906,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 154,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래 현금유입액의 현재가치 추정치 [구성요소]",
+        "n": 56,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 56,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 56,
+        "std": null
+      },
+      {
+        "member": "entity00112332_ReinsuranceContractsThatAppliedTheFairValueMethodAmongTheInsuranceContractsThatExistedAtTheTimeOfConversionOfInsuranceContractsByComponentsMemberOfChangesInReinsuranceCostsForReinsuranceContractsHeldTableOfMember",
+        "ko_label": "전환 시점에 존재했던 보험계약 중 공정가치법을 적용한 재보험계약",
+        "n": 48,
+        "std": null
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreAssets",
+          "ifrs-full_InsuranceContractsThatAreLiabilities"
+        ]
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceRevenue"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNotAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "위험조정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNonfinancialRiskThatDoesNotRelateToFutureOrPastServiceInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServiceInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfGroupsOfOnerousContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": true,
+        "elements": [
+          "dart_OtherAdjustmentsOfLiabilitiesForIncurredClaimsThatAriseFromContractsWithinScopeOfIFRS17"
+        ]
+      },
+      {
+        "line": "발생사고비용",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "수취보험료",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranceContractsIssuedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "지급보험금",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "투자요소",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContractsIssuedRecognisedInProfitOrLoss"
+        ]
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughOtherChangesLiabilitiesUnderInsuranceContractsAndReinsuranceContractsIssued"
+        ]
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 2151491.83558452
+    },
+    "summary": {
+      "n_types": 11,
+      "group_dist": {
+        "사망": 3,
+        "건강": 1,
+        "연금": 2,
+        "저축": 2,
+        "기타": 1,
+        "미분류": 2
+      },
+      "n_unclassified": 2,
+      "n_lines_reported": 16,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00126256": {
+    "company": "삼성생명",
+    "sector": "life",
+    "types_members": [
+      {
+        "member": "dart_LifeInsuranceMember",
+        "ko_label": "사망보험(*)",
+        "n_ctx": 1524,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "dart_PensionAndSavingsInsuranceMember",
+        "ko_label": "연금저축보험 [구성요소]",
+        "n_ctx": 786,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "dart_HealthInsuranceMember",
+        "ko_label": "건강보험 [구성요소]",
+        "n_ctx": 762,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00126256_NonParticipatingInsuranceMemberOfTypesOfContractsMemberOfDisclosuresOfInsuranceContractsAssetsAndInsuranceContractsLiabilitiesForInsuranceContractsIssuedByParticipationFeatureTableOfMember",
+        "ko_label": "무배당보험 [구성요소]",
+        "n_ctx": 642,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00126256_VariableInsuranceMemberOfTypesOfContractsMemberOfDisclosuresOfInsuranceContractsAssetsAndInsuranceContractsLiabilitiesForInsuranceContractsIssuedByParticipationFeatureTableOfMember",
+        "ko_label": "변액보험 [구성요소]",
+        "n_ctx": 642,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00126256_ParticipatingInsuranceMemberOfTypesOfContractsMemberOfDisclosuresOfInsuranceContractsAssetsAndInsuranceContractsLiabilitiesForInsuranceContractsIssuedByParticipationFeatureTableOfMember",
+        "ko_label": "유배당보험 [구성요소]",
+        "n_ctx": 642,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "dart_OtherInsuranceMember",
+        "ko_label": "기타보험 [구성요소]",
+        "n_ctx": 12,
+        "std_group": "기타",
+        "confidence": 5
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 1072,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 1056,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 524,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 524,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 524,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 372,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 4,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래 현금유입액의 현재가치 추정치 [구성요소]",
+        "n": 4,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 4,
+        "std": null
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreAssets"
+        ]
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreLiabilities"
+        ]
+      },
+      {
+        "line": "보험수익",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNotAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranceContractsIssuedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "지급보험금",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "투자요소",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 2008463.47
+    },
+    "summary": {
+      "n_types": 7,
+      "group_dist": {
+        "사망": 1,
+        "건강": 1,
+        "연금": 0,
+        "저축": 1,
+        "기타": 1,
+        "미분류": 3
+      },
+      "n_unclassified": 3,
+      "n_lines_reported": 8,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00113058": {
+    "company": "한화생명",
+    "sector": "life",
+    "types_members": [
+      {
+        "member": "entity00113058_NonParticipatingInsuranceOfTypesOfContractsMemberOfDisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaimsParticipatingTableOfMember",
+        "ko_label": "무배당 보험계약 [구성요소]",
+        "n_ctx": 1702,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00113058_ParticipatingInsuranceOfTypesOfContractsMemberOfDisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaimsParticipatingTableOfMember",
+        "ko_label": "유배당 보험계약 [구성요소]",
+        "n_ctx": 1702,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00113058_NonParticipatingLifeInsuranceMemberOfLifeInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentPremiumAllocationApproachTableOfMember",
+        "ko_label": "무배당 사망보험 [구성요소]",
+        "n_ctx": 48,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_NonParticipatingPensionAndSavingsInsuranceMemberOfPensionAndSavingsInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentInParTableOfMember",
+        "ko_label": "무배당 연금저축보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_NonParticipatingHealthInsuranceMemberOfHealthInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "무배당 건강보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_AssetLinkedPensionAndSavingsInsuranceMemberOfPensionAndSavingsInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "자산연계형 연금저축보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_NonParticipatingHealthInsuranceMemberOfHealthInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentInParTableOfMember",
+        "ko_label": "무배당 건강보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_ParticipatingPensionAndSavingsInsuranceMemberOfPensionAndSavingsInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "유배당 연금저축보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_ParticipatingHealthInsuranceMemberOfHealthInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "유배당 건강보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_NonParticipatingPensionAndSavingsInsuranceMemberOfPensionAndSavingsInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "무배당 연금저축보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_ParticipatingOtherInsuranceMemberOfOtherInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "유배당 기타보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_VariableLifeInsuranceMemberOfVariableInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentVariableInsuranceTableOfMember",
+        "ko_label": "변액사망보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_VariablePensionAndSavingsInsuranceMemberOfVariableInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentVariableInsuranceTableOfMember",
+        "ko_label": "변액연금,저축보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_ParticipatingLifeInsuranceMemberOfLifeInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "유배당 사망보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_NonParticipatingLifeInsuranceMemberOfLifeInsuranceMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioAndAccountingModelLifeInsuranceSegmentTextBlockTableOfMember",
+        "ko_label": "무배당 사망보험 [구성요소]",
+        "n_ctx": 36,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "dart_OtherInsuranceMember",
+        "ko_label": "기타보험 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "기타",
+        "confidence": 5
+      },
+      {
+        "member": "dart_PensionAndSavingsInsuranceMember",
+        "ko_label": "연금저축보험 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "dart_LifeInsuranceMember",
+        "ko_label": "사망보험 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "dart_HealthInsuranceMember",
+        "ko_label": "건강보험 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_VariableInsuranceMemberOfTypesOfContractsMemberOfLiabilitiesAssetsOfInsuranceContractsByPortfolioLifeInsuranceTableOfMember",
+        "ko_label": "변액보험 [구성요소]",
+        "n_ctx": 12,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00113058_VariableInsuranceMemberOfTypesOfContractsMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrLossTableOfMember",
+        "ko_label": "변액보험 [구성요소]",
+        "n_ctx": 12,
+        "std_group": "미분류",
+        "confidence": 0
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 1440,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 1152,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 1152,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 72,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 72,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 72,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsMember",
+        "ko_label": "미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 8,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래 현금유입액의 현재가치 추정치 [구성요소]",
+        "n": 8,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 4,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 4,
+        "std": "BEL"
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreLiabilities",
+          "ifrs-full_InsuranceContractsThatAreAssets"
+        ]
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNotAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranceContractsIssuedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "지급보험금",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "투자요소",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 8561994.46
+    },
+    "summary": {
+      "n_types": 21,
+      "group_dist": {
+        "사망": 15,
+        "건강": 1,
+        "연금": 0,
+        "저축": 1,
+        "기타": 1,
+        "미분류": 3
+      },
+      "n_unclassified": 3,
+      "n_lines_reported": 11,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00117267": {
+    "company": "동양생명",
+    "sector": "life",
+    "types_members": [
+      {
+        "member": "dart_HealthInsuranceMember",
+        "ko_label": "건강보험 [구성요소]",
+        "n_ctx": 68,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00117267_VariableInsuranceMemberOfTypesOfContractsMemberOfDisclosureOfClassificationOfInsuranceContractAssetsAndLiabilitiesByProductTableOfMember",
+        "ko_label": "변액 보험 [구성요소]",
+        "n_ctx": 68,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "dart_LifeInsuranceMember",
+        "ko_label": "사망보험 [구성요소]",
+        "n_ctx": 68,
+        "std_group": "사망",
+        "confidence": 10
+      },
+      {
+        "member": "entity00117267_PensionSavingsAndOtherInsuranceMemberOfTypesOfContractsMemberOfDisclosureOfClassificationOfInsuranceContractAssetsAndLiabilitiesByProductTableOfMember",
+        "ko_label": "연금저축 및 기타 보험 [구성요소]",
+        "n_ctx": 68,
+        "std_group": "저축",
+        "confidence": 10
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "위험조정",
+        "n": 4416,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "최선추정부채",
+        "n": 4380,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 2046,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 1364,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 1364,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 790,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래현금흐름 유입액의 현재가치 추정치",
+        "n": 36,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsMember",
+        "ko_label": "미래현금흐름의 현재가치 추정치",
+        "n": 36,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 12,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득현금흐름",
+        "n": 12,
+        "std": null
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedInsuranceContractsLiabilityAsset",
+          "ifrs-full_IncreaseDecreaseThroughInsuranceRevenueNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "지급보험금",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "투자요소",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset",
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 281450.79
+    },
+    "summary": {
+      "n_types": 4,
+      "group_dist": {
+        "사망": 1,
+        "건강": 1,
+        "연금": 0,
+        "저축": 1,
+        "기타": 0,
+        "미분류": 1
+      },
+      "n_unclassified": 1,
+      "n_lines_reported": 5,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00139214": {
+    "company": "삼성화재",
+    "sector": "non_life",
+    "types_members": [
+      {
+        "member": "dart_LongtermInsuranceMember",
+        "ko_label": "장기보험 [구성요소]",
+        "n_ctx": 1698,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_AutomobileInsuranceMember",
+        "ko_label": "자동차보험 [구성요소]",
+        "n_ctx": 455,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_GeneralInsuranceMember",
+        "ko_label": "일반보험 [구성요소]",
+        "n_ctx": 455,
+        "std_group": "기타",
+        "confidence": 8
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 582,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 506,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 506,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 28,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 28,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 28,
+        "std": "CSM"
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreLiabilities",
+          "ifrs-full_InsuranceContractsThatAreAssets"
+        ]
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset",
+          "ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNotAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "지급보험금",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "투자요소",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContractsIssuedRecognisedInProfitOrLoss"
+        ]
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 487348.12310826
+    },
+    "summary": {
+      "n_types": 3,
+      "group_dist": {
+        "사망": 0,
+        "건강": 0,
+        "연금": 0,
+        "저축": 0,
+        "기타": 3,
+        "미분류": 0
+      },
+      "n_unclassified": 0,
+      "n_lines_reported": 9,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00164973": {
+    "company": "현대해상",
+    "sector": "non_life",
+    "types_members": [
+      {
+        "member": "dart_LongtermInsuranceMember",
+        "ko_label": "장기보험 [구성요소]",
+        "n_ctx": 2768,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_GeneralInsuranceMember",
+        "ko_label": "일반보험 [구성요소]",
+        "n_ctx": 1156,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_AutomobileInsuranceMember",
+        "ko_label": "자동차보험 [구성요소]",
+        "n_ctx": 1146,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "entity00164973_DividendOfAnnuitySavingFixedInterestPortfolioMemberOfFixedInterestPortfolioMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "유배당연금저축, 금리고정형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "연금",
+        "confidence": 10
+      },
+      {
+        "member": "entity00164973_NonDividendOfWealthFixedInterestPortfolioMemberOfFixedInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당재물, 금리고정형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00164973_NonDividendOfInjuryFloatingInterestPortfolioMemberOfFloatingInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당상해, 금리연동형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00164973_NonDividendOfDiseaseFloatingInterestPortfolioMemberOfFloatingInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당질병, 금리연동형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00164973_DividendOfOthersnonDividendOfInjuryFloatingInterestPortfolioMemberOfFloatingInterestPortfolioMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "유배당기타, 금리연동형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00164973_NonDividendOfDiseaseFixedInterestPortfolioMemberOfFixedInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당질병, 금리고정형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00164973_DividendOfAnnuitySavingnonDividendOfInjuryFloatingInterestPortfolioMemberOfFloatingInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "유배당연금저축, 금리연동형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "연금",
+        "confidence": 10
+      },
+      {
+        "member": "entity00164973_NonDividendOfAnnuitySavingFloatingInterestPortfolioMemberOfFloatingInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당연금저축, 금리연동형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "연금",
+        "confidence": 10
+      },
+      {
+        "member": "entity00164973_NonDividendOfInjuryFixedInterestPortfolioMemberOfFixedInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당상해, 금리고정형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00164973_NonDividendOfAnnuitySavingFixedInterestPortfolioMemberOfFixedInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당연금저축, 금리고정형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "연금",
+        "confidence": 10
+      },
+      {
+        "member": "entity00164973_NonDividendOfWealthFloatingInterestPortfolioMemberOfFloatingInterestPortfolioMemberOfDisclosureOfInformationAboutExpectedRecognitionOfContractualServiceMarginInProfitOrlossByPortfolioTableOfMember",
+        "ko_label": "무배당재물, 금리연동형 [구성요소]",
+        "n_ctx": 24,
+        "std_group": "미분류",
+        "confidence": 0
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 1530,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 1426,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 1406,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 52,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 52,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 52,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 10,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 10,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래 현금유입액의 현재가치 추정치 [구성요소]",
+        "n": 10,
+        "std": null
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreLiabilities",
+          "ifrs-full_InsuranceContractsThatAreAssets"
+        ]
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset",
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "entity00164973_IncreaseDecreaseThroughOtherEffectsExcludingEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAssetOfDisclosureOfDetailsOfChangesInInsuranceContractsIssuedDueToChangesOfActuarialAssumptionOfDisclosureOfDetailsOfChangesInInsuranceContractsIssuedDueToChangesOfActuarialAssumptionTableOfItems",
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNotAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfGroupsOfOnerousContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranceContractsIssuedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "지급보험금",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "투자요소",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 348529.24404989
+    },
+    "summary": {
+      "n_types": 14,
+      "group_dist": {
+        "사망": 0,
+        "건강": 2,
+        "연금": 4,
+        "저축": 0,
+        "기타": 3,
+        "미분류": 5
+      },
+      "n_unclassified": 5,
+      "n_lines_reported": 11,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00159102": {
+    "company": "DB손해보험",
+    "sector": "non_life",
+    "types_members": [
+      {
+        "member": "dart_LongtermInsuranceMember",
+        "ko_label": "장기보험 [구성요소]",
+        "n_ctx": 6482,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_GeneralInsuranceMember",
+        "ko_label": "일반보험 [구성요소]",
+        "n_ctx": 1075,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_AutomobileInsuranceMember",
+        "ko_label": "자동차보험 [구성요소]",
+        "n_ctx": 985,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "entity00159102_NonDividendAccidentInsuranceNparMemberOfNonParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당상해, 비참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00159102_DividendPensionSavingsInsuranceIparMemberOfIndirectParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "유배당연금저축, 간접 참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "entity00159102_NonDividendHealthInsuranceNparMemberOfNonParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당질병, 비참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00159102_NonDividendPensionSavingsInsuranceIparMemberOfIndirectParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당연금저축, 간접 참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "entity00159102_NonDividendPropertyInsuranceIparMemberOfIndirectParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당재물, 간접 참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00159102_NonDividendPensionSavingsInsuranceNparMemberOfNonParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당연금저축, 비참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "entity00159102_NonDividendAccidentInsuranceIparMemberOfIndirectParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당상해, 간접 참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "미분류",
+        "confidence": 0
+      },
+      {
+        "member": "entity00159102_NonDividendHealthInsuranceIparMemberOfIndirectParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당질병, 간접 참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00159102_NonDividendOtherInsuranceIparMemberOfIndirectParticipatingContractMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherThanThoseToWhichPremiumAllocationApproachHasBeenAppliedTableOfMember",
+        "ko_label": "무배당기타, 간접 참가적 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "미분류",
+        "confidence": 0
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 819,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 747,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 597,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 597,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 597,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 210,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래 현금유입액의 현재가치 추정치 [구성요소]",
+        "n": 24,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 12,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsMember",
+        "ko_label": "미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 12,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 12,
+        "std": null
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreAssets",
+          "ifrs-full_InsuranceContractsThatAreLiabilities"
+        ]
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedInsuranceContractsLiabilityAsset",
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranceContractsIssuedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "지급보험금",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "투자요소",
+        "reported": true,
+        "elements": [
+          "entity00159102_IncreaseDecreaseThroughInvestmentComponentsOtherCashFlowsInsuranceContractsLiabilityAssetOfIncreaseDecreaseThroughCashFlowsInsuranceContractsLiabilityAssetOfDisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponentsTableOfItems",
+          "entity00159102_IncreaseDecreaseThroughInvestmentComponentsOtherCashFlowsInsuranceContractsLiabilityAssetOfIncreaseDecreaseThroughCashFlowsInsuranceContractsLiabilityAssetOfDisclosureOfReconciliationOfChangesInInsuranceContractsByRemainingCoverageAndIncurredClaimsPremiumAllocationApproachGeneralTableOfItems"
+        ]
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 1263204.16
+    },
+    "summary": {
+      "n_types": 12,
+      "group_dist": {
+        "사망": 0,
+        "건강": 2,
+        "연금": 0,
+        "저축": 3,
+        "기타": 3,
+        "미분류": 4
+      },
+      "n_unclassified": 4,
+      "n_lines_reported": 10,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "00135917": {
+    "company": "한화손해보험",
+    "sector": "non_life",
+    "types_members": [
+      {
+        "member": "dart_LongtermInsuranceMember",
+        "ko_label": "장기보험 [구성요소]",
+        "n_ctx": 2736,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_GeneralInsuranceMember",
+        "ko_label": "일반보험 [구성요소]",
+        "n_ctx": 777,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "dart_AutomobileInsuranceMember",
+        "ko_label": "자동차보험 [구성요소]",
+        "n_ctx": 747,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "entity00135917_NonParticipatingHealthInsuranceMemberOfLongTermInsuranceMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherthanthosetowhichpremiumallocationapproachhasbeenappliedTableOfMember",
+        "ko_label": "무배당질병 [구성요소]",
+        "n_ctx": 84,
+        "std_group": "건강",
+        "confidence": 10
+      },
+      {
+        "member": "entity00135917_NonParticipatingPensionSavingsInsuranceMemberOfLongTermInsuranceMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherthanthosetowhichpremiumallocationapproachhasbeenappliedTableOfMember",
+        "ko_label": "무배당연금저축 [구성요소]",
+        "n_ctx": 84,
+        "std_group": "저축",
+        "confidence": 10
+      },
+      {
+        "member": "entity00135917_NonParticipatingAccidentInsuranceMemberOfLongTermInsuranceMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherthanthosetowhichpremiumallocationapproachhasbeenappliedTableOfMember",
+        "ko_label": "무배당상해 [구성요소]",
+        "n_ctx": 84,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "entity00135917_NonParticipatingOtherInsuranceMemberOfLongTermInsuranceMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherthanthosetowhichpremiumallocationapproachhasbeenappliedTableOfMember",
+        "ko_label": "무배당기타 [구성요소]",
+        "n_ctx": 84,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "entity00135917_NonParticipatingPropertyInsuranceMemberOfLongTermInsuranceMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherthanthosetowhichpremiumallocationapproachhasbeenappliedTableOfMember",
+        "ko_label": "무배당재물 [구성요소]",
+        "n_ctx": 84,
+        "std_group": "기타",
+        "confidence": 8
+      },
+      {
+        "member": "entity00135917_ParticipatingPensionSavingsInsuranceMemberOfLongTermInsuranceMemberOfDetailsOfInsuranceContractLiabilityAssetByPortfolioOtherthanthosetowhichpremiumallocationapproachhasbeenappliedTableOfMember",
+        "ko_label": "유배당연금저축 [구성요소]",
+        "n_ctx": 42,
+        "std_group": "저축",
+        "confidence": 10
+      }
+    ],
+    "components_members": [
+      {
+        "member": "ifrs-full_RiskAdjustmentForNonfinancialRiskMember",
+        "ko_label": "비금융위험에 대한 위험조정 [구성요소]",
+        "n": 649,
+        "std": "RA"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember",
+        "ko_label": "미래 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 617,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 355,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 수정소급법이나 공정가치법을 적용하지 아니한 계약의 보험계약마진 [구성요소]",
+        "n": 355,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginRelatedToContractsThatExistedAtTransitionDateToWhichFairValueApproachHasBeenAppliedMember",
+        "ko_label": "전환일에 존재했던 계약 중 공정가치법을 적용한 계약의 보험계약마진 [구성요소]",
+        "n": 355,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_ContractualServiceMarginMember",
+        "ko_label": "보험계약마진 [구성요소]",
+        "n": 302,
+        "std": "CSM"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름의 현재가치 추정치 [구성요소]",
+        "n": 16,
+        "std": "BEL"
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashInflowsMember",
+        "ko_label": "미래 현금유입액의 현재가치 추정치 [구성요소]",
+        "n": 16,
+        "std": null
+      },
+      {
+        "member": "ifrs-full_EstimatesOfPresentValueOfFutureCashOutflowsOtherThanInsuranceAcquisitionCashFlowsMember",
+        "ko_label": "보험취득 현금흐름 외의 미래 현금유출액의 현재가치 추정치 [구성요소]",
+        "n": 16,
+        "std": null
+      }
+    ],
+    "standard_lines": [
+      {
+        "line": "기초잔액",
+        "reported": true,
+        "elements": [
+          "ifrs-full_InsuranceContractsThatAreLiabilities",
+          "ifrs-full_InsuranceContractsThatAreAssets"
+        ]
+      },
+      {
+        "line": "기초잔액_자산",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기초잔액_부채",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "보험수익",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceRevenueNotRelatedToContractsThatExistedAtTransitionDateToWhichModifiedRetrospectiveApproachOrFairValueApproachHasBeenAppliedInsuranceContractsLiabilityAsset",
+          "ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExcludedFromInsuranceRevenueAndInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "신계약인식",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitiallyRecognisedInPeriodInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "CSM미조정추정변동",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNotAdjustContractualServiceMarginInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "위험조정변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "경험조정",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "과거서비스변동",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "손실부담계약손실",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고요소조정",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "발생사고비용",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "수취보험료",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranceContractsIssuedInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "지급보험금",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherInsuranceServiceExpensesPaidForInsuranceContractsIssuedExcludingInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF지급",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "보험취득CF상각",
+        "reported": true,
+        "elements": [
+          "ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcquisitionCashFlowsInsuranceContractsLiabilityAsset"
+        ]
+      },
+      {
+        "line": "투자요소",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_PL",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "금융손익_OCI",
+        "reported": false,
+        "elements": []
+      },
+      {
+        "line": "기타증감",
+        "reported": false,
+        "elements": []
+      }
+    ],
+    "balance": {
+      "BS_liability_total_억": 613940.7102
+    },
+    "summary": {
+      "n_types": 9,
+      "group_dist": {
+        "사망": 0,
+        "건강": 1,
+        "연금": 0,
+        "저축": 2,
+        "기타": 6,
+        "미분류": 0
+      },
+      "n_unclassified": 0,
+      "n_lines_reported": 10,
+      "n_lines_total": 21,
+      "bel_csm_ra": [
+        true,
+        true,
+        true
+      ]
+    }
+  }
+}
