@@ -330,6 +330,21 @@ html += '</tbody></table></div>'
 
 # ━━━━━━━━━━━━━━━ § 5 추출된 자료 — BEL/RA/CSM ━━━━━━━━━━━━━━━
 html += f"""
+<h2>4-B. 식별된 7 role 차례 추출 결과</h2>
+<p>§2에서 식별한 부채 관련 7 role에 대해 8개사 모두 별도·발행 기준 보고 확인:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Role</th><th>내용</th><th>8개사 보고</th><th>핵심 데이터</th><th>추출 상태</th></tr></thead>
+<tbody>
+<tr><td><b>DI817100</b></td><td>보험계약부채 변동표</td><td class="pass-cell">8/8 ✓</td><td>BEL/RA/CSM 변동, LRC/LIC × 상품군 변동</td><td class="pass-cell">완료 — §5</td></tr>
+<tr><td><b>DI817105</b></td><td>보험계약부채 잔액</td><td class="pass-cell">8/8 ✓</td><td>5상품군 × LRC/LIC 잔액. 미래에셋 27조 BS 100% 일치</td><td class="pass-cell">완료 — §5-B</td></tr>
+<tr><td><b>DI817300</b></td><td>보험계약 정보 (CSM 만기)</td><td class="pass-cell">8/8 ✓</td><td>CSM 만기별 인식 기대액 (미래에셋 7구간, 타사 36구간)</td><td class="warn-cell">서베이 완료 — 매핑 dict 필요</td></tr>
+<tr><td><b>DI817305</b></td><td>보험계약 정보 잔액</td><td class="pass-cell">8/8 ✓</td><td>위험보험료·예정유지비·CSM·신계약</td><td class="warn-cell">서베이 완료</td></tr>
+<tr><td><b>DI818100/105</b></td><td>보험계약 위험관리</td><td class="pass-cell">8/8 ✓</td><td>IFRS17 위험 익스포저, 부채인 보험계약 잔액</td><td class="warn-cell">서베이 완료</td></tr>
+<tr><td><b>DI818200/205</b></td><td>위험관리 상세 (금융자산·신용위험)</td><td class="pass-cell">8/8 ✓</td><td>총 금융자산, 신용위험 최대 노출정도</td><td class="warn-cell">서베이 완료</td></tr>
+</tbody></table>
+</div>
+
 <h2>5. 추출된 자료 — BEL/RA/CSM 잔액 비교 (8개사)</h2>
 <p>각 회사 별도·발행 기준 기말(2025-12-31) 잔액을 BEL/RA/CSM 구성요소로 분해. <b>n_axes-safe + fingerprint dedup + CSM transition priority</b> 적용. BS 잔액과 합계 정확도 검증:</p>
 
@@ -360,8 +375,24 @@ for p in peer_data:
     html += f'<td class="num">{fmt_pct(p["CSM_GROWTH"])}</td></tr>'
 html += '</tbody></table></div>'
 
-# ━━━━━━━━━━━━━━━ § 6 자사 인사이트 ━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━ § 5-B DI817105 상품군 분해 ━━━━━━━━━━━━━━━
 html += f"""
+<h2>5-B. DI817105 잔액 — 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</h2>
+<p>DI817105 (보험계약부채 잔액) 에서 미래에셋생명 5상품군 × LRC/LIC 분해. 합계가 BS 27조와 정확히 일치 (단위 억원):</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>상품군</th><th>LRC<br>(손실외+손실요소)</th><th>LIC<br>(발생사고)</th><th>소계</th><th>구성비</th></tr></thead>
+<tbody>
+<tr><td class="label">사망</td><td class="num">66,527</td><td class="num">1,199</td><td class="num"><b>67,726</b></td><td class="num">25.1%</td></tr>
+<tr><td class="label">건강</td><td class="num">33,380</td><td class="num">1,282</td><td class="num"><b>34,662</b></td><td class="num">12.8%</td></tr>
+<tr class="ct-pass"><td class="label"><b>연금</b></td><td class="num">95,106</td><td class="num">1,307</td><td class="num"><b>96,412</b></td><td class="num"><b>35.7%</b> ← 최대</td></tr>
+<tr><td class="label">저축</td><td class="num">70,366</td><td class="num">334</td><td class="num"><b>70,700</b></td><td class="num">26.2%</td></tr>
+<tr><td class="label">기타</td><td class="num">466</td><td class="num">1</td><td class="num"><b>467</b></td><td class="num">0.2%</td></tr>
+<tr class="self"><td class="label"><b>합계</b></td><td class="num"><b>265,845</b></td><td class="num"><b>4,122</b></td><td class="num"><b>269,967</b></td><td class="num"><b>≈ 27.00조</b><br>= BS 100%</td></tr>
+</tbody></table>
+</div>
+<p><b>미래에셋 사업 mix 인사이트</b>: 연금 35.7% (최대), 저축 26.2%, 사망 25.1%, 건강 12.8%, 기타 0.2%. <b>저축성(연금+저축) = 61.9%</b>로 보장성(사망+건강 = 37.9%) 보다 우위.</p>
+
 <h2>6. 자사(미래에셋생명) 인사이트</h2>
 
 <div class="cards">
