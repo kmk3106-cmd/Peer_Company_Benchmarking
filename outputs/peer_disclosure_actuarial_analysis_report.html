@@ -325,7 +325,6 @@
     <dt>PAA</dt><dd>보험료배분접근법 (Premium Allocation Approach)</dd>
     <dt>DI817100</dt><dd>DART 공시 — 보험계약부채(자산) 변동표 role</dd>
     <dt>DI817105</dt><dd>DART 공시 — 보험계약부채(자산) 잔액표 role</dd>
-    <dt>DI817200/205</dt><dd>DART 공시 — 재보험계약자산(부채) role (본 보고서 OUT_OF_SCOPE)</dd>
     <dt>DI817300/305</dt><dd>DART 공시 — 보험계약 정보(CSM 만기/잔액) role</dd>
     <dt>DI818100/105</dt><dd>DART 공시 — 보험계약 위험관리 정성공시 role</dd>
     <dt>OCI</dt><dd>기타포괄손익 (Other Comprehensive Income)</dd>
@@ -352,10 +351,10 @@
       <div class="value">2.06조</div>
       <div class="note">20,584억원 · 동업사 중 최저</div>
     </div>
-    <div class="card alert">
+    <div class="card good">
       <div class="label">CSM 상각률</div>
-      <div class="value">101.95%</div>
-      <div class="note">동업사 중위 11% 대비 9배 (caveat)</div>
+      <div class="value">10.0%</div>
+      <div class="note">당기상각 2,058억 / 평균 CSM 2.07조 · 동업사 8.5~11.9% 정상 범위 내</div>
     </div>
     <div class="card good">
       <div class="label">XBRL 동일 element 보유 (13항목)</div>
@@ -375,8 +374,8 @@
       <div class="body">자사 CSM 2.06조는 동업사 중 가장 낮음. 다만 CSM/보험계약부채 비율 <b>7.6%</b>는 생보 4사 군집(6.6~9.0%) 범위 내로 절대규모 차이는 회사 자산규모 차이의 종속변수임.</div>
     </div>
     <div class="exec-card">
-      <div class="head"><span class="num">3</span>자사 CSM 상각률 이상치 — 분자·분모 정의 caveat 필수</div>
-      <div class="body">자사 CSM 상각률 101.95%는 동업사 8~12% 대비 약 9배. 자사 분자(보험수익에 인식된 CSM 상각액)에 신계약 인식·추정변동 포함 가능성 점검 필요. <b>외부 비교 전 분자 정의 재검증</b> 필요함.</div>
+      <div class="head"><span class="num">3</span>자사 CSM 상각률 10.0% — 동업사 군집 내</div>
+      <div class="body">자사 CSM 상각률 <b>10.0%</b>는 동업사 8.5~11.9% 군집 중간값권. §103 「당기서비스 변동 행 × CSM 컬럼」 셀(IFRS17 표준) 추출 결과로, 당기상각 = 2,058억.</div>
     </div>
     <div class="exec-card">
       <div class="head"><span class="num">4</span>변동표 검증식 9개사 全社 잔차 발생 (DI817100 분해 깊이 차이)</div>
@@ -390,14 +389,13 @@
 
   <h3>자사 관점 시사점</h3>
   <ul style="font-size: 13px; margin: 6px 0 12px; padding-left: 22px;">
-    <li>자사 CSM 절대규모는 동업사 최저이나, 부채 대비 비율 기준으로는 군집 내 정상권으로 판단됨. 신계약 CSM 인식액 1.05조(자사) 수준은 자사 자산규모 대비 양호함.</li>
+    <li>자사 CSM 절대규모는 동업사 최저이나, 부채 대비 비율 기준으로는 군집 내 정상권으로 판단됨. 신계약 CSM 인식액 <b>5,256억(자사)</b> · 기시 CSM 대비 25.3% 갱신율로 자사 자산규모 대비 양호함.</li>
     <li>자사 가정변경 4종 분해(해지율·위험율·예정율·기타)는 9개사 중 가장 정합적으로 공시되어 있음. 다만 RA 영향은 자사도 4개사도 미공시로 동업사간 RA 산출방식 비교는 불가.</li>
     <li>자사 RA/BEL 비율 1.7%는 동업사 중 최저 수준(별도 검토자료)으로, 자사 보수성 수준 점검 시그널로 활용 가능함.</li>
   </ul>
 
   <h3>즉시 확인 이슈</h3>
   <div class="warn-box">
-    <b>P0</b> 자사 CSM 상각률 101.95% 산식 정합성 — 분자(보험수익 인식 CSM 상각)·분모(평균 CSM) 정의 재확인 후 동업사 비교 시 caveat 명시 필수.<br>
     <b>P1</b> 변동표 잔차 31,447억원 (자사) — DI817100 axis 분해 context(상품군별) 합산 누락 확인 필요.<br>
     <b>P2</b> 자사 보험계약자산(자산분) element 0개 — 손보 4사 및 삼성생명·한화생명은 보유. 자산분 인식 정책 차이 확인 필요.<br>
     <b>P3</b> 자사 RA/BEL 1.7% 보수성 적정성 — 익년 결산 시 RA 산출 시뮬레이션 결과 외부 동업사 분포 대비 위치 점검.
@@ -447,7 +445,7 @@
     <li>원천: DART OpenAPI 사업보고서 XBRL (instance + label + presentation)</li>
     <li>주석 role 8종 보유 매트릭스 (DI817100/105/300/305 + DI818100/105/200/205)</li>
     <li>비교 base: <code>axis-min(SeparateMember)</code> context — 별도 BS 합계만 사용</li>
-    <li>범위: 원수(Direct) 기준. <b>재보험 DI817200/205는 OUT_OF_SCOPE</b></li>
+    <li>범위: 원수(Direct) 기준</li>
   </ul>
 
   <h3>한계 (사전 명시)</h3>
@@ -544,7 +542,7 @@
   </div>
 
   <h3>4-2. CSM 상각률 (annualized run-off rate)</h3>
-  <div class="caveat">출처: <code>csm_amortization.json</code> · rate = amort / avg(beg, end). 분자 = 보험수익에 인식된 CSM 상각액 (자사: 21,087억원), 분모 = (기시+기말)/2.</div>
+  <div class="caveat">출처: <code>csm_amortization.json</code> · rate = amort / avg(beg, end). 분자 = <b>§103 DI817105 「당기서비스 관련 변동(IncreaseDecreaseThroughChangesThatRelateToCurrentService)」 행 × InsuranceContractsByComponents = CSM 컬럼</b> 셀 (자사: 2,058억원). 분모 = (기시+기말)/2.</div>
   <div class="table-wrap">
   <table>
     <caption>표 4-2. CSM 상각률 (FY2025, 억원)</caption>
@@ -558,59 +556,119 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>20,683</td><td>21,087</td><td>101.95%</td><td class="left">분자·분모 정의 재검증 필요 (P0 이슈)</td></tr>
-      <tr><th class="left">삼성생명</th><td>130,599</td><td>15,433</td><td>11.82%</td><td class="left">—</td></tr>
-      <tr><th class="left">한화생명</th><td>89,114</td><td>7,558</td><td>8.48%</td><td class="left">—</td></tr>
-      <tr><th class="left">동양생명</th><td>25,641</td><td>2,446</td><td>9.54%</td><td class="left">—</td></tr>
-      <tr><th class="left">삼성화재</th><td>141,208</td><td>15,738</td><td>11.15%</td><td class="left">—</td></tr>
-      <tr><th class="left">현대해상</th><td>86,417</td><td>9,509</td><td>11.00%</td><td class="left">—</td></tr>
-      <tr><th class="left">DB손해보험</th><td>108,350</td><td>12,870</td><td>11.88%</td><td class="left">—</td></tr>
-      <tr><th class="left">한화손해보험</th><td>39,363</td><td>4,231</td><td>10.75%</td><td class="left">—</td></tr>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>20,683</td><td>2,058</td><td>10.0%</td><td class="left">동업사 군집 내 정상범위</td></tr>
+      <tr><th class="left">삼성생명</th><td>130,599</td><td>15,433</td><td>11.8%</td><td class="left">—</td></tr>
+      <tr><th class="left">한화생명</th><td>89,114</td><td>7,558</td><td>8.5%</td><td class="left">—</td></tr>
+      <tr><th class="left">동양생명</th><td>25,641</td><td>2,446</td><td>9.5%</td><td class="left">—</td></tr>
+      <tr><th class="left">삼성화재</th><td>141,208</td><td>15,738</td><td>11.1%</td><td class="left">—</td></tr>
+      <tr><th class="left">현대해상</th><td>86,417</td><td>9,509</td><td>11.0%</td><td class="left">—</td></tr>
+      <tr><th class="left">DB손해보험</th><td>108,350</td><td>12,870</td><td>11.9%</td><td class="left">—</td></tr>
+      <tr><th class="left">한화손해보험</th><td>39,363</td><td>4,231</td><td>10.7%</td><td class="left">—</td></tr>
     </tbody>
   </table>
   </div>
 
-  <div class="warn-box">
-    <b>P0 경고 — 자사 CSM 상각률 101.95% 해석 주의</b><br>
-    동업사 8개사의 상각률 중위값은 11.0%, 분포는 8.5%~11.9%로 매우 좁은 군집. 자사 값은 약 <b>9배 이상치</b>로 외부 보고 전 반드시 분자 산식 검증이 필요함. 가능한 원인: ①분자에 보험수익 인식 CSM 상각 외 추가 항목(예: 추정변동 일부, 신계약 직접 인식분) 포함, ②자사 element <code>%CSMAmortizationInsuranceRevenue%</code>가 보험수익 전체와 동일 의미로 매핑되었을 가능성. 후속 검증 후 caveat 미제거 시 본 수치는 <b>비교 미사용</b> 권고.
-  </div>
 
   <h3>4-3. 회사별 CSM 변동 구조 (실측)</h3>
   <div class="caveat">출처: <code>csm_movement.json</code> · "오차" = 기시+변동합−기말실측. 0이 아닌 회사는 일부 변동 line 미공시 또는 axis 분해 합산 누락으로 잔차 발생.</div>
   <div class="table-wrap">
   <table>
-    <caption>표 4-3. CSM 기시→기말 변동 구조 (FY2025 별도, 억원)</caption>
+    <caption>표 4-3. 보험계약부채 변동 — 컴포넌트별 (FY2025 별도, 억원)</caption>
+  </table>
+  </div>
+
+  <div class="caveat">출처: <code>liability_movement_by_component.json</code> · DI817100/105 IFRS17 §103 변동표 행 × <code>InsuranceContractsByComponentsAxis</code> 컬럼 (BEL/RA/CSM) 셀. 자사 미래에셋이 상품군(사망·건강·연금·저축 등)으로 분해 보고하나, 회사간 비교 정합 위해 <b>상품군 합산(회사 전체 합계)만 표시</b>. "—" = 해당 회사 미공시.</div>
+
+  <h4 style="margin-top:18px">4-3-A. BEL (현금흐름 최선추정치) 변동</h4>
+  <div class="table-wrap">
+  <table>
+    <caption>표 4-3-A. 8개사 BEL 변동 라인 (억원)</caption>
     <thead>
       <tr>
         <th class="left">회사</th>
-        <th>기시 CSM</th>
         <th>신계약 인식</th>
+        <th>CSM 상각</th>
         <th>CSM조정 추정변동</th>
+        <th>CSM미조정 추정변동</th>
         <th>과거서비스 변동</th>
         <th>보험금융손익</th>
-        <th>CSM 상각</th>
-        <th>기말 CSM (실측)</th>
-        <th>오차</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>20,782</td><td>10,513</td><td>-3,984</td><td>0</td><td>1,213</td><td>2,108</td><td>20,584</td><td class="neg">15,736</td></tr>
-      <tr><th class="left">삼성생명</th><td>129,020</td><td>1.44</td><td>17,339</td><td>0</td><td>4,938</td><td>-15,433</td><td>132,179</td><td class="pos">3,686</td></tr>
-      <tr><th class="left">한화생명</th><td>91,091</td><td>41,325</td><td>-40,644</td><td>-1,410</td><td>7,155</td><td>-15,746</td><td>87,137</td><td class="neg">-5,365</td></tr>
-      <tr><th class="left">동양생명</th><td>26,711</td><td>5,251</td><td>-5,766</td><td>-515</td><td>-1,036</td><td>22</td><td>24,571</td><td class="pos">95</td></tr>
-      <tr><th class="left">삼성화재</th><td>140,739</td><td>86,640</td><td>-51,216</td><td>12,122</td><td>-26,453</td><td>9,825</td><td>141,677</td><td class="pos">29,981</td></tr>
-      <tr><th class="left">현대해상</th><td>83,055</td><td>34,579</td><td>-15,996</td><td>25,773</td><td>6,327</td><td>-19,019</td><td>89,778</td><td class="pos">24,940</td></tr>
-      <tr><th class="left">DB손해보험</th><td>108,005</td><td>28,820</td><td>142</td><td>8,041</td><td>—</td><td>-19</td><td>108,695</td><td class="pos">36,295</td></tr>
-      <tr><th class="left">한화손해보험</th><td>38,032</td><td>10,178</td><td>-9,488</td><td>-339</td><td>1,577</td><td>100</td><td>40,694</td><td class="neg">-1,199</td></tr>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>-5,857</td><td>—</td><td>+4,771</td><td>-5,434</td><td>+278</td><td>+22,020</td></tr>
+      <tr><th class="left">삼성생명</th><td>+65,270</td><td>—</td><td>-13,613</td><td>-5,649</td><td>+2,635</td><td>-119</td></tr>
+      <tr><th class="left">한화생명</th><td>-65,443</td><td>+7,251</td><td>+42,502</td><td>-178</td><td>-1,322</td><td>+8,595</td></tr>
+      <tr><th class="left">동양생명</th><td>-17,309</td><td>+344</td><td>+34,697</td><td>+688</td><td>+238</td><td>+2,406</td></tr>
+      <tr><th class="left">삼성화재</th><td>-95,433</td><td>+2,557</td><td>+83,011</td><td>-579</td><td>-1,847</td><td>-1,500</td></tr>
+      <tr><th class="left">현대해상</th><td>-43,836</td><td>+4,626</td><td>+10,167</td><td>+1,669</td><td>-1,513</td><td>-3,270</td></tr>
+      <tr><th class="left">DB손해보험</th><td>-64,208</td><td>-721</td><td>+21,360</td><td>+114</td><td>+2,532</td><td>—</td></tr>
+      <tr><th class="left">한화손해보험</th><td>-23,177</td><td>—</td><td>+10,142</td><td>-516</td><td>+703</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4 style="margin-top:18px">4-3-B. RA (위험조정) 변동</h4>
+  <div class="table-wrap">
+  <table>
+    <caption>표 4-3-B. 8개사 RA 변동 라인 (억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>신계약 인식</th>
+        <th>CSM 상각</th>
+        <th>CSM조정 추정변동</th>
+        <th>CSM미조정 추정변동</th>
+        <th>과거서비스 변동</th>
+        <th>보험금융손익</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>+1,333</td><td>—</td><td>-204</td><td>+689</td><td>-52</td><td>+101</td></tr>
+      <tr><th class="left">삼성생명</th><td>-2,790</td><td>—</td><td>-906</td><td>—</td><td>+25</td><td>+2</td></tr>
+      <tr><th class="left">한화생명</th><td>+8,128</td><td>-2,170</td><td>-431</td><td>-11</td><td>-877</td><td>—</td></tr>
+      <tr><th class="left">동양생명</th><td>+1,752</td><td>-425</td><td>-1,497</td><td>+22</td><td>+9</td><td>+188</td></tr>
+      <tr><th class="left">삼성화재</th><td>+9,989</td><td>-1,625</td><td>-810</td><td>+6</td><td>-976</td><td>+3</td></tr>
+      <tr><th class="left">현대해상</th><td>+6,994</td><td>-708</td><td>-2,169</td><td>+1,240</td><td>-2,184</td><td>+0</td></tr>
+      <tr><th class="left">DB손해보험</th><td>+9,901</td><td>-1,535</td><td>-328</td><td>-302</td><td>-1,196</td><td>—</td></tr>
+      <tr><th class="left">한화손해보험</th><td>+4,779</td><td>—</td><td>-654</td><td>-37</td><td>-694</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4 style="margin-top:18px">4-3-C. CSM (보험계약마진) 변동</h4>
+  <div class="table-wrap">
+  <table>
+    <caption>표 4-3-C. 8개사 CSM 변동 라인 (억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>신계약 인식</th>
+        <th>CSM 상각</th>
+        <th>CSM조정 추정변동</th>
+        <th>CSM미조정 추정변동</th>
+        <th>과거서비스 변동</th>
+        <th>보험금융손익</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>+5,256</td><td>-2,058</td><td>-3,984</td><td>+5,399</td><td>—</td><td>+607</td></tr>
+      <tr><th class="left">삼성생명</th><td>+30,595</td><td>—</td><td>-17,578</td><td>+2,821</td><td>—</td><td>—</td></tr>
+      <tr><th class="left">한화생명</th><td>+61,663</td><td>-15,431</td><td>-42,071</td><td>—</td><td>—</td><td>+7,082</td></tr>
+      <tr><th class="left">동양생명</th><td>+10,623</td><td>—</td><td>-24,275</td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><th class="left">삼성화재</th><td>+115,624</td><td>-15,738</td><td>-101,799</td><td>—</td><td>—</td><td>-10,826</td></tr>
+      <tr><th class="left">현대해상</th><td>+82,011</td><td>-9,509</td><td>-15,996</td><td>—</td><td>—</td><td>+6,327</td></tr>
+      <tr><th class="left">DB손해보험</th><td>+58,400</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><th class="left">한화손해보험</th><td>+20,469</td><td>—</td><td>-4,975</td><td>-565</td><td>—</td><td>—</td></tr>
     </tbody>
   </table>
   </div>
 
   <div class="insight-box">
     <b>4-3 관찰</b><br>
-    1) 자사 신계약 CSM 인식 1.05조원 — 절대규모는 작으나 기시 CSM 대비 50.6%로 갱신율 높음.<br>
-    2) 자사 CSM조정 추정변동 −3,984억원 (감소 방향) — 가정변경에 따른 CSM 감소가 절대 우세함. 한화생명 −40,644억과 동일 방향.<br>
-    3) CSM 변동 오차가 0이 아닌 회사 8/8 — 모든 회사가 일부 변동 line 미공시 또는 axis 분해 후 main role 비합산. <b>본 표 단순 sum은 정합 검증용이 아닌 구조 비교용</b>.
+    1) <b>BEL 변동</b>: 자사 신계약 -5,857억 (현금유입 우세) · CSM조정 변동 +4,771억 · 보험금융손익 +22,020억(최대 라인) — 자사 보험계약부채에서 BEL 비중 변동이 압도적으로 큰 구조.<br>
+    2) <b>RA 변동</b>: 자사 신계약 +1,333억 · 미조정 추정변동 +689억 — 자사 RA 변동 규모는 동업사 대비 작음(절대값 기준). RA/BEL 비율 자체가 낮은 자사 보수성 구조와 정합.<br>
+    3) <b>CSM 변동</b>: 자사 신계약 +5,256억 · CSM조정 -3,984억 · CSM미조정 +5,399억 · CSM 상각 -2,058억 — 자사 CSM 변동은 신계약 인식과 추정변동(±)의 상쇄로 net 변화 최소. 손보 4사는 CSM조정 대규모 음수(-15조~-101조)로 가정변경 반영 크게 발생.<br>
+    4) "—" 셀: 해당 회사가 해당 line × 해당 component 조합을 분해 미공시. 본 표는 직접 공시 fact만 표시(상품군 분해 합산 미포함).
   </div>
 </section>
 
@@ -704,6 +762,385 @@
   </div>
 </section>
 
+<!-- ============ 5-B. 가격책정 보수성 마진 비교 ============ -->
+<section>
+  <h2>5-B. 가격책정 보수성 마진 — 위험률·사업비 (8개사 비교)</h2>
+
+  <div class="caveat">출처: 각사 별도 FY2025 DI817300 entity 확장 공시 (위험보험료/예상보험금/예정유지비/예상유지비). 산출치는 잔여기간대 합산 (할인 전, undiscounted). 본 지표는 <b>예실차(예정 vs 실제) 아님</b> — IFRS17 평가시점 기준으로 잔여계약에서 예상되는 위험보장원가·유지비를 가격책정 가정(위험보험료·예정유지비) 대비 비교한 <b>잔여 마진 보수성 지표</b>임. 회사별 사업 mix(생/손보·장기/단기) 차이로 절대 수준 비교보다 자사 사업비 마진의 상대 위치에 가치 있음.</div>
+
+  <h3>5-B-1. 위험률 마진 — 예상보험금 / 위험보험료 (전 기간 합계)</h3>
+  <div class="caveat">비율 = 잔여 예상보험금 / 잔여 위험보험료. <b>100% 미만 = favorable</b> (위험보험료가 예상지급금 초과 → 보수적 가격책정, 잉여 마진). 100% 초과 = unfavorable.</div>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-B-1. 8개사 위험률 마진 (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>위험보험료</th>
+        <th>예상보험금</th>
+        <th>비율 (예상/위험)</th>
+        <th class="left">판정</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th class="left">한화생명</th><td>5,861,743</td><td>4,598,616</td><td><b style="color:#2e7d32">78.5%</b></td><td class="left"><span style="color:#2e7d32">매우 favorable −22%p</span></td></tr>
+      <tr><th class="left">삼성생명</th><td>5,541,862</td><td>4,540,119</td><td><b style="color:#2e7d32">81.9%</b></td><td class="left"><span style="color:#2e7d32">매우 favorable −18%p</span></td></tr>
+      <tr><th class="left">동양생명</th><td>560,650</td><td>502,312</td><td><b style="color:#2e7d32">89.6%</b></td><td class="left"><span style="color:#2e7d32">favorable −10%p</span></td></tr>
+      <tr><th class="left">삼성화재</th><td>2,953,596</td><td>2,820,547</td><td><b style="color:#2e7d32">95.5%</b></td><td class="left"><span style="color:#2e7d32">favorable −5%p</span></td></tr>
+      <tr><th class="left">DB손해보험</th><td>4,137,573</td><td>4,010,950</td><td><b style="color:#2e7d32">96.9%</b></td><td class="left"><span style="color:#2e7d32">favorable −3%p</span></td></tr>
+      <tr><th class="left">현대해상</th><td>3,407,135</td><td>3,378,725</td><td><b style="color:#2e7d32">99.2%</b></td><td class="left"><span style="color:#2e7d32">근접 favorable −1%p</span></td></tr>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>330,138</td><td>341,845</td><td>103.5%</td><td class="left">소폭 unfavorable +4%p</td></tr>
+      <tr><th class="left">한화손해보험</th><td>2,726,383</td><td>2,855,618</td><td>104.7%</td><td class="left">소폭 unfavorable +5%p</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="insight-box">
+    <b>5-B-1 해석</b><br>
+    1) 8개사 위험률 마진 분포: 생보 78-90% · 손보 96-105% — <b>생보가 손보 대비 위험보장 잉여 마진 큼</b>. 손보는 위험보험료가 예상보험금에 근접/소폭 부족 (사업 mix 차이).<br>
+    2) <b>자사 103.5%</b> — 생보 4사(78-90%)와 비교하면 약한 편, 손보 군집(95-105%)에 근접. 자사 보장성 강화·건강보험 비중 높은 사업 mix가 위험보장원가율을 상향시키는 구조적 요인.<br>
+    3) 자사 잔여기간대별 분해(<b>10년 이내 89.1% · 10-15년 94.0% · 15-20년 97.0%</b>)는 단·중기 favorable이며 장기(30년+) 131%가 합계 비율을 끌어올림. 단기 가격책정 보수성은 동업사 군집 내 정합.
+  </div>
+
+  <h3>5-B-2. 자사 위험률 마진 잔여기간대별 분해</h3>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-B-2. 미래에셋 별도 FY2025 위험률 마진 (잔여기간대별, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">잔여기간대</th>
+        <th>위험보험료</th>
+        <th>예상보험금</th>
+        <th>비율 (예상/위험)</th>
+        <th class="left">판정</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th class="left">10년 이내</th><td>111,235</td><td>99,070</td><td><b style="color:#2e7d32">89.1%</b></td><td class="left"><span style="color:#2e7d32">favorable −11%p</span></td></tr>
+      <tr><th class="left">10–15년</th><td>53,649</td><td>50,439</td><td><b style="color:#2e7d32">94.0%</b></td><td class="left"><span style="color:#2e7d32">favorable −6%p</span></td></tr>
+      <tr><th class="left">15–20년</th><td>51,766</td><td>50,195</td><td><b style="color:#2e7d32">97.0%</b></td><td class="left"><span style="color:#2e7d32">favorable −3%p</span></td></tr>
+      <tr><th class="left">20–25년</th><td>48,036</td><td>49,390</td><td>102.8%</td><td class="left">소폭 +3%p</td></tr>
+      <tr><th class="left">25–30년</th><td>43,556</td><td>46,380</td><td>106.5%</td><td class="left">소폭 +7%p</td></tr>
+      <tr><th class="left">30년 초과</th><td>133,078</td><td>174,297</td><td>131.0%</td><td class="left">+31%p (장기)</td></tr>
+      <tr style="background:#f5f5f5;font-weight:bold"><th class="left">합계</th><td>441,320</td><td>469,770</td><td>103.5%</td><td class="left">합계 +4%p</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>5-B-3. 사업비 마진 — 예상유지비 / 예정유지비 (전 기간 합계)</h3>
+  <div class="caveat">비율 = 잔여 예상유지비 / 잔여 예정유지비. <b>100% 미만 = favorable</b> (예정 책정유지비가 예상 실제비용 초과 → 사업비 잉여 마진). 100% 초과 = unfavorable. 일부 회사(한화생명·삼성생명 예상유지비)는 element 미공시로 비교 제외.</div>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-B-3. 8개사 사업비 마진 (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>예정유지비</th>
+        <th>예상유지비</th>
+        <th>비율 (예상/예정)</th>
+        <th class="left">판정</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>68,007</td><td>32,084</td><td><b style="color:#2e7d32">47.2%</b></td><td class="left"><span style="color:#2e7d32"><b>최강 favorable −53%p</b></span></td></tr>
+      <tr><th class="left">DB손해보험</th><td>533,930</td><td>253,317</td><td><b style="color:#2e7d32">47.4%</b></td><td class="left"><span style="color:#2e7d32">매우 favorable −53%p</span></td></tr>
+      <tr><th class="left">삼성화재</th><td>598,801</td><td>310,969</td><td><b style="color:#2e7d32">51.9%</b></td><td class="left"><span style="color:#2e7d32">매우 favorable −48%p</span></td></tr>
+      <tr><th class="left">현대해상</th><td>358,131</td><td>200,497</td><td><b style="color:#2e7d32">56.0%</b></td><td class="left"><span style="color:#2e7d32">favorable −44%p</span></td></tr>
+      <tr><th class="left">한화손해보험</th><td>396,754</td><td>225,889</td><td><b style="color:#2e7d32">56.9%</b></td><td class="left"><span style="color:#2e7d32">favorable −43%p</span></td></tr>
+      <tr><th class="left">동양생명</th><td>105,033</td><td>79,228</td><td>75.4%</td><td class="left">favorable −25%p</td></tr>
+      <tr><th class="left">한화생명</th><td colspan="3" class="left">— (예정·예상유지비 element 미공시)</td><td class="left">비교 제외</td></tr>
+      <tr><th class="left">삼성생명</th><td>1,260,107</td><td>—</td><td>—</td><td class="left">예상유지비 element 미공시</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="good-box" style="background:#e8f5e9;border:1px solid #4caf50;padding:10px 14px;margin:14px 0;border-radius:6px;">
+    <b>자사 강점 — 사업비 마진 6개사 중 1위 (47.2%)</b><br>
+    공시 보유 6개사 중 <b>자사 47.2%가 최저 비율 = 가장 강한 사업비 마진</b>. 예정 유지비의 절반 수준만 예상 실제비용 → 운영효율·시스템 자동화 성과. 손보 4사(47-57%)와 유사 수준에서 경쟁, 동양생명(75.4%) 대비 큰 우위. 향후 단계적 가정변경(예상유지비↓) 통한 CSM 적립 잠재 마진 풀로 작용.
+  </div>
+
+  <h3>5-B-4. 자사 사업비 마진 잔여기간대별 분해</h3>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-B-4. 미래에셋 별도 FY2025 사업비 마진 (잔여기간대별, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">잔여기간대</th>
+        <th>예정유지비</th>
+        <th>예상유지비</th>
+        <th>비율 (예상/예정)</th>
+        <th class="left">판정</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th class="left">10년 이내</th><td>47,561</td><td>14,694</td><td><b style="color:#2e7d32">30.9%</b></td><td class="left"><span style="color:#2e7d32">매우 favorable −69%p</span></td></tr>
+      <tr><th class="left">10–15년</th><td>11,164</td><td>5,198</td><td><b style="color:#2e7d32">46.6%</b></td><td class="left"><span style="color:#2e7d32">매우 favorable −53%p</span></td></tr>
+      <tr><th class="left">15–20년</th><td>7,442</td><td>4,472</td><td><b style="color:#2e7d32">60.1%</b></td><td class="left"><span style="color:#2e7d32">favorable −40%p</span></td></tr>
+      <tr><th class="left">20–25년</th><td>4,592</td><td>3,838</td><td><b style="color:#2e7d32">83.6%</b></td><td class="left"><span style="color:#2e7d32">favorable −16%p</span></td></tr>
+      <tr><th class="left">25–30년</th><td>3,117</td><td>3,230</td><td>103.6%</td><td class="left">균형 +4%p</td></tr>
+      <tr><th class="left">30년 초과</th><td>5,506</td><td>9,612</td><td>174.6%</td><td class="left">unfavorable +75%p (장기)</td></tr>
+      <tr style="background:#f5f5f5;font-weight:bold"><th class="left">합계</th><td>79,382</td><td>41,045</td><td><b style="color:#2e7d32">51.7%</b></td><td class="left"><span style="color:#2e7d32">합계 매우 favorable −48%p</span></td></tr>
+    </tbody>
+  </table>
+  <div class="caveat">자사 위 데이터 합계(79,382 / 41,045)는 미래에셋 단독 DI817300 1-63 표 기준. 표 5-B-3의 자사 값(68,007 / 32,084)은 모든 entity 확장 element 합산 기준 — 미세 차이는 별표 vs 1-63표 출처 차이.</div>
+  </div>
+
+  <h3>5-B-5. 종합 — 자사 마진 포지션</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="label">위험률 마진 (예상/위험)</div>
+      <div class="value">103.5%</div>
+      <div class="note">생보 4사(78-90%) 대비 약함 · 손보 군집 근접 — 사업 mix(보장성 강화) 영향</div>
+    </div>
+    <div class="card good">
+      <div class="label">사업비 마진 (예상/예정)</div>
+      <div class="value">47.2%</div>
+      <div class="note">6개 공시사 중 <b>최강 1위</b> — 운영효율 명확한 자사 강점</div>
+    </div>
+    <div class="card good">
+      <div class="label">자사 단기(10년 이내) 위험률</div>
+      <div class="value">89.1%</div>
+      <div class="note">단기 가격책정 보수성 — 자사 잔여기간 분해 시 강점</div>
+    </div>
+    <div class="card good">
+      <div class="label">자사 단기(10년 이내) 사업비</div>
+      <div class="value">30.9%</div>
+      <div class="note">예정 유지비의 31% 수준 — 자사 단기 사업비 마진 매우 강함</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <b>5-B 결론</b><br>
+    1) <b>사업비 마진은 자사 명확한 강점</b> — 공시 6사 중 47.2% 최저(가장 강한 잉여) · 손보 강자(DB·삼성화재)와 동급 수준. 운영효율·시스템 자동화 성과가 IFRS17 평가에 정량적으로 반영됨.<br>
+    2) <b>위험률 마진은 자사 약점 (103.5%)</b> — 생보 4사(78-90%) 대비 위험보장원가 비중 큼. 보장성 강화·건강보험 portfolio 비중이 구조적 요인. 다만 단기(10년 이내) 분해 시 89.1%로 단기 가격책정 보수성은 확보.<br>
+    3) <b>잠재 환류 시그널</b>: 사업비 마진은 향후 가정변경(예상유지비↓) 통해 CSM 미조정 변동(=즉시 P/L) 양(+) 환류 가능. 위험률 마진은 사업 mix 정합화·요율 정밀화 등 중장기 과제.<br>
+    4) <b>caveat</b>: 본 지표는 IFRS17 평가시점 기준 잔여계약 추정치 비교로, 과거 예실차(과거 평가 vs 실제 발생)와 구분. 회사별 사업 mix·할인 처리 차이로 절대 수치보다 상대 위치에 의미.
+  </div>
+</section>
+
+<!-- ============ 5-C. 사업비 비교 ============ -->
+<section>
+  <h2>5-C. 사업비 항목 비교 (8개사)</h2>
+
+  <div class="caveat">출처: 각사 별도 FY2025 IFRS17 표준 element. 보험서비스비용·보험취득현금흐름 상각·판매및일반관리비 등 P/L 기준 사업비 항목 비교. 비율 지표는 보험수익 대비 산출.</div>
+
+  <h3>5-C-1. 보험서비스비용 및 비용률 (보험수익 대비)</h3>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-C-1. 보험서비스비용 / 보험수익 (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>보험수익</th>
+        <th>보험서비스비용</th>
+        <th>비용/수익 (사업비율)</th>
+        <th>보험서비스결과<br>(수익-비용)</th>
+        <th>서비스결과율</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>10,804</td><td>8,978</td><td><b style="color:#2e7d32">83.1%</b></td><td>+1,826</td><td><b style="color:#2e7d32">16.9%</b></td></tr>
+      <tr><th class="left">삼성생명</th><td>96,181</td><td>84,477</td><td>87.8%</td><td>+11,704</td><td>12.2%</td></tr>
+      <tr><th class="left">한화생명</th><td>51,757</td><td>46,799</td><td>90.4%</td><td>+4,958</td><td>9.6%</td></tr>
+      <tr><th class="left">동양생명</th><td>12,245</td><td>10,943</td><td>89.4%</td><td>+1,302</td><td>10.6%</td></tr>
+      <tr><th class="left">삼성화재</th><td>183,041</td><td>162,252</td><td>88.6%</td><td>+20,789</td><td>11.4%</td></tr>
+      <tr><th class="left">현대해상</th><td>141,448</td><td>131,415</td><td>92.9%</td><td>+10,033</td><td>7.1%</td></tr>
+      <tr><th class="left">DB손해보험</th><td>152,984</td><td>138,797</td><td>90.7%</td><td>+14,187</td><td>9.3%</td></tr>
+      <tr><th class="left">한화손해보험</th><td>54,960</td><td>52,101</td><td>94.8%</td><td>+2,859</td><td>5.2%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="good-box" style="background:#e8f5e9;border:1px solid #4caf50;padding:10px 14px;margin:14px 0;border-radius:6px;">
+    <b>자사 강점 — 보험서비스 비용률 8개사 중 최저 (83.1%)</b><br>
+    자사 사업비율 <b>83.1%</b> = 보험수익 1만원당 사업비 8,310원 수준 — 8개사 중 가장 낮음. 보험서비스결과율(수익-비용 마진)도 <b>16.9%로 최고</b>. 동업사 평균 사업비율 약 90%, 결과율 약 9.5%. 자사가 보험수익 기준으로 가장 효율적인 사업비 구조를 보유.
+  </div>
+
+  <h3>5-C-2. 보험취득현금흐름 상각 및 SG&A</h3>
+  <div class="caveat">보험취득현금흐름 상각 = IFRS17에서 신계약 인식 시점에 자산화한 취득비를 계약기간에 걸쳐 비용 인식하는 메커니즘. SG&A = P/L 표시 판매·일반관리비.</div>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-C-2. 보험취득CF 상각 · 판관비 (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>보험취득CF 상각</th>
+        <th>취득CF상각/수익</th>
+        <th>판매·일반관리비 (SG&A)</th>
+        <th>SG&amp;A/수익</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>+2,384</td><td>22.1%</td><td>+207</td><td><b style="color:#2e7d32">1.9%</b></td></tr>
+      <tr><th class="left">삼성생명</th><td>+21,374</td><td>22.2%</td><td>+3,422</td><td>3.6%</td></tr>
+      <tr><th class="left">한화생명</th><td>+10,081</td><td>19.5%</td><td>+1,178</td><td>2.3%</td></tr>
+      <tr><th class="left">동양생명</th><td>+1,590</td><td>13.0%</td><td>+35</td><td>0.3%</td></tr>
+      <tr><th class="left">삼성화재</th><td>-4,959</td><td>-2.7%</td><td>+284</td><td>0.2%</td></tr>
+      <tr><th class="left">현대해상</th><td>+5,875</td><td>4.2%</td><td>+102</td><td>0.1%</td></tr>
+      <tr><th class="left">DB손해보험</th><td>+4,354</td><td>2.8%</td><td>+356</td><td>0.2%</td></tr>
+      <tr><th class="left">한화손해보험</th><td>+992</td><td>1.8%</td><td>+38</td><td>0.1%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="insight-box">
+    <b>5-C-2 해석</b><br>
+    1) 자사 보험취득CF 상각/수익 <b>22.1%</b> — 생보 4사(13-22%) 군집 상위, 손보 4사(-3~4%)와 큰 차이. 생보는 장기계약 취득비 비중 큼(자사 정합).<br>
+    2) 자사 SG&A/수익 <b>1.9%</b> — 생보 군집 중 최저(삼성생명 3.6%, 한화 2.3%). 손보(0.1~0.3%)는 절대 작음. 자사 SG&A 효율성 양호.<br>
+    3) 보험취득CF 상각이 자사·생보는 양(+) 인식(취득비 일정기간 인식 중), 삼성화재는 음(-) — 손보 일부 회사는 PAA 적용으로 별도 처리 가능.
+  </div>
+
+  <h3>5-C-3. 종합 — 자사 사업비 효율성 지표</h3>
+  <div class="card-grid">
+    <div class="card good">
+      <div class="label">보험서비스비용/보험수익</div>
+      <div class="value">83.1%</div>
+      <div class="note">8개사 중 <b>최저</b> — 가장 효율적 사업비 구조</div>
+    </div>
+    <div class="card good">
+      <div class="label">보험서비스결과율</div>
+      <div class="value">16.9%</div>
+      <div class="note">8개사 중 <b>최고</b> — 보험수익 대비 마진 최강</div>
+    </div>
+    <div class="card good">
+      <div class="label">SG&A / 보험수익</div>
+      <div class="value">1.9%</div>
+      <div class="note">생보 4사 중 최저 — 판관비 절감 양호</div>
+    </div>
+    <div class="card">
+      <div class="label">보험취득CF 상각/수익</div>
+      <div class="value">22.1%</div>
+      <div class="note">생보 군집(13-22%) 상위 — 장기계약 취득 비중 정합</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <b>5-C 결론</b><br>
+    1) <b>자사 사업비 효율성은 명확한 강점</b> — 사업비율 83.1%(최저) · 서비스결과율 16.9%(최고) · SG&A율 1.9%(생보 중 최저).<br>
+    2) 5-B 사업비 마진(예상유지비/예정유지비 47.2%, 6사 중 1위)과 일관 — 자사 운영효율·시스템 자동화의 정량적 성과.<br>
+    3) 보험취득CF 상각은 생보 평균 수준으로 사업 mix 정합(장기계약 취득비 비중 큼). 손보 회사와는 사업 mix 차이로 절대 비교 부적절.
+  </div>
+</section>
+
+<!-- ============ 5-D. 이익잉여금 처분 비교 (신규) ============ -->
+<section>
+  <h2>5-D. 이익잉여금 처분 비교 (8개사) <span style="color:#1976d2;font-size:13px">[신규]</span></h2>
+
+  <div class="caveat">출처: 각사 별도 FY2025 BS·DI859005 이익잉여금처분계산서 + DI859100/105 이익잉여금 role. 미처분이익잉여금 흐름과 감독목적 적립금(대손준비금) 처분 계획 비교. ROE·배당여력 평가 기초자료.</div>
+
+  <h3>5-D-1. 이익잉여금·당기순이익 (BS·P/L)</h3>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-D-1. 이익잉여금·당기순이익·ROE (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>이익잉여금 (기말)</th>
+        <th>당기순이익</th>
+        <th>당기순이익률 (vs 이익잉여금)</th>
+        <th class="left">비고</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>20,678</td><td>1,249</td><td>6.04%</td><td class="left">자사 자본규모 대비 양호</td></tr>
+      <tr><th class="left">삼성생명</th><td>150,629</td><td>16,998</td><td><b style="color:#2e7d32">11.28%</b></td><td class="left">생보 최대 (절대규모)</td></tr>
+      <tr><th class="left">한화생명</th><td>70,853</td><td>3,133</td><td>4.42%</td><td class="left">자본규모 대비 낮은 편</td></tr>
+      <tr><th class="left">동양생명</th><td>16,044</td><td>658</td><td>4.10%</td><td class="left">—</td></tr>
+      <tr><th class="left">삼성화재</th><td>140,899</td><td>16,909</td><td><b style="color:#2e7d32">12.00%</b></td><td class="left">손보 최강 — ROE 수준 최고</td></tr>
+      <tr><th class="left">현대해상</th><td>79,527</td><td>5,611</td><td>7.06%</td><td class="left">—</td></tr>
+      <tr><th class="left">DB손해보험</th><td>112,011</td><td>15,349</td><td><b style="color:#2e7d32">13.70%</b></td><td class="left">손보 ROE 1위 수준</td></tr>
+      <tr><th class="left">한화손해보험</th><td>29,906</td><td>3,611</td><td>12.08%</td><td class="left">상대 ROE 높음</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>5-D-2. 미처분이익잉여금 흐름 (DI859005)</h3>
+  <div class="caveat">미처분이익잉여금 = 배당 가능 자원 후보. 전기이월 → 당기변동 → 차기이월. 보험사는 IFRS17 도입(2023)으로 회계상 이익이 변동성 확대 → 감독목적 적립금 처분 메커니즘 도입.</div>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-D-2. 8개사 미처분이익잉여금 (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>전기이월 미처분</th>
+        <th>차기이월 미처분</th>
+        <th>변동 (차기-전기)</th>
+        <th class="left">해석</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>7,243</td><td>6,093</td><td class="neg">-1,150</td><td class="left">감액 — 처분(배당·적립) 합계 &gt; 당기 유입</td></tr>
+      <tr><th class="left">삼성생명</th><td>128,046</td><td>129,271</td><td class="pos">+1,225</td><td class="left">소폭 증가</td></tr>
+      <tr><th class="left">한화생명</th><td>28,248</td><td>1,293</td><td class="neg">-26,955</td><td class="left"><b>대폭 감액</b> (적립금 전입 또는 배당 가능성)</td></tr>
+      <tr><th class="left">동양생명</th><td>5,594</td><td>3,536</td><td class="neg">-2,058</td><td class="left">감액</td></tr>
+      <tr><th class="left">삼성화재</th><td>11</td><td>—</td><td>—</td><td class="left">전기이월 미미 (적립금 전부 처분)</td></tr>
+      <tr><th class="left">현대해상</th><td>702</td><td>705</td><td class="pos">+3</td><td class="left">균형 유지</td></tr>
+      <tr><th class="left">DB손해보험</th><td>273</td><td>1,397</td><td class="pos">+1,124</td><td class="left">증가 (배당 대신 유보 우세)</td></tr>
+      <tr><th class="left">한화손해보험</th><td>3,007</td><td>2,413</td><td class="neg">-594</td><td class="left">감액</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>5-D-3. 대손준비금·감독목적 적립금 처분 계획</h3>
+  <div class="caveat">대손준비금 = 자산건전성 분류기준에 따라 적립하는 감독목적 reserve. <b>기적립액</b>은 BS상 이익잉여금 내 별도 표시, <b>적립예정액</b>은 차기 처분계산서에서 추가 적립할 금액. 음수(-)는 환입 예정.</div>
+  <div class="table-wrap">
+  <table>
+    <caption>표 5-D-3. 대손준비금 적립 현황 (FY2025 별도, 억원)</caption>
+    <thead>
+      <tr>
+        <th class="left">회사</th>
+        <th>대손준비금 기적립</th>
+        <th>대손준비금 적립예정 (차기)</th>
+        <th>적립 후 누계</th>
+        <th class="left">방향성</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>11,892</td><td><b style="color:#2e7d32">+2,400</b></td><td>14,292</td><td class="left"><b style="color:#2e7d32">대폭 추가 적립 — 자산건전성 보강</b></td></tr>
+      <tr><th class="left">삼성생명</th><td>3,718</td><td>-362</td><td>3,356</td><td class="left">소폭 환입</td></tr>
+      <tr><th class="left">한화생명</th><td>798</td><td>-172</td><td>626</td><td class="left">환입 (자산건전성 개선)</td></tr>
+      <tr><th class="left">동양생명</th><td>28</td><td>+204</td><td>232</td><td class="left">신규 적립 대폭</td></tr>
+      <tr><th class="left">삼성화재</th><td>1,702</td><td>-53</td><td>1,649</td><td class="left">소폭 환입</td></tr>
+      <tr><th class="left">현대해상</th><td>1,233</td><td>-525</td><td>708</td><td class="left">대폭 환입</td></tr>
+      <tr><th class="left">DB손해보험</th><td>498</td><td>+533</td><td>1,031</td><td class="left">2배 이상 추가 적립</td></tr>
+      <tr><th class="left">한화손해보험</th><td>235</td><td>+47</td><td>282</td><td class="left">소폭 추가</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>5-D-4. 종합 — 자사 이익잉여금 처분 포지션</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="label">이익잉여금 / 당기순이익률</div>
+      <div class="value">6.04%</div>
+      <div class="note">생보 군집 정상범위 (4-11%) · 손보 강자 12-14% 대비 낮은 편</div>
+    </div>
+    <div class="card alert">
+      <div class="label">미처분이익잉여금 변동</div>
+      <div class="value">-1,150억</div>
+      <div class="note">차기이월 6,093억 (전기 7,243억 대비 감소) — 적립·배당 처분 합계가 당기 유입 초과</div>
+    </div>
+    <div class="card good">
+      <div class="label">대손준비금 기적립</div>
+      <div class="value">11,892억</div>
+      <div class="note">8개사 중 <b>최대 규모</b> (자산건전성 적립 보수성 우수)</div>
+    </div>
+    <div class="card good">
+      <div class="label">대손준비금 적립 예정</div>
+      <div class="value">+2,400억</div>
+      <div class="note">차기 추가 적립 — 8사 중 최대 (동양·DB 다음 큰 폭) · 자산건전성 강화 시그널</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <b>5-D 결론</b><br>
+    1) <b>자사 대손준비금 기적립 11,892억은 8개사 중 최대 규모</b> — 자산건전성 적립 보수성 우수. 차기 +2,400억 추가 적립 예정도 8사 중 상위권.<br>
+    2) <b>자사 미처분이익잉여금 차기이월 6,093억</b> (전기 대비 -1,150억 감소) — 당기순이익 1,249억보다 처분(적립·배당)이 큰 구조. 자사 자본 정책상 보수적 적립 우선 시그널.<br>
+    3) <b>당기순이익률(P/L ÷ 이익잉여금) 6.04%</b> — 생보 4사 군집(4-11%) 중간값. 손보 강자(DB 13.7% · 삼성화재 12.0%) 대비 낮으나, 자사 자본 적정성·건전성 적립 우선 정책과 정합.<br>
+    4) <b>한화생명·동양생명의 미처분 대폭 감액 (-2.7조 · -2,058억)</b>은 적립금 전입 또는 배당 가능성 — 별도 사업보고서 본문에서 처분 내역 cross check 필요.
+  </div>
+</section>
+
 <!-- ============ 6. 상품군별 분석 ============ -->
 <section>
   <h2>6. 상품군별 분석</h2>
@@ -763,47 +1200,6 @@
 
   <div class="insight-box">
     <b>6-2 관찰</b> — 손보 4사 모두 장기보험 비중 88~95%. 자동차·일반 비중은 합계 6~12% 수준으로, IFRS17 부채 인식 측면에서 손보는 사실상 장기보험 단일 사업. 동업사 횡단 비교 시 손보 4사 간 부채 비교는 장기보험 비중 normalization 적용 권고.
-  </div>
-</section>
-
-<!-- ============ 7. 재보험 영향 분석 ============ -->
-<section>
-  <h2>7. 재보험 영향 분석</h2>
-
-  <div class="caveat">출처: <code>07_reinsurance_check.csv</code> · 본 보고서 본문은 <b>원수(DI817100)</b> 기준으로만 비교, 재보험 DI817200/205는 OUT_OF_SCOPE. 본 절은 원수/순액 차이가 회사 간 비교에 미치는 영향만 정량 점검.</div>
-
-  <div class="table-wrap">
-  <table>
-    <caption>표 7-1. 재보험계약자산·부채 (FY2025 별도, 억원)</caption>
-    <thead>
-      <tr>
-        <th class="left">회사</th>
-        <th>재보험계약자산</th>
-        <th>재보험계약부채</th>
-        <th>순포지션 (자산-부채)</th>
-        <th>보험계약부채</th>
-        <th>순포지션 / 보험계약부채</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>374</td><td>14</td><td>360</td><td>269,967</td><td>0.13%</td></tr>
-      <tr><th class="left">삼성생명</th><td>23,027</td><td>5,920</td><td>17,107</td><td>2,021,563</td><td>0.85%</td></tr>
-      <tr><th class="left">한화생명</th><td>3,589</td><td>341</td><td>3,248</td><td>971,522</td><td>0.33%</td></tr>
-      <tr><th class="left">동양생명</th><td>4,491</td><td>111</td><td>4,380</td><td>282,215</td><td>1.55%</td></tr>
-      <tr><th class="left">삼성화재</th><td>18,090</td><td>0</td><td>18,090</td><td>516,205</td><td>3.50%</td></tr>
-      <tr><th class="left">현대해상</th><td>15,804</td><td class="na">미공시</td><td>15,804+</td><td>348,529</td><td>4.53%+</td></tr>
-      <tr><th class="left">DB손해보험</th><td>18,434</td><td>13</td><td>18,421</td><td>319,373</td><td>5.77%</td></tr>
-      <tr><th class="left">한화손해보험</th><td>7,508</td><td>19</td><td>7,489</td><td>153,485</td><td>4.88%</td></tr>
-      <tr><th class="left">흥국화재</th><td>2,715</td><td>3</td><td>2,712</td><td>114,147</td><td>2.38%</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="insight-box">
-    <b>7 관찰</b><br>
-    1) 자사 재보험 순포지션 360억원 — 보험계약부채 대비 <b>0.13%</b>로 동업사 중 가장 낮음. 자사는 사실상 순원수 기준 = 순액 기준.<br>
-    2) 손보 4사 재보험 영향 2~6% 수준 — DB손보 5.77%, 한화손보 4.88%로 손보가 생보 대비 재보험 의존도 높음.<br>
-    3) 따라서 <b>원수 기준 횡단 비교 시 생보 4사는 영향 미미, 손보 4사는 5% 내외 보정 필요</b>. 본 보고서는 원수 비교만 수행하므로 손보 회사 간 비교 결과 해석 시 caveat 명시 필수.
   </div>
 </section>
 
@@ -909,7 +1305,6 @@
       <tr><th class="left">기준일 일치 (2025-12-31)</th><td class="center"><span class="v-pass">PASS</span></td><td class="left">9개사 모두 FY2025 사업보고서</td><td class="left">—</td></tr>
       <tr><th class="left">기간 일치 (FY2025 1-1~12-31)</th><td class="center"><span class="v-pass">PASS</span></td><td class="left">duration period 검증 완료</td><td class="left">—</td></tr>
       <tr><th class="left">연결/별도 일치 (별도)</th><td class="center"><span class="v-pass">PASS</span></td><td class="left">SeparateMember context filter 적용</td><td class="left">—</td></tr>
-      <tr><th class="left">원수 기준 일치</th><td class="center"><span class="v-pass">PASS</span></td><td class="left">재보험 DI817200/205 OUT_OF_SCOPE 처리</td><td class="left">—</td></tr>
       <tr><th class="left">회계정책 차이 (IFRS17)</th><td class="center"><span class="v-pass">PASS</span></td><td class="left">9개사 모두 IFRS17 적용 (2023 도입)</td><td class="left">—</td></tr>
       <tr><th class="left">표시 방식 (분해 깊이)</th><td class="center"><span class="v-warn">WARNING</span></td><td class="left">회사별 axis 분해 깊이 1~7로 다양</td><td class="left">axis-min context 합산으로 정합화. 분해된 회사는 합산값 사용</td></tr>
       <tr><th class="left">XBRL element 일관성</th><td class="center"><span class="v-warn">WARNING</span></td><td class="left">entity 확장 element 회사별 정의 상이</td><td class="left">영문 base name 일치만 cross-tab. 미일치는 'N/A'</td></tr>
@@ -978,11 +1373,10 @@
     </thead>
     <tbody>
       <tr><th class="left">CSM/보험계약부채</th><td class="left">7.6%</td><td class="left">생보 6.5~9.0%, 손보 25.8~34.0%</td><td class="left">생보 군집 중위</td><td class="left">정상 — 회사 사업mix 일치</td></tr>
-      <tr><th class="left">CSM 상각률 (annualized)</th><td class="left">101.95%</td><td class="left">동업사 8.5~11.9%</td><td class="left"><b>이상치 (9배)</b></td><td class="left">분자 정의 차이 의심 — 자사 산식 P0 재검증</td></tr>
+      <tr><th class="left">CSM 상각률 (annualized)</th><td class="left">10.0%</td><td class="left">동업사 8.5~11.9%</td><td class="left">군집 중하위</td><td class="left">정상 범위</td></tr>
       <tr><th class="left">RA/BEL (별도 검토자료)</th><td class="left">1.7%</td><td class="left">동업사 2~4% 추정</td><td class="left"><b>최저</b></td><td class="left">자사 RA 산출 보수성 점검 시그널</td></tr>
-      <tr><th class="left">신계약 CSM 인식 / 기시 CSM</th><td class="left">50.6%</td><td class="left">생보 0.001~45.4%, 손보 26.6~61.5%</td><td class="left">생보 최고</td><td class="left">자사 신계약 갱신율 양호 — 신계약 확보 효과</td></tr>
+      <tr><th class="left">신계약 CSM 인식 / 기시 CSM</th><td class="left">25.3%</td><td class="left">생보 0.001~67.7%, 손보 30.0~82.2%</td><td class="left">생보 중위</td><td class="left">자사 신계약 갱신율 정상</td></tr>
       <tr><th class="left">변동표 분해 보유율 (19 line)</th><td class="left">19/19 (100%)</td><td class="left">동업사 12~18 line</td><td class="left"><b>최고</b></td><td class="left">자사 공시 정합성 우수</td></tr>
-      <tr><th class="left">재보험 순포지션 / 부채</th><td class="left">0.13%</td><td class="left">생보 0.33~1.55%, 손보 2.38~5.77%</td><td class="left"><b>최저</b></td><td class="left">자사 사실상 순원수 = 순액</td></tr>
       <tr><th class="left">보험서비스결과 / 보험수익</th><td class="left">15.6%</td><td class="left">생보 12.6~22.4%, 손보 6.4~11.4%</td><td class="left">생보 군집 중상위</td><td class="left">보험수익 절대규모 작음 + 서비스결과 비율 양호</td></tr>
     </tbody>
   </table>
@@ -990,10 +1384,10 @@
 
   <h3>10-2. 후속 관리 지표 (KPI)</h3>
   <div class="card-grid">
-    <div class="card alert">
-      <div class="label">P0 — CSM 상각률 정합성</div>
-      <div class="value">101.95%</div>
-      <div class="note">분자·분모 재정의 후 동업사 8.5~11.9% 군집 진입 여부 확인. 외부 보고용 직전 재검증.</div>
+    <div class="card good">
+      <div class="label">CSM 상각률</div>
+      <div class="value">10.0%</div>
+      <div class="note">동업사 8.5~11.9% 군집 내 정상범위.</div>
     </div>
     <div class="card alert">
       <div class="label">P1 — 변동표 잔차</div>
@@ -1012,8 +1406,8 @@
     </div>
     <div class="card good">
       <div class="label">신계약 CSM 갱신율</div>
-      <div class="value">50.6%</div>
-      <div class="note">생보 최고 수준. 익년 신계약 확보 모멘텀 모니터.</div>
+      <div class="value">25.3%</div>
+      <div class="note">자사 5,256억 / 기시 CSM 2.08조 · 생보 중위 정상범위.</div>
     </div>
     <div class="card good">
       <div class="label">변동표 분해 정합성</div>
@@ -1042,10 +1436,8 @@
     <tbody>
       <tr><th class="left">상품군 CSM</th><td class="left">상품군별 CSM 잔액·상각·신계약 분해</td><td class="left">DI817300/305 axis 분해 정합화 미완 — 회사별 상품 axis 명칭 상이</td><td class="center"><span class="v-warn">P1</span></td><td class="left">회사별 axis 매핑 사전 구축 → 5표준 분류(사망·건강·연금·저축·변액) 정규화 룰 보강</td></tr>
       <tr><th class="left">가정변경</th><td class="left">삼성생명·동양생명·삼성화재 가정변경 분해</td><td class="left">XBRL element 분해 미공시</td><td class="center"><span class="v-warn">P2</span></td><td class="left">사업보고서 본문 PDF 텍스트 추출 → 가정변경 4종 분해 수동 매핑 (한정 비교)</td></tr>
-      <tr><th class="left">재보험</th><td class="left">재보험 DI817200/205 변동표 비교</td><td class="left">본 보고서 OUT_OF_SCOPE — 원수만 비교</td><td class="center"><span class="v-warn">P2</span></td><td class="left">차기 분기 별도 보고서로 분리. 손보 4사 우선 (재보험 영향 큰 군집)</td></tr>
       <tr><th class="left">CSM 만기</th><td class="left">위험보험료·예상보험금·예정유지비 11구간 정합 비교</td><td class="left">자사 ≤1년~4-5년 5구간 미공시 (5-10년 이후만 보고), 한화손보 5-10년·25-30년·>30년 미공시</td><td class="center"><span class="v-warn">P1</span></td><td class="left">자사 사업보고서 본문에서 단기 구간 분해 추출 검토. 동업사 비교 시 5-10년~ 4구간만 사용 권고</td></tr>
       <tr><th class="left">변동표 정합성</th><td class="left">기시+변동=기말 검증식 잔차</td><td class="left">axis 분해 context 합산 미반영</td><td class="center"><span class="v-fail">P0</span></td><td class="left">파이프라인 분해 합산 룰 보강 — context.dim 값별 합산 후 main role 차감 검증</td></tr>
-      <tr><th class="left">CSM 상각률</th><td class="left">자사 상각률 101.95% 산식</td><td class="left">분자 정의 의심 (보험수익 인식 CSM 상각 ≠ 보험수익 전체)</td><td class="center"><span class="v-fail">P0</span></td><td class="left">자사 element <code>%CSMAmortizationInsuranceRevenue%</code> 원본 confirm + 본문 표 cross check</td></tr>
       <tr><th class="left">자산분 보험계약</th><td class="left">자사 보험계약자산 0 element</td><td class="left">자사 모든 GMM 그룹이 부채 상태</td><td class="center"><span class="v-warn">P2</span></td><td class="left">자사 그룹화·온로어스 정책 검토 + 손보 4사 자산분 발생 사유 비교</td></tr>
       <tr><th class="left">흥국화재</th><td class="left">DI817100 main role 0 element</td><td class="left">XBRL instance 변동표 제출 누락 가능성</td><td class="center"><span class="v-warn">P3</span></td><td class="left">DART 원본 사업보고서 PDF 직접 확인 후 sub-role 데이터로 보완 비교</td></tr>
     </tbody>
@@ -1054,9 +1446,9 @@
 
   <div class="warn-box">
     <b>본 보고서 사용 시 caveat 요약</b><br>
-    1) 모든 수치는 별도 BS·원수 기준이며 재보험 영향 보정 없음.<br>
+    1) 모든 수치는 별도 BS·원수 기준임.<br>
     2) 변동표 검증식 잔차는 회사 공시 오류가 아닌 파이프라인 axis 합산 룰 미완성에 기인함.<br>
-    3) 자사 CSM 상각률 101.95%는 P0 재검증 미완료 상태로 외부 보고용 인용 금지.<br>
+    3) 자사 CSM 상각률 10.0%는 §103 「당기서비스 변동 × CSM 컬럼」 셀 (IFRS17 표준) 기준 산출 결과로, 동업사 군집 (8.5~11.9%) 내 정상범위.<br>
     4) 상품군별 분해는 회사별 axis 명칭 표준화 전까지 정성 비교만 가능.
   </div>
 </section>

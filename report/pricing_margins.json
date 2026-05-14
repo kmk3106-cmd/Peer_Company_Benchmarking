@@ -1,0 +1,74 @@
+{
+  "00112332": {
+    "name": "미래에셋",
+    "risk_premium": 33013794649766.0,
+    "expected_claim": 34184547831918.0,
+    "planned_maint": 6800744928688.0,
+    "expected_maint": 3208422689442.0,
+    "claim_ratio_pct": 103.54625451140103,
+    "maint_ratio_pct": 47.17751839078266
+  },
+  "00126256": {
+    "name": "삼성생명",
+    "risk_premium": 554186192000000.0,
+    "expected_claim": 454011904000000.0,
+    "planned_maint": 126010672000000.0,
+    "expected_maint": null,
+    "claim_ratio_pct": 81.92407363336112,
+    "maint_ratio_pct": null
+  },
+  "00113058": {
+    "name": "한화생명",
+    "risk_premium": 586174288000000.0,
+    "expected_claim": 459861632000000.0,
+    "planned_maint": null,
+    "expected_maint": null,
+    "claim_ratio_pct": 78.45134824473912,
+    "maint_ratio_pct": null
+  },
+  "00117267": {
+    "name": "동양생명",
+    "risk_premium": 56064978000000.0,
+    "expected_claim": 50231232000000.0,
+    "planned_maint": 10503296000000.0,
+    "expected_maint": 7922832000000.0,
+    "claim_ratio_pct": 89.59466995599284,
+    "maint_ratio_pct": 75.43186443569714
+  },
+  "00139214": {
+    "name": "삼성화재",
+    "risk_premium": 295359647000000.0,
+    "expected_claim": 282054655000000.0,
+    "planned_maint": 59880102000000.0,
+    "expected_maint": 31096944000000.0,
+    "claim_ratio_pct": 95.49532506043387,
+    "maint_ratio_pct": 51.93201574706736
+  },
+  "00164973": {
+    "name": "현대해상",
+    "risk_premium": 340713456534689.0,
+    "expected_claim": 337872524826137.0,
+    "planned_maint": 35813119723222.0,
+    "expected_maint": 20049746976432.0,
+    "claim_ratio_pct": 99.16618153640118,
+    "maint_ratio_pct": 55.98436308086087
+  },
+  "00159102": {
+    "name": "DB손보",
+    "risk_premium": 413757332000000.0,
+    "expected_claim": 401095018000000.0,
+    "planned_maint": 53393036000000.0,
+    "expected_maint": 25331682000000.0,
+    "claim_ratio_pct": 96.93967622548378,
+    "maint_ratio_pct": 47.443793980922905
+  },
+  "00135917": {
+    "name": "한화손보",
+    "risk_premium": 272638347252000.0,
+    "expected_claim": 285561786215000.0,
+    "planned_maint": 39675443301000.0,
+    "expected_maint": 22588940443000.0,
+    "claim_ratio_pct": 104.7401398567953,
+    "maint_ratio_pct": 56.93431141179123
+  }
+}

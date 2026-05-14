@@ -1,0 +1,376 @@
+<!doctype html>
+    <html lang='ko'><head><meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>종합보고서 v3 — DI817100 영문 element name 기준 유기적 매핑</title>
+    <style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "맑은 고딕", "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    margin: 0; padding: 16px;
+    color: #222; background: #fafafa;
+    max-width: 1400px; margin: 0 auto;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: clamp(18pt, 5vw, 24pt); border-bottom: 3px solid #1a3870; padding-bottom: 8px; margin-top: 8px; }
+  h2 { font-size: clamp(14pt, 4vw, 18pt); border-left: 5px solid #4a76d8; padding-left: 10px; margin-top: 32px; color: #1a3870; }
+  h3 { font-size: clamp(12pt, 3vw, 14pt); color: #555; margin-top: 20px; }
+  p, li { font-size: clamp(10pt, 2.5vw, 12pt); line-height: 1.6; }
+
+  .meta { font-size: clamp(9pt, 2vw, 11pt); color: #666; margin-bottom: 16px; }
+  .meta span { display: inline-block; margin-right: 18px; margin-bottom: 4px; }
+
+  /* 요약 카드 (반응형) */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
+  .card { padding: 14px; border-radius: 8px; border: 1px solid #ccc; background: #fff; }
+  .card .label { font-size: clamp(9pt, 2vw, 11pt); color: #666; margin-bottom: 4px; }
+  .card .num { font-size: clamp(18pt, 4.5vw, 24pt); font-weight: 700; margin: 2px 0; }
+  .card .sub { font-size: clamp(9pt, 2vw, 10pt); color: #888; }
+  .card.pass { border-color: #4a9d4e; } .card.pass .num { color: #2d7d31; }
+  .card.warn { border-color: #d8a44a; } .card.warn .num { color: #946a18; }
+  .card.review { border-color: #d84a4a; } .card.review .num { color: #8c2424; }
+  .card.info { border-color: #4a76d8; } .card.info .num { color: #1a3870; }
+
+  /* 테이블 (가로 스크롤) */
+  .table-wrap { overflow-x: auto; margin: 8px 0; -webkit-overflow-scrolling: touch; }
+  table { border-collapse: collapse; background: #fff; font-size: clamp(9pt, 2vw, 11pt); min-width: 100%; }
+  th, td { border: 1px solid #999; padding: 8px 10px; }
+  thead th { background: #e8eef5; text-align: center; font-weight: 600; white-space: nowrap; }
+  thead th.life { background: #fde9e9; }
+  thead th.nonlife { background: #e3edfa; }
+  td.company { text-align: left; font-weight: 600; white-space: nowrap; }
+  td.label { text-align: left; min-width: 140px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.self { background: #fff7e0; font-weight: 700; }
+  tr.self td { background: #fff7e0; }
+
+  /* 셀 색상 */
+  td.pass-cell { background: #e6f4e7; text-align: center; color: #2d7d31; font-weight: 600; }
+  td.fail-cell { background: #f4e6e6; text-align: center; color: #8c2424; }
+  td.warn-cell { background: #faf4e2; text-align: center; color: #946a18; font-weight: 600; }
+  tr.ct-pass td.label { font-weight: 600; color: #2d7d31; }
+  tr.ct-mid td.label { color: #946a18; }
+  tr.ct-low td.label { color: #8c2424; }
+
+  /* 결론 박스 */
+  .conclusion { background: #f0f5fb; border-left: 5px solid #4a76d8; padding: 14px 18px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .conclusion h4 { margin: 0 0 8px 0; color: #1a3870; font-size: clamp(11pt, 2.8vw, 13pt); }
+  .conclusion ul { margin: 4px 0; padding-left: 22px; }
+  .conclusion ul li { margin: 4px 0; }
+  .warning { background: #faf4e2; border-left-color: #d8a44a; }
+  .warning h4 { color: #946a18; }
+
+  /* 작은 화면 — 테이블 폰트 더 작게 */
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    table { font-size: 9pt; }
+    th, td { padding: 5px 6px; }
+    .meta span { display: block; margin-right: 0; }
+  }
+
+  .footer-note { font-size: clamp(9pt, 2vw, 11pt); color: #555; line-height: 1.55; margin-top: 28px; padding-top: 16px; border-top: 1px solid #ccc; }
+  .footer-note code { background: #eee; padding: 1px 4px; border-radius: 3px; font-size: 0.9em; }
+  .footer-note ol { padding-left: 22px; }
+
+  .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; font-weight: 600; }
+  .badge.green { background: #d4e8d6; color: #1a5a1c; }
+  .badge.blue { background: #d4dff5; color: #1a3870; }
+  .badge.purple { background: #ead5f0; color: #5a1a70; }
+  .badge.yellow { background: #f5ead4; color: #6a5a1a; }
+
+
+
+  /* ─── 목차 (TOC) — 그룹형 ─── */
+  .toc-container {
+    background: #fff; border: 1px solid #ddd; border-radius: 10px;
+    padding: 16px 20px; margin: 16px 0 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc-toggle {
+    background: #1a3870; color: white; border: none;
+    padding: 10px 16px; border-radius: 6px;
+    font-size: clamp(10pt, 2.5vw, 12pt); font-weight: 600;
+    cursor: pointer; margin-bottom: 4px;
+  }
+  .toc-toggle:hover { background: #4a76d8; }
+  .toc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px; margin-top: 14px;
+  }
+  .toc-list.hidden { display: none; }
+  .toc-group {
+    background: #f7f9fc; border-radius: 8px; padding: 10px 12px;
+    border-left: 4px solid #4a76d8;
+  }
+  .toc-group-title {
+    margin: 0 0 8px 0; font-size: clamp(10pt, 2.3vw, 11pt);
+    color: #1a3870; font-weight: 700;
+  }
+  .toc-item {
+    display: block; color: #333; text-decoration: none;
+    padding: 5px 8px; border-radius: 4px;
+    font-size: clamp(9.5pt, 2.1vw, 10.5pt); line-height: 1.5;
+    border-left: 2px solid transparent;
+  }
+  .toc-item:hover {
+    background: #fff; border-left-color: #4a76d8; color: #1a3870;
+  }
+  .toc-sub { padding-left: 14px; }
+
+  /* anchor 점프 offset */
+  h2[id], h3[id] { scroll-margin-top: 16px; }
+
+  /* ─── 맨 위로 버튼 ─── */
+  .back-to-top {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #1a3870; color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000; opacity: 0.85; transition: opacity 0.2s;
+  }
+  .back-to-top:hover { opacity: 1; background: #4a76d8; }
+
+  @media (max-width: 600px) {
+    .back-to-top { bottom: 16px; right: 16px; width: 44px; height: 44px; font-size: 20px; }
+    .toc-list { grid-template-columns: 1fr; }
+  }
+
+  /* 회사 탭 selector */
+  .peer-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; padding-bottom: 8px; border-bottom: 2px solid #ddd; }
+  .peer-tab {
+    background: #f0f0f0; border: 1px solid #ccc; color: #444;
+    padding: 7px 13px; border-radius: 5px 5px 0 0;
+    font-size: clamp(9.5pt, 2.3vw, 11pt); font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .peer-tab:hover { background: #e0e8f5; color: #1a3870; }
+  .peer-tab.active { background: #1a3870; color: white; border-color: #1a3870; }
+  .peer-panel { display: none; padding-top: 10px; }
+  .peer-panel.active { display: block; }
+  .badge-na { background: #f4e6e6; color: #8c2424; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+  .warn-text { color: #8c2424; background: #fdf3f3; padding: 8px 12px; border-radius: 4px; }
+  .note-list { font-size: clamp(9.5pt, 2.1vw, 11pt); color: #555; margin: 8px 0 0; padding-left: 22px; }
+</style>
+    </head><body>
+      <h1>📊 종합보고서 v3 — DI817100 영문 element 기준 유기적 매핑</h1>
+      <div class="meta">
+        <span>자사: 미래에셋생명 (CIK 00112332)</span>
+        <span>동업사: 8개 IFRS17 풍부 KOSPI 상장</span>
+        <span>기준: 별도(separate) · 2026-05-14</span>
+        <span>규칙: no-inference + 분해 깊이 axis-min 흡수</span>
+      </div>
+
+<div class="toc-container">
+  <div class="toc-toggle" onclick="document.getElementById('toc-list').classList.toggle('hidden')">📑 목차</div>
+  <div id="toc-list" class="toc-list">
+    <div class="toc-group">
+      <h4 class="toc-group-title">개요</h4>
+      <a class="toc-item" href="#sec-1-결론">1. 검토 결론</a>
+      <a class="toc-item" href="#sec-2-매트릭스">2. 매핑 매트릭스</a>
+    </div>
+    <div class="toc-group">
+      <h4 class="toc-group-title">패턴 상세 (9개)</h4>
+      <a class="toc-item" href="#sec-3-P1">P1. LRC/LIC 차이조정</a>
+      <a class="toc-item" href="#sec-3-P2">P2. 구성요소 차이조정</a>
+      <a class="toc-item" href="#sec-3-P3">P3. 계리적 가정 변동</a>
+      <a class="toc-item" href="#sec-3-P4">P4. CSM 기간별 기대수익</a>
+      <a class="toc-item" href="#sec-3-P5">P5. 회계모형·포트폴리오</a>
+      <a class="toc-item" href="#sec-3-P6">P6. 투자서비스수익·보험금융</a>
+      <a class="toc-item" href="#sec-3-P7">P7. 보험수익 분해</a>
+      <a class="toc-item" href="#sec-3-P8">P8. 직접참가 파생 상쇄</a>
+      <a class="toc-item" href="#sec-3-P9">P9. 직접참가 기초항목</a>
+
+    </div>
+    <div class="toc-group">
+      <h4 class="toc-group-title">결론·한계</h4>
+      <a class="toc-item" href="#sec-4-한계">4. 한계·다음 단계</a>
+    </div>
+  </div>
+</div>
+
+      <h2 id="sec-1-결론">1. 검토 결론 (영문 element name 기준 유기적 매핑)</h2>
+<div class="cards">
+  <div class="card info">
+    <div class="label">표준 영문 패턴</div>
+    <div class="num">9</div>
+    <div class="sub">자사 11개 단위에서 추출한 본질</div>
+  </div>
+  <div class="card pass">
+    <div class="label">패턴 보유 (n_elem &gt; 0)</div>
+    <div class="num">28 / 81</div>
+    <div class="sub">34.6% — element 발견</div>
+  </div>
+  <div class="card warn">
+    <div class="label">값 보유 (n_with_val &gt; 0)</div>
+    <div class="num">19 / 81</div>
+    <div class="sub">23.5% — 실제 수치 보고</div>
+  </div>
+  <div class="card review">
+    <div class="label">미공시</div>
+    <div class="num">53 / 81</div>
+    <div class="sub">65.4% — 패턴 자체 없음</div>
+  </div>
+</div>
+<div class="conclusion">
+  <h4>핵심 결론 (이전 v2 매핑보다 정확)</h4>
+  <ul>
+    <li>매핑 키를 자사 단위 한국어 라벨 → <b>영문 element name 본질 substring</b>으로 변경.
+        회사마다 풀어서/묶어서 보고하는 차이를 LIKE 매칭으로 흡수.</li>
+    <li><b>P1 LRC/LIC 차이조정 + P2 구성요소 차이조정</b>은 7-8/9개사 보유 — 표준 비교 가능.</li>
+    <li><b>P3 계리적가정·P4 CSM 만기·P5 회계모형·P6 투자수익·P8/P9 직접참가</b>는 자사 특화 entity 확장 단위.
+        다른 회사는 같은 정보를 다른 패턴으로 보고했거나 미공시.</li>
+    <li>금액 합산은 <b>axis-min context</b> 사용 — 회사가 풀어서 보고하면 분해 row 중 가장 집계 수준 높은
+        것만 골라 double-count 방지. 회사 간 동일 수준 비교.</li>
+  </ul>
+</div>
+      <h2 id="sec-2-매트릭스">2. 영문 패턴 × 9개사 매핑 매트릭스</h2>
+<p>각 패턴 (영문 element name substring) 별로 회사별 element 수 / 값보유 / axis-min 합계 조원.
+회사 간 분해 깊이 차이는 axis-min 합산으로 흡수.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>패턴</th><th>영문 substring</th><th class='self'>미래에셋</th><th>삼성생명</th><th>한화생명</th><th>동양생명</th><th>삼성화재</th><th>현대해상</th><th>DB손해보험</th><th>한화손해보험</th><th>흥국화재</th></tr></thead>
+  <tbody><tr><td rowspan="3"><b>P1</b><br><span style="font-size:0.85em;color:#666">LRC/LIC 차이조정</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">DisclosureOfReconciliationOfChangesInInsuranceContracts…</td><td class="self" style="text-align:right">9</td><td class="fail-cell">0</td><td class="pass-cell">18</td><td class="pass-cell">10</td><td class="pass-cell">6</td><td class="pass-cell">13</td><td class="pass-cell">30</td><td class="pass-cell">19</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">1</td><td class="fail-cell">0</td><td class="pass-cell">2</td><td class="pass-cell">1</td><td class="fail-cell">0</td><td class="pass-cell">1</td><td class="pass-cell">22</td><td class="pass-cell">13</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td class="self" style="text-align:right">5.31</td><td style="text-align:right;color:#aaa">—</td><td class="" style="text-align:right">3.17</td><td class="" style="text-align:right">2.76</td><td style="text-align:right;color:#aaa">—</td><td class="" style="text-align:right">0.62</td><td class="" style="text-align:right">-44.83</td><td class="" style="text-align:right">25.15</td><td class="" style="text-align:right">-0.06</td></tr><tr><td rowspan="3"><b>P2</b><br><span style="font-size:0.85em;color:#666">구성요소 차이조정</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">DisclosureOfReconciliationOfChangesInInsuranceContracts…</td><td class="self" style="text-align:right">9</td><td class="pass-cell">4</td><td class="pass-cell">8</td><td class="pass-cell">10</td><td class="pass-cell">6</td><td class="pass-cell">6</td><td class="pass-cell">23</td><td class="pass-cell">8</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">1</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="pass-cell">1</td><td class="fail-cell">0</td><td class="pass-cell">2</td><td class="pass-cell">8</td><td class="pass-cell">4</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td class="self" style="text-align:right">2.01</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td class="" style="text-align:right">2.76</td><td style="text-align:right;color:#aaa">—</td><td class="" style="text-align:right">0.62</td><td class="" style="text-align:right">3.58</td><td class="" style="text-align:right">-22.56</td><td class="" style="text-align:right">0.12</td></tr><tr><td rowspan="3"><b>P3</b><br><span style="font-size:0.85em;color:#666">계리적 가정 변동</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">ChangesInInsuranceLiabilitiesBasedOnActuarialAssumption…</td><td class="self" style="text-align:right">13</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">7</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td class="self" style="text-align:right">0.10</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td></tr><tr><td rowspan="3"><b>P4</b><br><span style="font-size:0.85em;color:#666">CSM 기간별 기대수익</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">ExpectedRevenueRecognitionAmountByPeriodOfContractualSe…</td><td class="self" style="text-align:right">18</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td></tr><tr><td rowspan="3"><b>P5</b><br><span style="font-size:0.85em;color:#666">회계모형·포트폴리오</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">InsuranceLiabilitiesByAccountingModelAndPortfolio…</td><td class="self" style="text-align:right">5</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="pass-cell">4</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td></tr><tr><td rowspan="3"><b>P6</b><br><span style="font-size:0.85em;color:#666">투자서비스수익·보험금융</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">InvestmentServiceProfitAndInsuranceRelatedFinancialInco…</td><td class="self" style="text-align:right">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td></tr><tr><td rowspan="3"><b>P7</b><br><span style="font-size:0.85em;color:#666">보험수익 분해</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">InsuranceRevenue…</td><td class="self" style="text-align:right">7</td><td class="fail-cell">0</td><td class="pass-cell">2</td><td class="pass-cell">5</td><td class="pass-cell">2</td><td class="pass-cell">2</td><td class="pass-cell">35</td><td class="pass-cell">6</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">6</td><td class="fail-cell">0</td><td class="pass-cell">2</td><td class="pass-cell">5</td><td class="pass-cell">2</td><td class="pass-cell">2</td><td class="pass-cell">35</td><td class="pass-cell">5</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td class="self" style="text-align:right">10.61</td><td class="" style="text-align:right">92.53</td><td class="" style="text-align:right">73.92</td><td class="" style="text-align:right">4.69</td><td class="" style="text-align:right">231.27</td><td class="" style="text-align:right">103.80</td><td class="" style="text-align:right">42.94</td><td class="" style="text-align:right">44.02</td><td class="" style="text-align:right">23.48</td></tr><tr><td rowspan="3"><b>P8</b><br><span style="font-size:0.85em;color:#666">직접참가 파생 상쇄</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">OffsettingEffectOfDerivativesOnFinancialRiskOfInsurance…</td><td class="self" style="text-align:right">2</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td></tr><tr><td rowspan="3"><b>P9</b><br><span style="font-size:0.85em;color:#666">직접참가 기초항목</span></td><td rowspan="3" style="font-size:0.75em;font-family:monospace">UnderlyingItemsForInsuranceContractsWithDirectParticipa…</td><td class="self" style="text-align:right">2</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>LineItem (값보유)</td><td class="self" style="text-align:right">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td><td class="fail-cell">0</td></tr><tr><td>합계 (조원, axis-min)</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td><td style="text-align:right;color:#aaa">—</td></tr></tbody>
+</table>
+</div>
+      <h2 id="sec-3-상세">3. 패턴별 상세 — element 분포 + 값 합산</h2>
+
+<h3 id="sec-3-P1">P1. LRC/LIC 차이조정</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaims</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">9</td><td style="text-align:right">5</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">5</td><td style="text-align:right">5.31</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">18</td><td style="text-align:right">10</td><td style="text-align:right">2</td><td style="text-align:right">4</td><td style="text-align:right">14</td><td style="text-align:right">3.17</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">10</td><td style="text-align:right">2</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">6</td><td style="text-align:right">2.76</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">6</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">2</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">13</td><td style="text-align:right">4</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">9</td><td style="text-align:right">0.62</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">30</td><td style="text-align:right">23</td><td style="text-align:right">22</td><td style="text-align:right">4</td><td style="text-align:right">26</td><td style="text-align:right">-44.83</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">19</td><td style="text-align:right">15</td><td style="text-align:right">13</td><td style="text-align:right">4</td><td style="text-align:right">15</td><td style="text-align:right">25.15</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">-0.06</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P2">P2. 구성요소 차이조정</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponents</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">9</td><td style="text-align:right">5</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">5</td><td style="text-align:right">2.01</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">4</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">8</td><td style="text-align:right">4</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">4</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">10</td><td style="text-align:right">2</td><td style="text-align:right">1</td><td style="text-align:right">4</td><td style="text-align:right">6</td><td style="text-align:right">2.76</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">6</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">2</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">6</td><td style="text-align:right">3</td><td style="text-align:right">2</td><td style="text-align:right">4</td><td style="text-align:right">2</td><td style="text-align:right">0.62</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">23</td><td style="text-align:right">10</td><td style="text-align:right">8</td><td style="text-align:right">4</td><td style="text-align:right">19</td><td style="text-align:right">3.58</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">8</td><td style="text-align:right">5</td><td style="text-align:right">4</td><td style="text-align:right">4</td><td style="text-align:right">4</td><td style="text-align:right">-22.56</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0.12</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P3">P3. 계리적 가정 변동</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>ChangesInInsuranceLiabilitiesBasedOnActuarialAssumptions</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">13</td><td style="text-align:right">12</td><td style="text-align:right">7</td><td style="text-align:right">0</td><td style="text-align:right">13</td><td style="text-align:right">0.10</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P4">P4. CSM 기간별 기대수익</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>ExpectedRevenueRecognitionAmountByPeriodOfContractualServiceMargin</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">18</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">18</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P5">P5. 회계모형·포트폴리오</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>InsuranceLiabilitiesByAccountingModelAndPortfolio</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">5</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">5</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">4</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">4</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P6">P6. 투자서비스수익·보험금융</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>InvestmentServiceProfitAndInsuranceRelatedFinancialIncomeAndLoss</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P7">P7. 보험수익 분해</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>InsuranceRevenue</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">7</td><td style="text-align:right">6</td><td style="text-align:right">6</td><td style="text-align:right">6</td><td style="text-align:right">1</td><td style="text-align:right">10.61</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">92.53</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">0</td><td style="text-align:right">73.92</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">5</td><td style="text-align:right">5</td><td style="text-align:right">5</td><td style="text-align:right">5</td><td style="text-align:right">0</td><td style="text-align:right">4.69</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">0</td><td style="text-align:right">231.27</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">2</td><td style="text-align:right">0</td><td style="text-align:right">103.80</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">35</td><td style="text-align:right">35</td><td style="text-align:right">35</td><td style="text-align:right">5</td><td style="text-align:right">30</td><td style="text-align:right">42.94</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">6</td><td style="text-align:right">5</td><td style="text-align:right">5</td><td style="text-align:right">6</td><td style="text-align:right">0</td><td style="text-align:right">44.02</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">23.48</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P8">P8. 직접참가 파생 상쇄</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>OffsettingEffectOfDerivativesOnFinancialRiskOfInsuranceContractsWithDirectParticipation</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">2</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">2</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody>
+</table>
+</div>
+
+
+<h3 id="sec-3-P9">P9. 직접참가 기초항목</h3>
+<p style="font-family:monospace;font-size:0.8em;color:#555">패턴: <code>UnderlyingItemsForInsuranceContractsWithDirectParticipationFeatures</code></p>
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>회사</th><th>총 element</th><th>LineItem</th><th>값 보유</th>
+    <th>표준(dart/ifrs)</th><th>entity 확장</th><th>합계 (조)</th>
+  </tr></thead>
+  <tbody><tr class="self"><td>미래에셋생명</td><td style="text-align:right">2</td><td style="text-align:right">1</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">2</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>동양생명</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>삼성화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>현대해상</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>DB손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>한화손해보험</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr class=""><td>흥국화재</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody>
+</table>
+</div>
+
+      <h2 id="sec-4-한계">4. 한계 · 다음 단계</h2>
+<div class="conclusion warning">
+  <h4>한계</h4>
+  <ul>
+    <li><b>합계 axis-min 합산</b>은 sub-table 안에 추가 axis가 있어도 가장 집계된 row만 골라 double-count 회피.
+        다만 회사마다 axis 구성이 다르면 합계 의미가 다를 수 있음 — 핵심 패턴(P1, P2)은 표준 dart로 일관성 높음.</li>
+    <li><b>자사 entity 확장 패턴 (P3·P5·P6·P8·P9)</b>은 자사 특화. 동업사 미공시·다른 패턴 사용 가능.</li>
+    <li>P7 (보험수익)은 단순 substring 매칭이라 너무 많은 element가 잡힘 — 정밀화 필요.</li>
+  </ul>
+</div>
+<div class="conclusion">
+  <h4>다음 단계</h4>
+  <ul>
+    <li>P1·P2 핵심 패턴의 BEL/RA/CSM × LRC/LIC 분해 표 — 회사별 axis 합산하여 BS 매칭 검증.</li>
+    <li>P7 보험수익은 (1) 총 보험수익 (2) CSM 상각·RA 변동분 세분으로 분리해 비교.</li>
+    <li>P3 계리적가정은 §5.11 패턴 적용 (회사별 정확 search).</li>
+  </ul>
+</div>
+      <div class="footer-note">
+        build_report_v3.py · 영문 element name substring 기준 매핑 · 회사별 axis 깊이 차이 흡수
+      </div>
+    </body></html>

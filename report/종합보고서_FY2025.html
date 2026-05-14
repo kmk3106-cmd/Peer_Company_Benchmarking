@@ -81,28 +81,6 @@
 
 
 
-
-
-
-
-
-
-  /* 회사 탭 selector */
-  .peer-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; padding-bottom: 8px; border-bottom: 2px solid #ddd; }
-  .peer-tab {
-    background: #f0f0f0; border: 1px solid #ccc; color: #444;
-    padding: 7px 13px; border-radius: 5px 5px 0 0;
-    font-size: clamp(9.5pt, 2.3vw, 11pt); font-weight: 600;
-    cursor: pointer; transition: all 0.15s;
-  }
-  .peer-tab:hover { background: #e0e8f5; color: #1a3870; }
-  .peer-tab.active { background: #1a3870; color: white; border-color: #1a3870; }
-  .peer-panel { display: none; padding-top: 10px; }
-  .peer-panel.active { display: block; }
-  .badge-na { background: #f4e6e6; color: #8c2424; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
-  .warn-text { color: #8c2424; background: #fdf3f3; padding: 8px 12px; border-radius: 4px; }
-  .note-list { font-size: clamp(9.5pt, 2.1vw, 11pt); color: #555; margin: 8px 0 0; padding-left: 22px; }
-
   /* ─── 목차 (TOC) — 그룹형 ─── */
   .toc-container {
     background: #fff; border: 1px solid #ddd; border-radius: 10px;
@@ -160,6 +138,22 @@
     .back-to-top { bottom: 16px; right: 16px; width: 44px; height: 44px; font-size: 20px; }
     .toc-list { grid-template-columns: 1fr; }
   }
+
+  /* 회사 탭 selector */
+  .peer-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; padding-bottom: 8px; border-bottom: 2px solid #ddd; }
+  .peer-tab {
+    background: #f0f0f0; border: 1px solid #ccc; color: #444;
+    padding: 7px 13px; border-radius: 5px 5px 0 0;
+    font-size: clamp(9.5pt, 2.3vw, 11pt); font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .peer-tab:hover { background: #e0e8f5; color: #1a3870; }
+  .peer-tab.active { background: #1a3870; color: white; border-color: #1a3870; }
+  .peer-panel { display: none; padding-top: 10px; }
+  .peer-panel.active { display: block; }
+  .badge-na { background: #f4e6e6; color: #8c2424; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+  .warn-text { color: #8c2424; background: #fdf3f3; padding: 8px 12px; border-radius: 4px; }
+  .note-list { font-size: clamp(9.5pt, 2.1vw, 11pt); color: #555; margin: 8px 0 0; padding-left: 22px; }
 </style>
 </head>
 <body>
@@ -196,121 +190,8 @@
 <a href="#sec-54-CSM-만기별-인식-기대액" class="toc-item toc-sub">5.4 CSM 만기별 인식 기대액</a>
 <a href="#sec-55-손보-상품군-mix-장기자동차일반" class="toc-item toc-sub">5.5 손보 상품군 mix (장기·자동차·일반)</a>
 <a href="#sec-56-계리적-metric-위험보험료예상보험금유지비" class="toc-item toc-sub">5.6 계리적 metric (위험보험료·예상보험금·유지비)</a>
-<a href="#sec-57-변동표-17-라인--잔액-횡단비교" class="toc-item toc-sub">5.7 변동표 17 라인 + 잔액 횡단비교</a>
-<a href="#sec-58-사업비-영역-판관비영업비" class="toc-item toc-sub">5.8 사업비 영역 (판관비·영업비)</a>
 <a href="#sec-59-예실차-Expected-vs-Actual-Claims" class="toc-item toc-sub">5.9 예실차 (Expected vs Actual Claims)</a>
 <a href="#sec-510-CSM-변동-무브먼트" class="toc-item toc-sub">5.10 CSM 변동 무브먼트</a>
-    </div>
-    <div class="toc-group">
-      <h4 class="toc-group-title">📌 결론·한계</h4>
-<a href="#sec-6-IFRS17-회계가정-적용" class="toc-item toc-sub">6. IFRS17 회계가정 적용</a>
-<a href="#sec-7-자사-미래에셋생명-인사이트" class="toc-item toc-sub">7. 자사 (미래에셋생명) 인사이트</a>
-<a href="#sec-8-분석-한계다음-단계" class="toc-item toc-sub">8. 분석 한계·다음 단계</a>
-    </div>
-  </nav>
-</div>
-
-<div class="toc-container">
-  <button class="toc-toggle" onclick="document.getElementById('toc-list').classList.toggle('hidden');">
-    📑 목차
-  </button>
-  <nav id="toc-list" class="toc-list">
-    <div class="toc-group">
-      <h4 class="toc-group-title">📋 개요·매핑</h4>
-<a href="#sec-1-검토-결론" class="toc-item toc-sub">1. 검토 결론</a>
-<a href="#sec-2-식별된-주석공시-카테고리" class="toc-item toc-sub">2. 식별된 주석공시 카테고리</a>
-<a href="#sec-3-작성-가능-자료-매트릭스-14개사--4-role" class="toc-item toc-sub">3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</a>
-<a href="#sec-4-표준-라인-매핑-효과-v1--v2" class="toc-item toc-sub">4. 표준 라인 매핑 효과 (v1 → v2)</a>
-<a href="#sec-41-식별된-7개-role-추출-결과" class="toc-item toc-sub">4.1 식별된 7개 role 추출 결과</a>
-    </div>
-    <div class="toc-group">
-      <h4 class="toc-group-title">📊 추출 자료 (5)</h4>
-<a href="#sec-51-BELRACSM-잔액-비교" class="toc-item toc-sub">5.1 BEL/RA/CSM 잔액 비교</a>
-<a href="#sec-52-미래에셋-5상품군--LRCLIC-BS-100-검증" class="toc-item toc-sub">5.2 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</a>
-<a href="#sec-53-자산-부채-매칭-Coverage-Ratio" class="toc-item toc-sub">5.3 자산-부채 매칭 (Coverage Ratio)</a>
-<a href="#sec-54-CSM-만기별-인식-기대액" class="toc-item toc-sub">5.4 CSM 만기별 인식 기대액</a>
-<a href="#sec-55-손보-상품군-mix-장기자동차일반" class="toc-item toc-sub">5.5 손보 상품군 mix (장기·자동차·일반)</a>
-<a href="#sec-56-계리적-metric-위험보험료예상보험금유지비" class="toc-item toc-sub">5.6 계리적 metric (위험보험료·예상보험금·유지비)</a>
-<a href="#sec-57-변동표-17-라인--잔액-횡단비교" class="toc-item toc-sub">5.7 변동표 17 라인 + 잔액 횡단비교</a>
-<a href="#sec-58-사업비-영역-판관비영업비" class="toc-item toc-sub">5.8 사업비 영역 (판관비·영업비)</a>
-<a href="#sec-59-예실차-Expected-vs-Actual-Claims" class="toc-item toc-sub">5.9 예실차 (Expected vs Actual Claims)</a>
-<a href="#sec-510-CSM-변동-무브먼트" class="toc-item toc-sub">5.10 CSM 변동 무브먼트</a>
-<a href="#sec-511-계리적-가정-변동에-따른-부채-변동내역" class="toc-item toc-sub">5.11 계리적 가정 변동에 따른 부채 변동내역</a>
-<a href="#sec-512-보험계약마진CSM-상각률" class="toc-item toc-sub">5.12 보험계약마진(CSM) 상각률</a>
-    </div>
-    <div class="toc-group">
-      <h4 class="toc-group-title">📌 결론·한계</h4>
-<a href="#sec-6-IFRS17-회계가정-적용" class="toc-item toc-sub">6. IFRS17 회계가정 적용</a>
-<a href="#sec-7-자사-미래에셋생명-인사이트" class="toc-item toc-sub">7. 자사 (미래에셋생명) 인사이트</a>
-<a href="#sec-8-분석-한계다음-단계" class="toc-item toc-sub">8. 분석 한계·다음 단계</a>
-    </div>
-  </nav>
-</div>
-
-<div class="toc-container">
-  <button class="toc-toggle" onclick="document.getElementById('toc-list').classList.toggle('hidden');">
-    📑 목차
-  </button>
-  <nav id="toc-list" class="toc-list">
-    <div class="toc-group">
-      <h4 class="toc-group-title">📋 개요·매핑</h4>
-<a href="#sec-1-검토-결론" class="toc-item toc-sub">1. 검토 결론</a>
-<a href="#sec-2-식별된-주석공시-카테고리" class="toc-item toc-sub">2. 식별된 주석공시 카테고리</a>
-<a href="#sec-3-작성-가능-자료-매트릭스-14개사--4-role" class="toc-item toc-sub">3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</a>
-<a href="#sec-4-표준-라인-매핑-효과-v1--v2" class="toc-item toc-sub">4. 표준 라인 매핑 효과 (v1 → v2)</a>
-<a href="#sec-41-식별된-7개-role-추출-결과" class="toc-item toc-sub">4.1 식별된 7개 role 추출 결과</a>
-    </div>
-    <div class="toc-group">
-      <h4 class="toc-group-title">📊 추출 자료 (5)</h4>
-<a href="#sec-51-BELRACSM-잔액-비교" class="toc-item toc-sub">5.1 BEL/RA/CSM 잔액 비교</a>
-<a href="#sec-52-미래에셋-5상품군--LRCLIC-BS-100-검증" class="toc-item toc-sub">5.2 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</a>
-<a href="#sec-53-자산-부채-매칭-Coverage-Ratio" class="toc-item toc-sub">5.3 자산-부채 매칭 (Coverage Ratio)</a>
-<a href="#sec-54-CSM-만기별-인식-기대액" class="toc-item toc-sub">5.4 CSM 만기별 인식 기대액</a>
-<a href="#sec-55-손보-상품군-mix-장기자동차일반" class="toc-item toc-sub">5.5 손보 상품군 mix (장기·자동차·일반)</a>
-<a href="#sec-56-계리적-metric-위험보험료예상보험금유지비" class="toc-item toc-sub">5.6 계리적 metric (위험보험료·예상보험금·유지비)</a>
-<a href="#sec-57-변동표-17-라인--잔액-횡단비교" class="toc-item toc-sub">5.7 변동표 17 라인 + 잔액 횡단비교</a>
-<a href="#sec-58-사업비-영역-판관비영업비" class="toc-item toc-sub">5.8 사업비 영역 (판관비·영업비)</a>
-<a href="#sec-59-예실차-Expected-vs-Actual-Claims" class="toc-item toc-sub">5.9 예실차 (Expected vs Actual Claims)</a>
-<a href="#sec-510-CSM-변동-무브먼트" class="toc-item toc-sub">5.10 CSM 변동 무브먼트</a>
-<a href="#sec-511-계리적가정에-의한-보험부채-변동내역-미래에셋-정확-search" class="toc-item toc-sub">5.11 계리적가정에 의한 보험부채 변동내역 (미래에셋, 정확 search)</a>
-<a href="#sec-512-보험계약마진CSM-상각률" class="toc-item toc-sub">5.12 보험계약마진(CSM) 상각률</a>
-    </div>
-    <div class="toc-group">
-      <h4 class="toc-group-title">📌 결론·한계</h4>
-<a href="#sec-6-IFRS17-회계가정-적용" class="toc-item toc-sub">6. IFRS17 회계가정 적용</a>
-<a href="#sec-7-자사-미래에셋생명-인사이트" class="toc-item toc-sub">7. 자사 (미래에셋생명) 인사이트</a>
-<a href="#sec-8-분석-한계다음-단계" class="toc-item toc-sub">8. 분석 한계·다음 단계</a>
-    </div>
-  </nav>
-</div>
-
-<div class="toc-container">
-  <button class="toc-toggle" onclick="document.getElementById('toc-list').classList.toggle('hidden');">
-    📑 목차
-  </button>
-  <nav id="toc-list" class="toc-list">
-    <div class="toc-group">
-      <h4 class="toc-group-title">📋 개요·매핑</h4>
-<a href="#sec-1-검토-결론" class="toc-item toc-sub">1. 검토 결론</a>
-<a href="#sec-2-식별된-주석공시-카테고리" class="toc-item toc-sub">2. 식별된 주석공시 카테고리</a>
-<a href="#sec-3-작성-가능-자료-매트릭스-14개사--4-role" class="toc-item toc-sub">3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</a>
-<a href="#sec-4-표준-라인-매핑-효과-v1--v2" class="toc-item toc-sub">4. 표준 라인 매핑 효과 (v1 → v2)</a>
-<a href="#sec-41-식별된-7개-role-추출-결과" class="toc-item toc-sub">4.1 식별된 7개 role 추출 결과</a>
-    </div>
-    <div class="toc-group">
-      <h4 class="toc-group-title">📊 추출 자료 (5)</h4>
-<a href="#sec-51-BELRACSM-잔액-비교" class="toc-item toc-sub">5.1 BEL/RA/CSM 잔액 비교</a>
-<a href="#sec-52-미래에셋-5상품군--LRCLIC-BS-100-검증" class="toc-item toc-sub">5.2 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</a>
-<a href="#sec-53-자산-부채-매칭-Coverage-Ratio" class="toc-item toc-sub">5.3 자산-부채 매칭 (Coverage Ratio)</a>
-<a href="#sec-54-CSM-만기별-인식-기대액" class="toc-item toc-sub">5.4 CSM 만기별 인식 기대액</a>
-<a href="#sec-55-손보-상품군-mix-장기자동차일반" class="toc-item toc-sub">5.5 손보 상품군 mix (장기·자동차·일반)</a>
-<a href="#sec-56-계리적-metric-위험보험료예상보험금유지비" class="toc-item toc-sub">5.6 계리적 metric (위험보험료·예상보험금·유지비)</a>
-<a href="#sec-57-변동표-17-라인--잔액-횡단비교" class="toc-item toc-sub">5.7 변동표 17 라인 + 잔액 횡단비교</a>
-<a href="#sec-58-사업비-영역-판관비영업비" class="toc-item toc-sub">5.8 사업비 영역 (판관비·영업비)</a>
-<a href="#sec-59-예실차-Expected-vs-Actual-Claims" class="toc-item toc-sub">5.9 예실차 (Expected vs Actual Claims)</a>
-<a href="#sec-510-CSM-변동-무브먼트" class="toc-item toc-sub">5.10 CSM 변동 무브먼트</a>
-<a href="#sec-511-계리적가정에-의한-보험부채-변동내역--8개사-정확-search" class="toc-item toc-sub">5.11 계리적가정에 의한 보험부채 변동내역 — 8개사 (정확 search)</a>
-<a href="#sec-512-보험계약마진CSM-상각률" class="toc-item toc-sub">5.12 보험계약마진(CSM) 상각률</a>
     </div>
     <div class="toc-group">
       <h4 class="toc-group-title">📌 결론·한계</h4>
@@ -520,8 +401,10 @@
 <p><b>시그널</b>: 미래에셋 예상유지비/예정유지비 = 212% — 예상이 예정의 2배. 사업비 실제가 예정 대비 크게 증가. <b>예정사업비율 점검 필요</b>. (한화생명·동양생명·삼성화재·현대해상은 element 매핑 한계로 미추출)</p>
 
 
+
+
 <h3 id="sec-5-F-연도별-위험보험료--예상보험금--예정예상유지비--Maturity-분해-FY2025-별도-억원">5-F-(연도별) 위험보험료 / 예상보험금 / 예정·예상유지비 — Maturity 분해 (FY2025 별도, 억원)</h3>
-<p>각 metric을 만기 구간별로 분해. 보험계약 기간별 부채 인식 패턴 비교:</p>
+<p>각 metric을 만기(remaining coverage) 구간별로 분해. 보험계약 기간별 부채 인식 패턴 비교:</p>
 <h4>위험보험료</h4>
 <div class="table-wrap"><table><thead><tr><th>회사</th><th>≤1년</th><th>1-2년</th><th>2-3년</th><th>3-4년</th><th>4-5년</th><th>5-10년</th><th>10-15년</th><th>15-20년</th><th>20-25년</th><th>25-30년</th><th>>30년</th><th>합계</th></tr></thead><tbody><tr class="self"><td class="company">미래에셋</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">55,618</td><td class="num">26,824</td><td class="num">25,883</td><td class="num">24,018</td><td class="num">21,778</td><td class="num">66,539</td><td class="num"><b>220,660</b></td></tr><tr class=""><td class="company">삼성생명</td><td class="num">45,711</td><td class="num">45,717</td><td class="num">44,642</td><td class="num">43,136</td><td class="num">41,848</td><td class="num">239,643</td><td class="num">191,603</td><td class="num">179,055</td><td class="num">161,506</td><td class="num">—</td><td class="num">536,089</td><td class="num"><b>1,528,950</b></td></tr><tr class=""><td class="company">한화생명</td><td class="num">32,757</td><td class="num">31,917</td><td class="num">30,838</td><td class="num">30,073</td><td class="num">29,436</td><td class="num">144,937</td><td class="num">145,286</td><td class="num">146,489</td><td class="num">147,883</td><td class="num">—</td><td class="num">765,042</td><td class="num"><b>1,504,658</b></td></tr><tr class=""><td class="company">동양생명</td><td class="num">5,746</td><td class="num">5,639</td><td class="num">5,477</td><td class="num">5,381</td><td class="num">5,311</td><td class="num">25,909</td><td class="num">25,132</td><td class="num">24,223</td><td class="num">22,862</td><td class="num">—</td><td class="num">102,794</td><td class="num"><b>228,475</b></td></tr><tr class=""><td class="company">삼성화재</td><td class="num">58,408</td><td class="num">54,254</td><td class="num">50,331</td><td class="num">47,551</td><td class="num">44,690</td><td class="num">196,026</td><td class="num">157,801</td><td class="num">151,694</td><td class="num">141,453</td><td class="num">—</td><td class="num">716,168</td><td class="num"><b>1,618,374</b></td></tr><tr class=""><td class="company">현대해상</td><td class="num">55,483</td><td class="num">53,412</td><td class="num">50,325</td><td class="num">46,792</td><td class="num">44,068</td><td class="num">198,596</td><td class="num">162,819</td><td class="num">152,774</td><td class="num">141,594</td><td class="num">127,276</td><td class="num">709,429</td><td class="num"><b>1,742,567</b></td></tr><tr class=""><td class="company">DB손보</td><td class="num">114,505</td><td class="num">109,816</td><td class="num">105,110</td><td class="num">101,124</td><td class="num">96,780</td><td class="num">460,058</td><td class="num">434,290</td><td class="num">423,971</td><td class="num">390,550</td><td class="num">357,887</td><td class="num">1,901,367</td><td class="num"><b>4,495,460</b></td></tr><tr class=""><td class="company">한화손보</td><td class="num">55,327</td><td class="num">53,975</td><td class="num">52,139</td><td class="num">49,628</td><td class="num">47,740</td><td class="num">—</td><td class="num">205,662</td><td class="num">196,067</td><td class="num">182,760</td><td class="num">—</td><td class="num">—</td><td class="num"><b>843,297</b></td></tr></tbody></table></div>
 <h4>예상보험금</h4>
@@ -532,75 +415,28 @@
 <div class="table-wrap"><table><thead><tr><th>회사</th><th>≤1년</th><th>1-2년</th><th>2-3년</th><th>3-4년</th><th>4-5년</th><th>5-10년</th><th>10-15년</th><th>15-20년</th><th>20-25년</th><th>25-30년</th><th>>30년</th><th>합계</th></tr></thead><tbody><tr class="self"><td class="company">미래에셋</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">23,781</td><td class="num">5,582</td><td class="num">3,721</td><td class="num">2,296</td><td class="num">1,558</td><td class="num">2,753</td><td class="num"><b>39,691</b></td></tr><tr class=""><td class="company">삼성생명</td><td class="num">28,102</td><td class="num">25,500</td><td class="num">23,289</td><td class="num">20,723</td><td class="num">17,661</td><td class="num">100,026</td><td class="num">48,416</td><td class="num">38,377</td><td class="num">30,393</td><td class="num">—</td><td class="num">121,622</td><td class="num"><b>454,109</b></td></tr><tr class=""><td class="company">한화생명</td><td class="num">6,933</td><td class="num">6,508</td><td class="num">5,324</td><td class="num">4,917</td><td class="num">4,500</td><td class="num">19,154</td><td class="num">16,323</td><td class="num">14,561</td><td class="num">12,443</td><td class="num">—</td><td class="num">50,360</td><td class="num"><b>141,024</b></td></tr><tr class=""><td class="company">동양생명</td><td class="num">1,543</td><td class="num">1,445</td><td class="num">1,234</td><td class="num">1,191</td><td class="num">1,143</td><td class="num">4,881</td><td class="num">4,171</td><td class="num">3,602</td><td class="num">3,107</td><td class="num">—</td><td class="num">12,000</td><td class="num"><b>34,319</b></td></tr><tr class=""><td class="company">삼성화재</td><td class="num">20,615</td><td class="num">17,928</td><td class="num">15,928</td><td class="num">13,917</td><td class="num">12,240</td><td class="num">48,104</td><td class="num">35,014</td><td class="num">29,022</td><td class="num">21,135</td><td class="num">—</td><td class="num">85,498</td><td class="num"><b>299,401</b></td></tr><tr class=""><td class="company">현대해상</td><td class="num">6,611</td><td class="num">6,005</td><td class="num">5,274</td><td class="num">4,716</td><td class="num">4,270</td><td class="num">17,310</td><td class="num">12,336</td><td class="num">9,278</td><td class="num">7,066</td><td class="num">5,612</td><td class="num">27,384</td><td class="num"><b>105,860</b></td></tr><tr class=""><td class="company">DB손보</td><td class="num">13,230</td><td class="num">10,170</td><td class="num">8,898</td><td class="num">8,175</td><td class="num">7,623</td><td class="num">33,565</td><td class="num">28,910</td><td class="num">25,430</td><td class="num">21,692</td><td class="num">18,840</td><td class="num">95,624</td><td class="num"><b>272,157</b></td></tr><tr class=""><td class="company">한화손보</td><td class="num">10,264</td><td class="num">6,759</td><td class="num">5,994</td><td class="num">5,495</td><td class="num">5,061</td><td class="num">—</td><td class="num">16,987</td><td class="num">14,476</td><td class="num">12,058</td><td class="num">—</td><td class="num">—</td><td class="num"><b>77,094</b></td></tr></tbody></table></div>
 <p><b>핵심 인사이트</b>:</p>
 <ul>
-<li><b>≤1년 위험보험료</b>: 미래에셋 미공시 (5년 이내 통합 보고). DB손보 11.5조 = 가장 단기 비중 큼</li>
-<li><b>30년 초과 위험보험료</b>: 한화생명 76.5조 / 미래에셋 6.7조 — 한화가 자사 약 11배 (장기 부채 비중 격차)</li>
-<li><b>예정유지비 vs 예상유지비 (사업비 마진)</b>:
+<li><b>≤1년 위험보험료</b>: 미래에셋 미공시 → 단기 단위 분해 안 함 (10년 이내 통합). DB손보 11.5조 = 압도적 단기 비중</li>
+<li><b>30년 초과 비중</b>: 한화생명 76조 / 미래에셋 6.7조 — 한화가 자사 11배 (장기 부채 비중 격차)</li>
+<li><b>예정유지비 vs 예상유지비 차이</b> (사업비 마진):
     <ul>
-    <li>미래에셋: 예정 20,523 vs 예상 39,691 — <b>예상이 예정의 1.93배</b> ⚠ 사업비 가정 격차</li>
-    <li>한화생명: 예정 317,564 vs 예상 141,024 — 예정이 예상의 2.25배 (보수적 가정)</li>
-    <li>현대해상: 예정 183,724 vs 예상 105,860 — 예정이 예상의 1.74배</li>
-    <li>DB손보: 예정 561,663 vs 예상 272,157 — 예정이 예상의 2.06배</li>
+    <li>미래에셋: 예정 20,523억 vs 예상 39,691억 — <b>예상이 예정의 1.93배 (사업비 가정 격차 큼)</b></li>
+    <li>한화생명: 예정 31.8조 vs 예상 14.1조 — 예정이 예상의 2.25배 (보수적 사업비 가정)</li>
+    <li>현대해상: 예정 18.4조 vs 예상 10.6조 — 예정이 예상의 1.73배</li>
     </ul>
 </li>
-</ul>
-<h2 id="sec-57-변동표-17-라인--잔액-횡단비교">5.7 변동표 17 라인 + 잔액 횡단비교</h2>
-<p>17 변동 라인 + 기시(2024-12-31)·기말(2025-12-31) 잔액. 잔액 행은 노란색 강조:</p>
-<div class="table-wrap"><table><thead><tr><th>라인</th><th class="self">미래에셋</th><th class="">삼성생명</th><th class="">한화생명</th><th class="">동양생명</th><th class="">삼성화재</th><th class="">현대해상</th><th class="">DB손보</th><th class="">한화손보</th></tr></thead><tbody><tr style="background:#fff7e0;font-weight:600"><td class="label">기초 잔액 (2024-12-31)</td><td class="num self">+262,484</td><td class="num">+2,021,563</td><td class="num">+971,522</td><td class="num">+282,215</td><td class="num">+516,095</td><td class="num">+348,019</td><td class="num">+319,373</td><td class="num">+151,976</td></tr><tr><td class="label">보험수익</td><td class="num self">-10,804</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">신계약인식</td><td class="num self">—</td><td class="num">+755</td><td class="num">+20,663</td><td class="num">+93</td><td class="num">+57,967</td><td class="num">+23,309</td><td class="num">+411</td><td class="num">+478</td></tr><tr><td class="label">CSM조정추정변동</td><td class="num self">+583</td><td class="num">—</td><td class="num">-20,322</td><td class="num">+790</td><td class="num">-33,722</td><td class="num">-7,190</td><td class="num">—</td><td class="num">-565</td></tr><tr><td class="label">CSM미조정추정변동</td><td class="num self">+667</td><td class="num">-5,642</td><td class="num">-95</td><td class="num">+790</td><td class="num">-605</td><td class="num">+2,934</td><td class="num">-327</td><td class="num">-565</td></tr><tr><td class="label">위험조정변동</td><td class="num self">-191</td><td class="num">-6,911</td><td class="num">-1,091</td><td class="num">-436</td><td class="num">-1,648</td><td class="num">-722</td><td class="num">-1,591</td><td class="num">-421</td></tr><tr><td class="label">경험조정</td><td class="num self">+269</td><td class="num">+3,219</td><td class="num">+3,816</td><td class="num">+460</td><td class="num">+2,609</td><td class="num">+4,388</td><td class="num">-1,023</td><td class="num">+1,069</td></tr><tr><td class="label">과거서비스변동</td><td class="num self">+196</td><td class="num">+2,727</td><td class="num">-1,114</td><td class="num">+258</td><td class="num">-1,005</td><td class="num">+2,224</td><td class="num">-5,674</td><td class="num">+383</td></tr><tr><td class="label">손실부담계약손실</td><td class="num self">+84</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">+897</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">발생사고비용</td><td class="num self">+5,887</td><td class="num">—</td><td class="num">+36,477</td><td class="num">+8,212</td><td class="num">+139,516</td><td class="num">+46,747</td><td class="num">+63,140</td><td class="num">—</td></tr><tr><td class="label">수취보험료</td><td class="num self">+69,104</td><td class="num">+417,990</td><td class="num">+166,870</td><td class="num">+40,617</td><td class="num">+358,007</td><td class="num">+60,857</td><td class="num">+65,182</td><td class="num">+15,629</td></tr><tr><td class="label">지급보험금</td><td class="num self">-85,939</td><td class="num">-428,964</td><td class="num">-135,186</td><td class="num">-36,212</td><td class="num">-309,902</td><td class="num">-48,406</td><td class="num">-52,274</td><td class="num">-11,067</td></tr><tr><td class="label">보험취득CF지급</td><td class="num self">-181,390</td><td class="num">-495,122</td><td class="num">-164,788</td><td class="num">-42,114</td><td class="num">-362,070</td><td class="num">-48,478</td><td class="num">-56,972</td><td class="num">-50,525</td></tr><tr><td class="label">보험취득CF상각</td><td class="num self">+2,384</td><td class="num">—</td><td class="num">+10,081</td><td class="num">+1,590</td><td class="num">+22,641</td><td class="num">+5,875</td><td class="num">-13,742</td><td class="num">+992</td></tr><tr><td class="label">투자요소</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">금융손익_PL</td><td class="num self">-22,728</td><td class="num">+74,339</td><td class="num">—</td><td class="num">-12,992</td><td class="num">-13,046</td><td class="num">—</td><td class="num">—</td><td class="num">-4,433</td></tr><tr><td class="label">금융손익_OCI</td><td class="num self">-333</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">기타증감</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr style="background:#fff7e0;font-weight:600"><td class="label">기말 잔액 (2025-12-31)</td><td class="num self">+269,967</td><td class="num">+2,008,463</td><td class="num">+969,358</td><td class="num">+281,451</td><td class="num">+487,348</td><td class="num">+348,529</td><td class="num">+315,801</td><td class="num">+153,485</td></tr></tbody></table></div>
+</ul><h2 id="sec-5-G-변동표--기시기말-잔액--8개사-횡단비교-FY2025-별도발행-단위-억원">5-G. 변동표 + 기시/기말 잔액 — 8개사 횡단비교 (FY2025 별도·발행, 단위 억원)</h2>
+<p>기시(2024-12-31)·기말(2025-12-31) 잔액 + 17 변동 라인. 잔액 행은 노란색 강조:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>라인</th><th class="self">미래에셋</th><th class="">삼성생명</th><th class="">한화생명</th><th class="">동양생명</th><th class="">삼성화재</th><th class="">현대해상</th><th class="">DB손보</th><th class="">한화손보</th></tr></thead><tbody><tr style="background:#fff7e0;font-weight:600"><td class="label">기초 잔액 (2024-12-31)</td><td class="num self">+262,484</td><td class="num">+2,021,563</td><td class="num">+971,522</td><td class="num">+282,215</td><td class="num">+516,095</td><td class="num">+348,019</td><td class="num">+319,373</td><td class="num">+151,976</td></tr><tr><td class="label">보험수익</td><td class="num self">-10,804</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">신계약인식</td><td class="num self">—</td><td class="num">+755</td><td class="num">+20,663</td><td class="num">+93</td><td class="num">+57,967</td><td class="num">+23,309</td><td class="num">+411</td><td class="num">+478</td></tr><tr><td class="label">CSM조정추정변동</td><td class="num self">+583</td><td class="num">—</td><td class="num">-20,322</td><td class="num">+790</td><td class="num">-33,722</td><td class="num">-7,190</td><td class="num">—</td><td class="num">-565</td></tr><tr><td class="label">CSM미조정추정변동</td><td class="num self">+667</td><td class="num">-5,642</td><td class="num">-95</td><td class="num">+790</td><td class="num">-605</td><td class="num">+2,934</td><td class="num">-327</td><td class="num">-565</td></tr><tr><td class="label">위험조정변동</td><td class="num self">-191</td><td class="num">-6,911</td><td class="num">-1,091</td><td class="num">-436</td><td class="num">-1,648</td><td class="num">-722</td><td class="num">-1,591</td><td class="num">-421</td></tr><tr><td class="label">경험조정</td><td class="num self">+269</td><td class="num">+3,219</td><td class="num">+3,816</td><td class="num">+460</td><td class="num">+2,609</td><td class="num">+4,388</td><td class="num">-1,023</td><td class="num">+1,069</td></tr><tr><td class="label">과거서비스변동</td><td class="num self">+196</td><td class="num">+2,727</td><td class="num">-1,114</td><td class="num">+258</td><td class="num">-1,005</td><td class="num">+2,224</td><td class="num">-5,674</td><td class="num">+383</td></tr><tr><td class="label">손실부담계약손실</td><td class="num self">+84</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">+897</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">발생사고비용</td><td class="num self">+5,887</td><td class="num">—</td><td class="num">+36,477</td><td class="num">+8,212</td><td class="num">+139,516</td><td class="num">+46,747</td><td class="num">+63,140</td><td class="num">—</td></tr><tr><td class="label">수취보험료</td><td class="num self">+69,104</td><td class="num">+417,990</td><td class="num">+166,870</td><td class="num">+40,617</td><td class="num">+358,007</td><td class="num">+60,857</td><td class="num">+65,182</td><td class="num">+15,629</td></tr><tr><td class="label">지급보험금</td><td class="num self">-85,939</td><td class="num">-428,964</td><td class="num">-135,186</td><td class="num">-36,212</td><td class="num">-309,902</td><td class="num">-48,406</td><td class="num">-52,274</td><td class="num">-11,067</td></tr><tr><td class="label">보험취득CF지급</td><td class="num self">-181,390</td><td class="num">-495,122</td><td class="num">-164,788</td><td class="num">-42,114</td><td class="num">-362,070</td><td class="num">-48,478</td><td class="num">-56,972</td><td class="num">-50,525</td></tr><tr><td class="label">보험취득CF상각</td><td class="num self">+2,384</td><td class="num">—</td><td class="num">+10,081</td><td class="num">+1,590</td><td class="num">+22,641</td><td class="num">+5,875</td><td class="num">-13,742</td><td class="num">+992</td></tr><tr><td class="label">투자요소</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">금융손익_PL</td><td class="num self">-22,728</td><td class="num">+74,339</td><td class="num">—</td><td class="num">-12,992</td><td class="num">-13,046</td><td class="num">—</td><td class="num">—</td><td class="num">-4,433</td></tr><tr><td class="label">금융손익_OCI</td><td class="num self">-333</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">기타증감</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr style="background:#fff7e0;font-weight:600"><td class="label">기말 잔액 (2025-12-31)</td><td class="num self">+269,967</td><td class="num">+2,008,463</td><td class="num">+969,358</td><td class="num">+281,451</td><td class="num">+487,348</td><td class="num">+348,529</td><td class="num">+315,801</td><td class="num">+153,485</td></tr></tbody></table></div>
 <p><b>잔액 변동 핵심</b>:</p>
 <ul>
 <li><b>자사 미래에셋</b>: 262,484 → 269,967 (<b>+7,483억, +2.9%</b>) — 부채 소폭 증가</li>
-<li>삼성생명: 2,021,563 → 2,008,463 (−13,100억, −0.6%) — 안정</li>
-<li>한화생명: 971,522 → 969,358 (−2,164억, −0.2%) — 거의 보합</li>
-<li>동양생명: 282,215 → 281,451 (−764억, −0.3%)</li>
-<li>삼성화재: 516,095 → 487,348 (<b>−28,747억, −5.6%</b>) — 부채 감소 최대</li>
-<li>현대해상: 348,019 → 348,529 (+510억, +0.1%)</li>
-<li>DB손보: 319,373 → 315,801 (−3,572억, −1.1%)</li>
-<li>한화손보: 151,976 → 153,485 (+1,509억, +1.0%) — 소폭 증가</li>
-</ul>
-<p><b>주요 변동 라인 관찰</b>:</p>
-<ul>
-<li><b>수취보험료 규모</b>: 삼성생명 418천억 (압도) &gt; 삼성화재 358천억 &gt; 한화생명 167천억 &gt; 미래에셋 69천억</li>
-<li><b>지급보험금 / 수취보험료 비율</b>: 미래에셋 124% (지급 86 / 수취 69) — 자사 지급률 상대적 높음</li>
-<li><b>보험취득CF 지급</b>: 미래에셋 18.1조 = BS 27조의 67% — 자산 대비 매우 큰 비중</li>
-<li><b>금융손익(PL)</b>: 삼성생명 +74천억 (이익), 미래에셋 −22천억 (손실), 손보 −4~13천억</li>
-<li><b>위험조정 변동</b>: 미래에셋 −191억 (절대값 최소) — RA 변동 가장 작음</li>
-</ul>
-<h2 id="sec-58-사업비-영역-판관비영업비">5.8 사업비 영역 (판관비·영업비)</h2>
-<p>판매비·관리비, 보험영업비용, 투자영업비용 등 사업비 항목 8개사 비교. 사업비율 = (판관비 + 보험영업비용) / 보험수익:</p>
-<div class="table-wrap">
-<table>
-<thead><tr><th>회사</th><th>구분</th><th>판관비</th><th>보험영업비용</th><th>투자영업비용</th><th>기타보험비용</th><th>기타투자비용</th><th>영업외비용</th><th>보험수익</th><th>사업비율</th></tr></thead>
-<tbody>
-<tr class="self"><td class="company">미래에셋</td><td>생보</td><td class="num">207억</td><td class="num">9,921억</td><td class="num">38,735억</td><td class="num">648억</td><td class="num">1,157억</td><td class="num">93억</td><td class="num">10,804억</td><td class="num pass-cell"><b>93.7%</b></td></tr><tr class=""><td class="company">삼성생명</td><td>생보</td><td class="num">3,422억</td><td class="num">88,139억</td><td class="num">202,061억</td><td class="num">1,376억</td><td class="num">1,790억</td><td class="num">263억</td><td class="num">96,181억</td><td class="num warn-cell"><b>95.2%</b></td></tr><tr class=""><td class="company">한화생명</td><td>생보</td><td class="num">1,178억</td><td class="num">49,037억</td><td class="num">91,691억</td><td class="num">1,469억</td><td class="num">5,135억</td><td class="num">402억</td><td class="num">51,757억</td><td class="num warn-cell"><b>97.0%</b></td></tr><tr class=""><td class="company">동양생명</td><td>생보</td><td class="num">35억</td><td class="num">11,497억</td><td class="num">21,818억</td><td class="num">345억</td><td class="num">220억</td><td class="num">1,082억</td><td class="num">12,245억</td><td class="num pass-cell"><b>94.2%</b></td></tr><tr class=""><td class="company">삼성화재</td><td>손보</td><td class="num">284억</td><td class="num">176,901억</td><td class="num">39,266억</td><td class="num">2,562억</td><td class="num">744억</td><td class="num">237억</td><td class="num">183,041억</td><td class="num warn-cell"><b>96.8%</b></td></tr><tr class=""><td class="company">현대해상</td><td>손보</td><td class="num">102억</td><td class="num">143,327억</td><td class="num">25,098억</td><td class="num">965억</td><td class="num">816억</td><td class="num">378억</td><td class="num">141,448억</td><td class="num fail-cell"><b>101.4%</b></td></tr><tr class=""><td class="company">DB손보</td><td>손보</td><td class="num">356억</td><td class="num">150,124억</td><td class="num">29,208억</td><td class="num">2,040억</td><td class="num">357억</td><td class="num">649억</td><td class="num">152,984억</td><td class="num warn-cell"><b>98.4%</b></td></tr><tr class=""><td class="company">한화손보</td><td>손보</td><td class="num">38억</td><td class="num">57,031억</td><td class="num">7,880억</td><td class="num">1,230억</td><td class="num">185억</td><td class="num">113억</td><td class="num">54,960억</td><td class="num fail-cell"><b>103.8%</b></td></tr></tbody></table></div>
-
-<p><b>사업비율 ranking (사업비 효율, 낮을수록 좋음)</b>:</p>
-<ol>
-<li><b>미래에셋 93.7% — 동업사 중 최저 (가장 효율적)</b> ✓ 자사 본업 운영효율 우위</li>
-<li>동양생명 94.2%</li>
-<li>삼성생명 95.2%</li>
-<li>삼성화재 96.8%</li>
-<li>한화생명 97.0%</li>
-<li>DB손보 98.4%</li>
-<li><b>현대해상 101.4%</b> ⚠ — 사업비가 보험수익 초과</li>
-<li><b>한화손보 103.8%</b> ⚠ — 사업비가 보험수익 크게 초과</li>
-</ol>
-
-<p><b>사업비 구조 (생보 vs 손보)</b>:</p>
-<ul>
-<li><b>생보</b>: 투자영업비용이 보험영업비용보다 큼 — 자산운용 의존도. 미래에셋 38,735 vs 9,921억 (3.9배), 삼성생명 202,061 vs 88,139억 (2.3배)</li>
-<li><b>손보</b>: 보험영업비용 절대값 압도 — 손해율·보상비. 삼성화재 176,901 vs 39,266억 (4.5배)</li>
-</ul>
-
-<div class="conclusion">
-<h4>📌 자사 사업비 시사점</h4>
-<ul>
-<li><b>사업비율 93.7% — 8개사 중 최저</b>. 본업 효율 우위. 동업사 평균 97.6% 대비 −3.9%p 양호.</li>
-<li><b>그러나 §5-F-(연도별) 검증: 예상유지비/예정유지비 = 1.93배</b> — 예상 사업비가 예정의 거의 2배. <b>사업비 절대 효율은 좋으나 가정 보수성은 낮음</b>. 예정사업비율 갱신 점검 권장.</li>
-<li><b>판관비 절대값 207억</b> — 자사 규모 감안시 적정 (BS 부채 27조의 0.077%)</li>
-<li><b>투자영업비용 38,735억</b> — 보험영업비용 9,921억의 약 4배. 자산운용 비중 큼 (VFA 위주 사업 mix와 일관)</li>
-</ul>
-</div>
-<h2 id="sec-59-예실차-Expected-vs-Actual-Claims">5.9 예실차 (Expected vs Actual Claims)</h2>
+<li>삼성생명 2,021,563 → 2,008,463 (−13,100, −0.6%) — 안정</li>
+<li>한화생명 971,522 → 969,358 (−2,164, −0.2%) — 거의 보합</li>
+<li>삼성화재 516,095 → 487,348 (−28,747, −5.6%) — 부채 감소 최대</li>
+<li>한화손보 151,976 → 153,485 (+1,509, +1.0%) — 소폭 증가</li>
+</ul><h2 id="sec-59-예실차-Expected-vs-Actual-Claims">5.9 예실차 (Expected vs Actual Claims)</h2>
 <p>실제 발생한 보험금이 예상 대비 어떻게 차이나는지. 두 방법:</p>
 
 <h3 id="sec-방법-A--1년-만기-예상보험금-vs-당기-실제-발생사고비용">방법 A · ≤1년 만기 예상보험금 vs 당기 실제 발생사고비용</h3>
@@ -670,7 +506,7 @@
 <tr style="background:#fff7e0;font-weight:600"><td class="label">기말 CSM (2025-12-31)</td><td class="num">+20,584억 (변동 −198, −1.0%)</td></tr>
 </table>
 <p>자사 CSM은 신계약 +1.05조와 상각 −1.36조가 거의 상쇄, 결과적으로 잔액 안정. 다만 절대 규모 2.06조는 동업사 중 가장 작음 — 신계약 영업 확대 여부 검토 가치.</p>
-<h2 id="sec-511-계리적가정에-의한-보험부채-변동내역--8개사-정확-search">5.11 계리적가정에 의한 보험부채 변동내역 — 8개사 (정확 search)</h2>
+<h2 id="sec-5-11-계리적가정-보험부채-변동내역-8개사">5.11 계리적가정에 의한 보험부채 변동내역 — 8개사 (정확 search)</h2>
 
 <div class="conclusion">
 <h4>📋 8개사 검증 결과</h4>
@@ -683,8 +519,8 @@
 </div>
 
 <div class="peer-tabs"><button class="peer-tab active" onclick="showPeerTab('00112332')">미래에셋</button><button class="peer-tab" onclick="showPeerTab('00126256')">삼성생명</button><button class="peer-tab" onclick="showPeerTab('00113058')">한화생명</button><button class="peer-tab" onclick="showPeerTab('00117267')">동양생명 <span class="badge-na">미공시</span></button><button class="peer-tab" onclick="showPeerTab('00139214')">삼성화재 <span class="badge-na">미공시</span></button><button class="peer-tab" onclick="showPeerTab('00164973')">현대해상</button><button class="peer-tab" onclick="showPeerTab('00159102')">DB손보</button><button class="peer-tab" onclick="showPeerTab('00135917')">한화손보</button></div>
-<div id="peer-00112332" class="peer-panel active"><h3 id="sec-미래에셋-entity00112332">미래에셋 (entity00112332)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+2,548</td><td class="num">—</td><td class="num">-2,548</td><td class="num">+2,548</td><td class="num">—</td><td class="num">-2,548</td></tr><tr><td class="label">위험율 가정변경</td><td class="num">+2,317</td><td class="num">—</td><td class="num">-2,317</td><td class="num">+2,317</td><td class="num">—</td><td class="num">-2,317</td></tr><tr><td class="label">예정율 가정변경</td><td class="num">+450</td><td class="num">—</td><td class="num">-450</td><td class="num">+450</td><td class="num">—</td><td class="num">-450</td></tr><tr><td class="label">기타 가정변경</td><td class="num">+2,910</td><td class="num">—</td><td class="num">-2,910</td><td class="num">+2,910</td><td class="num">—</td><td class="num">-2,910</td></tr><tr><td class="label">(추가) 손실요소 변동</td><td class="num">—</td><td class="num">—</td><td class="num">+583</td><td class="num">—</td><td class="num">—</td><td class="num">+583</td></tr><tr><td class="label">(추가) 보유물량·투자요소</td><td class="num">-3,294</td><td class="num">-202</td><td class="num">+3,496</td><td class="num">-3,294</td><td class="num">-202</td><td class="num">+3,496</td></tr></tbody></table></div><ul class="note-list"><li>✓ 6개 라인 분해 (해지율·위험율·예정율·기타 + 손실요소·보유물량). Table 형태 별도 공시</li></ul></div><div id="peer-00126256" class="peer-panel"><h3 id="sec-삼성생명-entity00126256">삼성생명 (entity00126256)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">가정변경 효과 (단일)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody></table></div><ul class="note-list"><li>⚠ 별도(Separate) 미공시 — 연결만 보고</li><li>⚠ 연결(Consolidated) 미공시</li><li>⚠ 단일 element만 보고. 가정 항목별 분해 미공시 (별도·연결 모두 0)</li></ul></div><div id="peer-00113058" class="peer-panel"><h3 id="sec-한화생명-entity00113058">한화생명 (entity00113058)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+6,052</td><td class="num">—</td><td class="num">-6,052</td><td class="num">+7,218</td><td class="num">—</td><td class="num">-7,218</td></tr><tr><td class="label">위험률 가정변경</td><td class="num">+740</td><td class="num">—</td><td class="num">-740</td><td class="num">+3,712</td><td class="num">—</td><td class="num">-3,712</td></tr><tr><td class="label">사업비율 가정변경</td><td class="num">-1,372</td><td class="num">—</td><td class="num">+1,372</td><td class="num">-3,801</td><td class="num">—</td><td class="num">+3,801</td></tr><tr><td class="label">기타 가정변경</td><td class="num">-556</td><td class="num">—</td><td class="num">+556</td><td class="num">-1,021</td><td class="num">—</td><td class="num">+1,021</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합</td><td class="num">+4,864</td><td class="num">—</td><td class="num">-4,864</td><td class="num">+6,108</td><td class="num">—</td><td class="num">-6,108</td></tr></tbody></table></div><ul class="note-list"><li>✓ 5개 라인 분해 — 사업비율 가정변경 분해. 별도 < 연결 (자회사 영향)</li></ul></div><div id="peer-00117267" class="peer-panel"><h3 id="sec-동양생명-entity00117267">동양생명 (entity00117267)</h3><p class="warn-text">❌ 가정변경 element 미공시 — 사업보고서 원본 XBRL 에서 정확 라벨 매치 없음.</p></div><div id="peer-00139214" class="peer-panel"><h3 id="sec-삼성화재-entity00139214">삼성화재 (entity00139214)</h3><p class="warn-text">❌ 가정변경 element 미공시 — 사업보고서 원본 XBRL 에서 정확 라벨 매치 없음.</p></div><div id="peer-00164973" class="peer-panel"><h3 id="sec-현대해상-entity00164973">현대해상 (entity00164973)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+2,996</td><td class="num">—</td><td class="num">-2,996</td><td class="num">+2,996</td><td class="num">—</td><td class="num">-2,996</td></tr><tr><td class="label">위험률 가정변경</td><td class="num">+12,986</td><td class="num">—</td><td class="num">-12,986</td><td class="num">+12,986</td><td class="num">—</td><td class="num">-12,986</td></tr><tr><td class="label">사업비율 가정변경</td><td class="num">-4,007</td><td class="num">—</td><td class="num">+4,007</td><td class="num">-4,007</td><td class="num">—</td><td class="num">+4,007</td></tr><tr><td class="label">기타 가정변경</td><td class="num">-318</td><td class="num">—</td><td class="num">+318</td><td class="num">-318</td><td class="num">—</td><td class="num">+318</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합</td><td class="num">+11,657</td><td class="num">—</td><td class="num">-11,657</td><td class="num">+11,657</td><td class="num">—</td><td class="num">-11,657</td></tr></tbody></table></div><ul class="note-list"><li>✓ 위험률 가정변경 BEL +12,986억 = 동업사 중 최대 (위험률 큰 폭 상향)</li></ul></div><div id="peer-00159102" class="peer-panel"><h3 id="sec-DB손보-entity00159102">DB손보 (entity00159102)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+4,429</td><td class="num">—</td><td class="num">-4,429</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">위험률 가정변경</td><td class="num">-6,889</td><td class="num">—</td><td class="num">+6,889</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">사업비율 가정변경</td><td class="num">+11,193</td><td class="num">—</td><td class="num">-11,193</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">기타 가정변경</td><td class="num">-202</td><td class="num">—</td><td class="num">+202</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합</td><td class="num">+17,061</td><td class="num">—</td><td class="num">-17,061</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody></table></div><ul class="note-list"><li>⚠ 연결(Consolidated) 미공시</li><li>✓ 가정변경 총합 BEL +17,061 = 동업사 최대. 사업비율 가정 +11,193억 상향</li></ul></div><div id="peer-00135917" class="peer-panel"><h3 id="sec-한화손보-entity00135917">한화손보 (entity00135917)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경 (CSM 조정)</td><td class="num">+1,166</td><td class="num">—</td><td class="num">-1,166</td><td class="num">+1,166</td><td class="num">—</td><td class="num">-1,166</td></tr><tr><td class="label">위험률 가정변경 (CSM 조정)</td><td class="num">+2,972</td><td class="num">—</td><td class="num">-2,972</td><td class="num">+2,972</td><td class="num">—</td><td class="num">-2,972</td></tr><tr><td class="label">사업비율 가정변경 (CSM 조정)</td><td class="num">-2,429</td><td class="num">—</td><td class="num">+2,429</td><td class="num">-2,429</td><td class="num">—</td><td class="num">+2,429</td></tr><tr><td class="label">기타 가정변경 (CSM 조정)</td><td class="num">-465</td><td class="num">—</td><td class="num">+465</td><td class="num">-465</td><td class="num">—</td><td class="num">+465</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합 (CSM 조정)</td><td class="num">+2,487</td><td class="num">—</td><td class="num">-2,487</td><td class="num">+2,487</td><td class="num">—</td><td class="num">-2,487</td></tr></tbody></table></div><ul class="note-list"><li>✓ CSM 조정하는 4개 가정 분해 (한화손보 고유 구조)</li></ul></div>
-<h3 id="sec--가정변경-효과-횡단-비교--가정변경-총합-BEL-영향-별도-억원">📊 가정변경 효과 횡단 비교 — 가정변경 총합 BEL 영향 (별도, 억원)</h3><p>가정변경으로 BEL이 얼마나 증가했는지 (CSM이 동일 금액 흡수). BEL ↑ = 가정 보수적 갱신:</p><div class="table-wrap"><table><thead><tr><th>회사</th><th>해지율</th><th>위험률</th><th>사업비율/예정율</th><th>기타</th><th>총합 BEL ↑</th></tr></thead><tbody><tr class="self"><td class="company">미래에셋</td><td class="num">+2,548억</td><td class="num">+2,317억</td><td class="num">+450억</td><td class="num">+2,910억</td><td class="num"><b>—</b></td></tr><tr class=""><td class="company">삼성생명</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>—</b></td></tr><tr class=""><td class="company">한화생명</td><td class="num">+6,052억</td><td class="num">+740억</td><td class="num">-1,372억</td><td class="num">-556억</td><td class="num"><b>+4,864억</b></td></tr><tr><td class="company">동양생명</td><td colspan="5" class="num">(미공시)</td></tr><tr><td class="company">삼성화재</td><td colspan="5" class="num">(미공시)</td></tr><tr class=""><td class="company">현대해상</td><td class="num">+2,996억</td><td class="num">+12,986억</td><td class="num">-4,007억</td><td class="num">-318억</td><td class="num"><b>+11,657억</b></td></tr><tr class=""><td class="company">DB손보</td><td class="num">+4,429억</td><td class="num">-6,889억</td><td class="num">+11,193억</td><td class="num">-202억</td><td class="num"><b>+17,061억</b></td></tr><tr class=""><td class="company">한화손보</td><td class="num">+1,166억</td><td class="num">+2,972억</td><td class="num">-2,429억</td><td class="num">-465억</td><td class="num"><b>+2,487억</b></td></tr></tbody></table></div><p><b>핵심 시그널</b>:</p>
+<div id="peer-00112332" class="peer-panel active"><h3>미래에셋 (entity00112332)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+2,548</td><td class="num">—</td><td class="num">-2,548</td><td class="num">+2,548</td><td class="num">—</td><td class="num">-2,548</td></tr><tr><td class="label">위험율 가정변경</td><td class="num">+2,317</td><td class="num">—</td><td class="num">-2,317</td><td class="num">+2,317</td><td class="num">—</td><td class="num">-2,317</td></tr><tr><td class="label">예정율 가정변경</td><td class="num">+450</td><td class="num">—</td><td class="num">-450</td><td class="num">+450</td><td class="num">—</td><td class="num">-450</td></tr><tr><td class="label">기타 가정변경</td><td class="num">+2,910</td><td class="num">—</td><td class="num">-2,910</td><td class="num">+2,910</td><td class="num">—</td><td class="num">-2,910</td></tr><tr><td class="label">(추가) 손실요소 변동</td><td class="num">—</td><td class="num">—</td><td class="num">+583</td><td class="num">—</td><td class="num">—</td><td class="num">+583</td></tr><tr><td class="label">(추가) 보유물량·투자요소</td><td class="num">-3,294</td><td class="num">-202</td><td class="num">+3,496</td><td class="num">-3,294</td><td class="num">-202</td><td class="num">+3,496</td></tr></tbody></table></div><ul class="note-list"><li>✓ 6개 라인 분해 (해지율·위험율·예정율·기타 + 손실요소·보유물량). Table 형태 별도 공시</li></ul></div><div id="peer-00126256" class="peer-panel"><h3>삼성생명 (entity00126256)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">가정변경 효과 (단일)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody></table></div><ul class="note-list"><li>⚠ 별도(Separate) 미공시 — 연결만 보고</li><li>⚠ 연결(Consolidated) 미공시</li><li>⚠ 단일 element만 보고. 가정 항목별 분해 미공시 (별도·연결 모두 0)</li></ul></div><div id="peer-00113058" class="peer-panel"><h3>한화생명 (entity00113058)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+6,052</td><td class="num">—</td><td class="num">-6,052</td><td class="num">+7,218</td><td class="num">—</td><td class="num">-7,218</td></tr><tr><td class="label">위험률 가정변경</td><td class="num">+740</td><td class="num">—</td><td class="num">-740</td><td class="num">+3,712</td><td class="num">—</td><td class="num">-3,712</td></tr><tr><td class="label">사업비율 가정변경</td><td class="num">-1,372</td><td class="num">—</td><td class="num">+1,372</td><td class="num">-3,801</td><td class="num">—</td><td class="num">+3,801</td></tr><tr><td class="label">기타 가정변경</td><td class="num">-556</td><td class="num">—</td><td class="num">+556</td><td class="num">-1,021</td><td class="num">—</td><td class="num">+1,021</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합</td><td class="num">+4,864</td><td class="num">—</td><td class="num">-4,864</td><td class="num">+6,108</td><td class="num">—</td><td class="num">-6,108</td></tr></tbody></table></div><ul class="note-list"><li>✓ 5개 라인 분해 — 사업비율 가정변경 분해. 별도 < 연결 (자회사 영향)</li></ul></div><div id="peer-00117267" class="peer-panel"><h3>동양생명 (entity00117267)</h3><p class="warn-text">❌ 가정변경 element 미공시 — 사업보고서 원본 XBRL 에서 정확 라벨 매치 없음.</p></div><div id="peer-00139214" class="peer-panel"><h3>삼성화재 (entity00139214)</h3><p class="warn-text">❌ 가정변경 element 미공시 — 사업보고서 원본 XBRL 에서 정확 라벨 매치 없음.</p></div><div id="peer-00164973" class="peer-panel"><h3>현대해상 (entity00164973)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+2,996</td><td class="num">—</td><td class="num">-2,996</td><td class="num">+2,996</td><td class="num">—</td><td class="num">-2,996</td></tr><tr><td class="label">위험률 가정변경</td><td class="num">+12,986</td><td class="num">—</td><td class="num">-12,986</td><td class="num">+12,986</td><td class="num">—</td><td class="num">-12,986</td></tr><tr><td class="label">사업비율 가정변경</td><td class="num">-4,007</td><td class="num">—</td><td class="num">+4,007</td><td class="num">-4,007</td><td class="num">—</td><td class="num">+4,007</td></tr><tr><td class="label">기타 가정변경</td><td class="num">-318</td><td class="num">—</td><td class="num">+318</td><td class="num">-318</td><td class="num">—</td><td class="num">+318</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합</td><td class="num">+11,657</td><td class="num">—</td><td class="num">-11,657</td><td class="num">+11,657</td><td class="num">—</td><td class="num">-11,657</td></tr></tbody></table></div><ul class="note-list"><li>✓ 위험률 가정변경 BEL +12,986억 = 동업사 중 최대 (위험률 큰 폭 상향)</li></ul></div><div id="peer-00159102" class="peer-panel"><h3>DB손보 (entity00159102)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경</td><td class="num">+4,429</td><td class="num">—</td><td class="num">-4,429</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">위험률 가정변경</td><td class="num">-6,889</td><td class="num">—</td><td class="num">+6,889</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">사업비율 가정변경</td><td class="num">+11,193</td><td class="num">—</td><td class="num">-11,193</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">기타 가정변경</td><td class="num">-202</td><td class="num">—</td><td class="num">+202</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합</td><td class="num">+17,061</td><td class="num">—</td><td class="num">-17,061</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody></table></div><ul class="note-list"><li>⚠ 연결(Consolidated) 미공시</li><li>✓ 가정변경 총합 BEL +17,061 = 동업사 최대. 사업비율 가정 +11,193억 상향</li></ul></div><div id="peer-00135917" class="peer-panel"><h3>한화손보 (entity00135917)</h3><div class="table-wrap"><table><thead><tr><th rowspan="2">라인</th><th colspan="3">별도 (Separate)</th><th colspan="3">연결 (Consolidated)</th></tr><tr><th>BEL</th><th>RA</th><th>CSM</th><th>BEL</th><th>RA</th><th>CSM</th></tr></thead><tbody><tr><td class="label">해지율 가정변경 (CSM 조정)</td><td class="num">+1,166</td><td class="num">—</td><td class="num">-1,166</td><td class="num">+1,166</td><td class="num">—</td><td class="num">-1,166</td></tr><tr><td class="label">위험률 가정변경 (CSM 조정)</td><td class="num">+2,972</td><td class="num">—</td><td class="num">-2,972</td><td class="num">+2,972</td><td class="num">—</td><td class="num">-2,972</td></tr><tr><td class="label">사업비율 가정변경 (CSM 조정)</td><td class="num">-2,429</td><td class="num">—</td><td class="num">+2,429</td><td class="num">-2,429</td><td class="num">—</td><td class="num">+2,429</td></tr><tr><td class="label">기타 가정변경 (CSM 조정)</td><td class="num">-465</td><td class="num">—</td><td class="num">+465</td><td class="num">-465</td><td class="num">—</td><td class="num">+465</td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">가정변경 총합 (CSM 조정)</td><td class="num">+2,487</td><td class="num">—</td><td class="num">-2,487</td><td class="num">+2,487</td><td class="num">—</td><td class="num">-2,487</td></tr></tbody></table></div><ul class="note-list"><li>✓ CSM 조정하는 4개 가정 분해 (한화손보 고유 구조)</li></ul></div>
+<h3>📊 가정변경 효과 횡단 비교 — 가정변경 총합 BEL 영향 (별도, 억원)</h3><p>가정변경으로 BEL이 얼마나 증가했는지 (CSM이 동일 금액 흡수). BEL ↑ = 가정 보수적 갱신:</p><div class="table-wrap"><table><thead><tr><th>회사</th><th>해지율</th><th>위험률</th><th>사업비율/예정율</th><th>기타</th><th>총합 BEL ↑</th></tr></thead><tbody><tr class="self"><td class="company">미래에셋</td><td class="num">+2,548억</td><td class="num">+2,317억</td><td class="num">+450억</td><td class="num">+2,910억</td><td class="num"><b>—</b></td></tr><tr class=""><td class="company">삼성생명</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><b>—</b></td></tr><tr class=""><td class="company">한화생명</td><td class="num">+6,052억</td><td class="num">+740억</td><td class="num">-1,372억</td><td class="num">-556억</td><td class="num"><b>+4,864억</b></td></tr><tr><td class="company">동양생명</td><td colspan="5" class="num">(미공시)</td></tr><tr><td class="company">삼성화재</td><td colspan="5" class="num">(미공시)</td></tr><tr class=""><td class="company">현대해상</td><td class="num">+2,996억</td><td class="num">+12,986억</td><td class="num">-4,007억</td><td class="num">-318억</td><td class="num"><b>+11,657억</b></td></tr><tr class=""><td class="company">DB손보</td><td class="num">+4,429억</td><td class="num">-6,889억</td><td class="num">+11,193억</td><td class="num">-202억</td><td class="num"><b>+17,061억</b></td></tr><tr class=""><td class="company">한화손보</td><td class="num">+1,166억</td><td class="num">+2,972억</td><td class="num">-2,429억</td><td class="num">-465억</td><td class="num"><b>+2,487억</b></td></tr></tbody></table></div><p><b>핵심 시그널</b>:</p>
 <ul>
 <li><b>가정변경 총합 BEL ↑ ranking</b>: DB손보 +17,061억 &gt; 현대해상 +11,657 &gt; 미래에셋 +8,225 (4개 합) &gt; 한화생명 +4,864 &gt; 한화손보 +2,487</li>
 <li><b>모든 회사 BEL ↔ CSM 정확히 대칭</b> (CSM이 가정 충격 흡수 — IFRS17 §103 표준)</li>
@@ -703,7 +539,7 @@ function showPeerTab(cik) {
 </script>
 
 
-<h2 id="sec-512-보험계약마진CSM-상각률">5.12 보험계약마진(CSM) 상각률</h2>
+<h2>5.12 보험계약마진(CSM) 상각률</h2>
 <p>당기 CSM 상각액 ÷ 평균 CSM × 100%. 정상 장기 보험사 8~15% 범위. 단위 억원·%:</p>
 <div class="table-wrap">
 <table>
@@ -733,7 +569,7 @@ function showPeerTab(cik) {
 </ul>
 </div>
 
-<h3 id="sec-512-보조-CSM-상각률-의미--계리적-해석">5.12-(보조) CSM 상각률 의미 — 계리적 해석</h3>
+<h3>5.12-(보조) CSM 상각률 의미 — 계리적 해석</h3>
 <ul>
 <li><b>상각률 8~12% (정상 장기)</b>: 보험계약 잔존기간 8~12년 평균. 한화생명·동양 = 장기 보험 위주, DB손보 = 상대 단기</li>
 <li><b>상각률 자체는 단기 효율 지표가 아님</b>: 상각률 낮음 = 장기 사업 (CSM 인식 늦음, 이익 발생 늦음 but 안정적). 높음 = 단기 사업 (CSM 빠르게 소진, 신계약 의존)</li>
