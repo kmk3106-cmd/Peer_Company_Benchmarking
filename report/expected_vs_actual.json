@@ -1,0 +1,66 @@
+{
+  "00112332": {
+    "expected": 34184547831918.0,
+    "actual": 611994484501.0,
+    "diff": -33572553347417.0,
+    "ratio": 1.790266431225347,
+    "exp_elem": "entity00112332_ExpectedInsuranceAmountOfExpectedInsurancePayoutComparedToRiskPremiumOfExpectedInsurancePayoutComparedToRiskPremiumTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00126256": {
+    "expected": 227005952000000.0,
+    "actual": 13947412000000.0,
+    "diff": -213058540000000.0,
+    "ratio": 6.1440732620085665,
+    "exp_elem": "entity00126256_ExpectedInsurancePremiumsOfDetailOfClaimsIncurredDuringPeriodMeasuredAtAmountsExpectedComparedToRiskPremiumLifeInsuranceOfDetailOfClaimsIncurredDuringPeriodMeasuredAtAmountsExpectedComparedToRiskPremiumLifeInsuranceTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00113058": {
+    "expected": 114965408000000.0,
+    "actual": 3565485000000.0,
+    "diff": -111399923000000.0,
+    "ratio": 3.1013546266021166,
+    "exp_elem": "entity00113058_ExpectedClaimOfExpectedClaimsByPeriodComparedToRiskPremiumsLineItemsOfExpectedClaimsByPeriodComparedToRiskPremiumsTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00117267": {
+    "expected": 21822097000000.0,
+    "actual": 791837000000.0,
+    "diff": -21030260000000.0,
+    "ratio": 3.6286017791965643,
+    "exp_elem": "entity00117267_EstimateOfUndiscountedExpectedClaimsThatAriseFromContractsWithinScopeOfIfrs17OfDisclosureOfExpectedClaimsRelativeToRiskPremiumsForNonParFixedInterestProductsLineItemsOfDisclosureOfExpectedClaimsRelativeToRiskPremiumsForNonParFixedInterestProductsTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00139214": {
+    "expected": 161837423000000.0,
+    "actual": -642630000000.0,
+    "diff": -162480053000000.0,
+    "ratio": -0.3970836831725873,
+    "exp_elem": "entity00139214_ExpectedInsuranceClaimsArisingFromContractsWithinTheScopeOfIfrs17OfDisclosureOfExpectedInsuranceBenefitsComparedToRiskInsurancePremiumsForLongTermDamageInsuranceLineItemsOfDisclosureOfExpectedInsuranceBenefitsComparedToRiskInsurancePremiumsForLongTermDamageInsuranceTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00164973": {
+    "expected": 177157440191094.0,
+    "actual": 4274375438780.0,
+    "diff": -172883064752314.0,
+    "ratio": 2.4127552498892335,
+    "exp_elem": "entity00164973_UndiscountedExpectedPremiumsOfExpectedInsuranceClaimComparedToRiskInsurancePremiumAndMaintenanceFeeComparedToAppointedMaintenancePremiumFixedInterestPortfolioOfExpectedInsuranceClaimComparedToRiskInsurancePremiumAndMaintenanceFeeComparedToAppointedMaintenancePremiumFixedInterestPortfolioTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00159102": {
+    "expected": 401095018000000.0,
+    "actual": 5586725000000.0,
+    "diff": -395508293000000.0,
+    "ratio": 1.3928682105944283,
+    "exp_elem": "entity00159102_ExpectedClaimsOfDisclosureOfExpectedInsuranceBenefitsAndRiskInsurancePremiumByPortfolioLineitemsOfDisclosureOfExpectedInsuranceBenefitsAndRiskInsurancePremiumByPortfolioTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  },
+  "00135917": {
+    "expected": 93604508584000.0,
+    "actual": -454585247000.0,
+    "diff": -94059093831000.0,
+    "ratio": -0.4856446060950777,
+    "exp_elem": "entity00135917_ExpectedInsuranceBenefitsOfDisclosureOfExpectedInsuranceBenefitsAndRiskInsurancePremiumByPortfolioOfDisclosureOfExpectedInsuranceBenefitsAndRiskInsurancePremiumByPortfolioTableOfItems",
+    "act_elem": "ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncurredInsuranceServiceExpensesInsuranceContractsLiabilityAsset"
+  }
+}
