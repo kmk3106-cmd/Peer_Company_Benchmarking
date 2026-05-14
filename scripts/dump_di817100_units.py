@@ -30,42 +30,38 @@ CIK = "00112332"
 COMPANY = "미래에셋생명"
 ROLE = "dart_2024-06-30_role-DI817100"
 
-UNITS = [
-    # (key, label, root_element_id)
-    ("U01_회계모형포트폴리오",
-     "1. 회계모형별·포트폴리오별 보험부채 현황",
-     "entity00112332_Title20256517565149Abstract"),
-    ("U02_파생상쇄효과",
-     "2. 직접참가 파생 상쇄효과",
-     "entity00112332_Title20257289204290Abstract"),
-    ("U03_CSM만기수익",
-     "3. CSM 기간별 기대수익 인식금액",
-     "entity00112332_Title202516161119540Abstract"),
-    ("U04_투자수익_보험금융손익",
-     "4. 회사 투자서비스수익·보험금융손익",
-     "entity00112332_Title20251616323362Abstract"),
-    ("U05_직접참가_기초항목",
-     "5. 직접참가 기초항목 공정가치",
-     "entity00112332_Title202516171838316Abstract"),
-    ("U06_보험수익",
-     "6. 보험수익 분해",
-     "entity00112332_Title202516172856136Abstract"),
-    ("U07_계리적가정_보험부채변동",
-     "7. 계리적가정에 의한 보험부채 변동내역",
-     "entity00112332_ChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsAbstract"),
-    ("U08_구성요소_배당여부_자사",
-     "8. 구성요소(BEL/RA/CSM) × 배당여부 — 자사 확장",
-     "entity00112332_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponentsClassificationByDividendStatusAbstract"),
-    ("U09_LRC_LIC_배당여부_자사",
-     "9. LRC/LIC × 배당여부 — 자사 확장",
-     "entity00112332_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaimsClassificationByDividendStatusAbstract"),
-    ("U10_구성요소_표준",
-     "10. 구성요소(BEL/RA/CSM) 차이조정 — 표준 dart",
-     "dart_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponentsAbstract"),
-    ("U11_LRC_LIC_표준",
-     "11. LRC/LIC 차이조정 — 표준 dart",
-     "dart_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaimsAbstract"),
+# 단위 root element_id 목록만 정의. 라벨은 lab_insurers에서 정확 search.
+# (no-inference rule: 사용자 라벨 추정 금지 — 실제 한국어 라벨만 사용)
+UNIT_ROOTS = [
+    ("U01", "entity00112332_Title20256517565149Abstract"),
+    ("U02", "entity00112332_Title20257289204290Abstract"),
+    ("U03", "entity00112332_Title202516161119540Abstract"),
+    ("U04", "entity00112332_Title20251616323362Abstract"),
+    ("U05", "entity00112332_Title202516171838316Abstract"),
+    ("U06", "entity00112332_Title202516172856136Abstract"),
+    ("U07", "entity00112332_ChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsAbstract"),
+    ("U08", "entity00112332_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponentsClassificationByDividendStatusAbstract"),
+    ("U09", "entity00112332_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaimsClassificationByDividendStatusAbstract"),
+    ("U10", "dart_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponentsAbstract"),
+    ("U11", "dart_DisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByRemainingCoverageAndIncurredClaimsAbstract"),
 ]
+
+
+def fetch_real_labels(con: duckdb.DuckDBPyConnection) -> dict[str, str]:
+    """각 root element의 실제 한국어 라벨을 lab_insurers에서 정확 search."""
+    elems = [root for _, root in UNIT_ROOTS]
+    ph = ",".join("?" for _ in elems)
+    rows = con.execute(f"""
+    SELECT ELMT_ID, MAX(LABEL) AS lbl FROM lab_insurers
+    WHERE CIK=? AND LANG='ko'
+      AND LABEL_ROLE_URI='http://www.xbrl.org/2003/role/label'
+      AND ELMT_ID IN ({ph})
+    GROUP BY ELMT_ID
+    """, [CIK, *elems]).fetchall()
+    return {r[0]: r[1] for r in rows}
+
+
+UNITS: list[tuple[str, str, str]] = []  # populated in main() after label lookup
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
 HEADER_FONT = Font(bold=True, color="FFFFFF", size=10)
@@ -288,12 +284,22 @@ def write_toc(ws, unit_dfs: dict[str, pd.DataFrame]) -> None:
 def main() -> int:
     con = duckdb.connect("data/db/benchmark.duckdb", read_only=True)
 
+    # Resolve each unit root to its actual Korean label (no inference)
+    label_map = fetch_real_labels(con)
+    global UNITS
+    UNITS = []
+    for key, root in UNIT_ROOTS:
+        actual_label = label_map.get(root, "(label not found in lab_insurers)")
+        UNITS.append((key, actual_label, root))
+        print(f"  {key} root: {root[:50]}...")
+        print(f"      label: {actual_label}")
+
     unit_dfs: dict[str, pd.DataFrame] = {}
     for key, label, root in UNITS:
         df = fetch_unit_tree(con, root)
         df = order_dfs(df, root)
         unit_dfs[key] = df
-        print(f"  {key:30s} → {len(df)} elements")
+        print(f"  {key:5s} → {len(df)} elements")
 
     con.close()
 
