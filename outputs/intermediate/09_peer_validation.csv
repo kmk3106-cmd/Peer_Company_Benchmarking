@@ -1,0 +1,13 @@
+﻿검증_항목,결과,주요_이슈,조치
+단위 일치,PASS,"모든 수치 원 단위(KRW), DECIMALS=0 또는 -3/-6 정규화",—
+기준일 일치 (2025-12-31),PASS,9개사 모두 FY2025 사업보고서,—
+"기간 일치 (FY2025, 2025-01-01~12-31)",PASS,duration period 검증 완료,—
+연결/별도 일치 (별도),PASS,SeparateMember context filter 적용,—
+원수 기준 일치,PASS,재보험 DI817200/205 OUT_OF_SCOPE,—
+회계정책 차이 (IFRS17),PASS,9개사 모두 IFRS17 적용 (2023 도입),—
+표시 방식 (분해 깊이),WARNING,회사별 axis 분해 깊이 1~7로 다양,axis-min context 합산으로 정합화 — 분해된 회사는 합산값 사용
+XBRL element 일관성,WARNING,entity 확장 element 회사별 정의,영문 base name(prefix 제거) 일치만 cross-tab. 미일치는 'N/A'
+음수/양수 방향성,PASS,amount_krw 부호 그대로 보존,—
+변동표 검증식 (기시+변동=기말),WARNING,회사별 일부 변동 line 미공시 — 잔차 발생,05_movement_verification.csv 참조
+흥국화재 main role 미보고,FAIL,"DI817100 main role 0 element, sub-section만",흥국화재 비교 제외 또는 sub-role 별도 분석
+삼성생명·동양·삼성화재 가정변경 분해 미공시,FAIL,ChangeEffectOf* element 미보고,해당사 가정변경 비교 NOT_COMPARABLE 표시

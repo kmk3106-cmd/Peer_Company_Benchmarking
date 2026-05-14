@@ -1,0 +1,11 @@
+﻿항목,element_id,미래에셋생명,삼성생명,한화생명,동양생명,삼성화재,현대해상,DB손해보험,한화손해보험,흥국화재,보유사_수,시사점
+기말 보험계약부채,ifrs-full_InsuranceContractsIssuedThatAreLiabilities,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+자산,ifrs-full_Assets,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+부채,ifrs-full_Liabilities,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+자본,ifrs-full_Equity,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+보험수익,ifrs-full_InsuranceRevenue,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+보험서비스결과,ifrs-full_InsuranceServiceResult,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+보험금융손익(PL),ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContractsIssuedRecognisedInProfitOrLoss,Y,Y,Y,Y,Y,Y,Y,Y,Y,9/9,전사 공시 — 횡단 비교 가능
+CSM(보험계약마진) Member,ifrs-full_ContractualServiceMarginMember,N,N,N,N,N,N,N,N,N,0/9,공시 미흡 — 비교 불가
+RA(위험조정) Member,ifrs-full_RiskAdjustmentForNonfinancialRiskMember,N,N,N,N,N,N,N,N,N,0/9,공시 미흡 — 비교 불가
+BEL Member,ifrs-full_EstimatesOfPresentValueOfFutureCashFlowsMember,N,N,N,N,N,N,N,N,N,0/9,공시 미흡 — 비교 불가
