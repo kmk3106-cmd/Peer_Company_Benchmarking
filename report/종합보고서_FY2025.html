@@ -83,6 +83,8 @@
 
 
 
+
+
   /* ─── 목차 (TOC) — 그룹형 ─── */
   .toc-container {
     background: #fff; border: 1px solid #ddd; border-radius: 10px;
@@ -216,6 +218,43 @@
 <a href="#sec-59-예실차-Expected-vs-Actual-Claims" class="toc-item toc-sub">5.9 예실차 (Expected vs Actual Claims)</a>
 <a href="#sec-510-CSM-변동-무브먼트" class="toc-item toc-sub">5.10 CSM 변동 무브먼트</a>
 <a href="#sec-511-계리적-가정-변동에-따른-부채-변동내역" class="toc-item toc-sub">5.11 계리적 가정 변동에 따른 부채 변동내역</a>
+<a href="#sec-512-보험계약마진CSM-상각률" class="toc-item toc-sub">5.12 보험계약마진(CSM) 상각률</a>
+    </div>
+    <div class="toc-group">
+      <h4 class="toc-group-title">📌 결론·한계</h4>
+<a href="#sec-6-IFRS17-회계가정-적용" class="toc-item toc-sub">6. IFRS17 회계가정 적용</a>
+<a href="#sec-7-자사-미래에셋생명-인사이트" class="toc-item toc-sub">7. 자사 (미래에셋생명) 인사이트</a>
+<a href="#sec-8-분석-한계다음-단계" class="toc-item toc-sub">8. 분석 한계·다음 단계</a>
+    </div>
+  </nav>
+</div>
+
+<div class="toc-container">
+  <button class="toc-toggle" onclick="document.getElementById('toc-list').classList.toggle('hidden');">
+    📑 목차
+  </button>
+  <nav id="toc-list" class="toc-list">
+    <div class="toc-group">
+      <h4 class="toc-group-title">📋 개요·매핑</h4>
+<a href="#sec-1-검토-결론" class="toc-item toc-sub">1. 검토 결론</a>
+<a href="#sec-2-식별된-주석공시-카테고리" class="toc-item toc-sub">2. 식별된 주석공시 카테고리</a>
+<a href="#sec-3-작성-가능-자료-매트릭스-14개사--4-role" class="toc-item toc-sub">3. 작성 가능 자료 매트릭스 (14개사 × 4 role)</a>
+<a href="#sec-4-표준-라인-매핑-효과-v1--v2" class="toc-item toc-sub">4. 표준 라인 매핑 효과 (v1 → v2)</a>
+<a href="#sec-41-식별된-7개-role-추출-결과" class="toc-item toc-sub">4.1 식별된 7개 role 추출 결과</a>
+    </div>
+    <div class="toc-group">
+      <h4 class="toc-group-title">📊 추출 자료 (5)</h4>
+<a href="#sec-51-BELRACSM-잔액-비교" class="toc-item toc-sub">5.1 BEL/RA/CSM 잔액 비교</a>
+<a href="#sec-52-미래에셋-5상품군--LRCLIC-BS-100-검증" class="toc-item toc-sub">5.2 미래에셋 5상품군 × LRC/LIC (BS 100% 검증)</a>
+<a href="#sec-53-자산-부채-매칭-Coverage-Ratio" class="toc-item toc-sub">5.3 자산-부채 매칭 (Coverage Ratio)</a>
+<a href="#sec-54-CSM-만기별-인식-기대액" class="toc-item toc-sub">5.4 CSM 만기별 인식 기대액</a>
+<a href="#sec-55-손보-상품군-mix-장기자동차일반" class="toc-item toc-sub">5.5 손보 상품군 mix (장기·자동차·일반)</a>
+<a href="#sec-56-계리적-metric-위험보험료예상보험금유지비" class="toc-item toc-sub">5.6 계리적 metric (위험보험료·예상보험금·유지비)</a>
+<a href="#sec-57-변동표-17-라인--잔액-횡단비교" class="toc-item toc-sub">5.7 변동표 17 라인 + 잔액 횡단비교</a>
+<a href="#sec-58-사업비-영역-판관비영업비" class="toc-item toc-sub">5.8 사업비 영역 (판관비·영업비)</a>
+<a href="#sec-59-예실차-Expected-vs-Actual-Claims" class="toc-item toc-sub">5.9 예실차 (Expected vs Actual Claims)</a>
+<a href="#sec-510-CSM-변동-무브먼트" class="toc-item toc-sub">5.10 CSM 변동 무브먼트</a>
+<a href="#sec-511-계리적가정에-의한-보험부채-변동내역-미래에셋-정확-search" class="toc-item toc-sub">5.11 계리적가정에 의한 보험부채 변동내역 (미래에셋, 정확 search)</a>
 <a href="#sec-512-보험계약마진CSM-상각률" class="toc-item toc-sub">5.12 보험계약마진(CSM) 상각률</a>
     </div>
     <div class="toc-group">
@@ -576,29 +615,62 @@
 <tr style="background:#fff7e0;font-weight:600"><td class="label">기말 CSM (2025-12-31)</td><td class="num">+20,584억 (변동 −198, −1.0%)</td></tr>
 </table>
 <p>자사 CSM은 신계약 +1.05조와 상각 −1.36조가 거의 상쇄, 결과적으로 잔액 안정. 다만 절대 규모 2.06조는 동업사 중 가장 작음 — 신계약 영업 확대 여부 검토 가치.</p>
-<h2 id="sec-511-계리적-가정-변동에-따른-부채-변동내역">5.11 계리적 가정 변동에 따른 부채 변동내역</h2>
-<p>IFRS17 §103 가정 변동 요소별 보험계약부채 영향. 양수 = 부채 증가 (불리), 음수 = 부채 감소 (유리). 단위 억원:</p>
+<h2 id="sec-511-계리적가정에-의한-보험부채-변동내역-미래에셋-정확-search">5.11 계리적가정에 의한 보험부채 변동내역 (미래에셋, 정확 search)</h2>
+
+<div class="conclusion warning">
+<h4>⚠️ 정정 안내</h4>
+<p>이전 버전(2026-05-14 이전)은 <code>entity_ChangeEffectOfDiscountRateAndFinancialAssumption</code> 같은 유사 element를 유추 매핑해 잘못된 값을 보고했음. 사용자 피드백 후 <b>미래에셋 사업보고서 원본 XBRL의 정확 element만 사용</b>으로 정정:</p>
+<ul>
+<li>원천 element: <code>entity00112332_ChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTable</code> (역할 <code>DI817100</code> + <code>DI817105</code>)</li>
+<li>자식 line items: <code>presentation tree.PARENT_ELEMENT_ID</code> 로 walk</li>
+<li>축: <code>InsuranceContractsByComponentsAxis</code> = BEL / RA / CSM (CSM은 standard + transition 3변형)</li>
+<li>기준: 별도(SeparateMember) + 발행(InsuranceContractsIssuedMember) + duration 2025</li>
+</ul>
+</div>
+
 <div class="table-wrap">
 <table>
-<thead><tr><th>가정 항목</th><th class="self">미래에셋</th><th class="">삼성생명</th><th class="">한화생명</th><th class="">동양생명</th><th class="">삼성화재</th><th class="">현대해상</th><th class="">DB손보</th><th class="">한화손보</th></tr></thead><tbody><tr><td class="label">신계약 효과</td><td class="num self">—</td><td class="num">+755</td><td class="num">+20,663</td><td class="num">+93</td><td class="num">+57,967</td><td class="num">+23,309</td><td class="num">+411</td><td class="num">+478</td></tr><tr><td class="label">CSM 조정 추정변동</td><td class="num self">+583</td><td class="num">—</td><td class="num">-20,322</td><td class="num">+790</td><td class="num">-33,722</td><td class="num">-7,190</td><td class="num">—</td><td class="num">-565</td></tr><tr><td class="label">CSM 미조정 추정변동</td><td class="num self">+667</td><td class="num">-5,642</td><td class="num">-95</td><td class="num">+790</td><td class="num">-605</td><td class="num">+2,934</td><td class="num">-327</td><td class="num">-565</td></tr><tr><td class="label">위험조정 변동</td><td class="num self">-191</td><td class="num">-6,911</td><td class="num">-1,091</td><td class="num">-436</td><td class="num">-1,648</td><td class="num">-722</td><td class="num">-1,591</td><td class="num">-421</td></tr><tr><td class="label">경험조정</td><td class="num self">+269</td><td class="num">+3,219</td><td class="num">+3,816</td><td class="num">+460</td><td class="num">+2,609</td><td class="num">+4,388</td><td class="num">-1,023</td><td class="num">+1,069</td></tr><tr><td class="label">손실부담계약 손실(환입)</td><td class="num self">+84</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">+897</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">할인률·금융가정 변경</td><td class="num self">+4,835</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">위험율 가정변경</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">해지율 가정변경</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><td class="label">환율변동 효과</td><td class="num self">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">-731</td><td class="num">+3</td></tr></tbody></table></div>
+<thead><tr><th>변동 항목</th><th>BEL</th><th>RA</th><th>CSM</th><th>합계</th></tr></thead>
+<tbody>
+<tr style="background:#f0f5fb;font-weight:600"><td class="label">신계약에 기인한 미래서비스의 변동</td><td class="num">-6,015</td><td class="num">+700</td><td class="num">+5,399</td><td class="num"><b>+84</b></td></tr><tr style="background:#f0f5fb;font-weight:600"><td class="label">신계약 외 미래서비스 변동 (합계)</td><td class="num">-3,294</td><td class="num">-202</td><td class="num">+3,496</td><td class="num"><b>0</b></td></tr><tr><td class="label">── 가정변경 효과 — 해지율 가정변경</td><td class="num">+2,548</td><td class="num">0</td><td class="num">-2,548</td><td class="num"><b>0</b></td></tr><tr><td class="label">── 가정변경 효과 — 위험율 가정변경</td><td class="num">+2,317</td><td class="num">0</td><td class="num">-2,317</td><td class="num"><b>0</b></td></tr><tr><td class="label">── 가정변경 효과 — 예정율 가정변경</td><td class="num">+450</td><td class="num">0</td><td class="num">-450</td><td class="num"><b>0</b></td></tr><tr><td class="label">── 가정변경 효과 — 기타 가정변경</td><td class="num">+2,910</td><td class="num">0</td><td class="num">-2,910</td><td class="num"><b>0</b></td></tr><tr><td class="label">── 보유물량·투자요소 차이</td><td class="num">-3,294</td><td class="num">-202</td><td class="num">+3,496</td><td class="num"><b>0</b></td></tr><tr><td class="label">── 손실요소에 의한 변동</td><td class="num">0</td><td class="num">0</td><td class="num">+583</td><td class="num"><b>+583</b></td></tr></tbody></table></div>
 
-<p><b>핵심 관찰</b>:</p>
+<p><b>핵심 관찰 (IFRS17 §103 표준 회계처리)</b>:</p>
 <ul>
-<li><b>신계약 효과 ranking</b>: 삼성화재 +57,967억 (압도) &gt; 현대해상 +23,309 &gt; 한화생명 +20,663 &gt; <b>미래에셋 미공시</b> (CSM 무브먼트 §5.10에서는 +10,513억 보고)</li>
-<li><b>CSM 조정 추정변동 (가정 하향, 부채 증가)</b>: 삼성화재 −33,722 (큰 하향), 한화생명 −20,322, 현대 −7,190, 미래에셋 +583 (소폭 상향)</li>
-<li><b>위험조정 변동</b>: 모두 음수 (RA 해소로 부채 감소). 자사 −191억 = 동업사 최저 절대값. 삼성생명 −6,911, 삼성화재 −1,648 등</li>
-<li><b>경험조정</b>: DB손보만 음수(−1,023, 유리), 나머지 7사 양수 (불리 — 실제가 예상 초과). 자사 +269억으로 동업사 중 최소</li>
-<li><b>할인률·금융가정 변경</b>: <b>미래에셋만 별도 분해 보고 +4,835억</b> (시장이율 변동으로 부채 증가). 다른 회사는 CSM 조정 추정변동에 통합 보고</li>
+<li><b>가정 변경 효과는 BEL ↑ ↔ CSM ↓ 대칭</b> — 합계 0. 즉 가정 변동이 CSM을 통해 모두 흡수되어 당기 P&L 영향 0:
+    <ul>
+    <li>해지율 가정변경: BEL +2,548 / CSM −2,548</li>
+    <li>위험율 가정변경: BEL +2,317 / CSM −2,317</li>
+    <li>예정율 가정변경: BEL +450 / CSM −450</li>
+    <li>기타 가정변경: BEL +2,910 / CSM −2,910 (최대)</li>
+    <li><b>가정변경 효과 BEL 합계 +8,225 / CSM 합계 −8,225</b> — 부채는 BEL 늘었으나 CSM이 그만큼 줄어 net 0</li>
+    </ul>
+</li>
+<li><b>신계약 기인 미래서비스 변동</b>: BEL −6,015 / RA +700 / CSM +5,399 → 합계 +84억 (소폭 부채 증가)</li>
+<li><b>손실요소에 의한 변동</b>: CSM +583억 → 손실부담계약 환입 (유리)</li>
+<li><b>보유물량·투자요소 차이</b>: BEL −3,294 / RA −202 / CSM +3,496 (가정 변경과 별개로 실제 contract volume 차이 영향)</li>
 </ul>
 
 <div class="conclusion">
-<h4>📌 자사 가정 변동 시사점</h4>
+<h4>📌 자사 계리적 가정 종합 시사점</h4>
 <ul>
-<li><b>할인률·금융가정 변경 +4,835억</b> — 시장이율 가정 변동시 부채 증가 큰 폭. VFA 위주 사업과 일관 (시장 민감도 큼)</li>
-<li><b>RA 변동 절대값 −191억 = 동업사 최소</b> — 위험조정 산정이 가장 안정적이거나 RA 규모 자체가 작아 변동 적음</li>
-<li><b>경험조정 +269억 = 동업사 중 3번째로 작음</b> — 보험금 예측 정확도 양호</li>
+<li><b>가정 변경 효과 BEL 8,225억 (총 +)</b> — 미래에셋이 FY2025 중 가정을 보수적으로 갱신 (해지율·위험율·예정율 모두 부채 증가 방향)</li>
+<li><b>그러나 CSM이 동일 금액 흡수</b> → 당기 PL 영향 0. IFRS17 §103 회계처리 표준 정합 ✓</li>
+<li><b>가정 변경 비중</b>: 기타 가정변경 35.4% &gt; 해지율 31.0% &gt; 위험율 28.2% &gt; 예정율 5.5% — 사업비 가정 외 미분류 항목 비중이 가장 큼 (구체 항목 식별 필요)</li>
+<li><b>한계</b>: 다른 7개사도 비슷한 표 있는지 별도 search 필요. 미래에셋만 entity 확장 element로 별도 공시 (다른 회사는 §5.7 변동표의 추정변동 element로만 통합 보고)</li>
 </ul>
 </div>
+
+<p><b>원천 element 출처</b> (감사 추적용):</p>
+<ul style="font-size:9pt;color:#666;">
+<li><code>entity00112332_ChangesInFutureServicesDueToNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems</code></li>
+<li><code>entity00112332_ChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems</code></li>
+<li><code>entity00112332_ChangeInCancellationRateAssumptionOf...</code> (해지율)</li>
+<li><code>entity00112332_ChangeInRiskRateAssumptionOf...</code> (위험율)</li>
+<li><code>entity00112332_ChangeInProjectRatioAssumptionOf...</code> (예정율)</li>
+<li><code>entity00112332_OtherAssumptionChangesOf...</code> (기타)</li>
+<li><code>entity00112332_FluctuationsDueToVolumeDifferencesAndDifferencesInInvestmentFactors...</code></li>
+<li><code>entity00112332_FluctuationsDueToLossFactorsOfChangesInFutureServices...</code></li>
+</ul>
 <h2 id="sec-512-보험계약마진CSM-상각률">5.12 보험계약마진(CSM) 상각률</h2>
 <p>당기 CSM 상각액 ÷ 평균 CSM × 100%. 정상 장기 보험사 8~15% 범위. 단위 억원·%:</p>
 <div class="table-wrap">
