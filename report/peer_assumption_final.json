@@ -1,0 +1,426 @@
+{
+  "00112332": {
+    "name": "미래에셋",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "pattern": "%ChangeInCancellationRateAssumption%",
+        "sep": {
+          "BEL": 254778168699.0,
+          "RA": null,
+          "CSM": -254778168699.0
+        },
+        "cons": {
+          "BEL": 254778168699.0,
+          "RA": null,
+          "CSM": -254778168699.0
+        }
+      },
+      {
+        "label": "위험율 가정변경",
+        "pattern": "%ChangeInRiskRateAssumption%",
+        "sep": {
+          "BEL": 231654272224.0,
+          "RA": null,
+          "CSM": -231654272224.0
+        },
+        "cons": {
+          "BEL": 231654272224.0,
+          "RA": null,
+          "CSM": -231654272224.0
+        }
+      },
+      {
+        "label": "예정율 가정변경",
+        "pattern": "%ChangeInProjectRatioAssumption%",
+        "sep": {
+          "BEL": 45015046446.0,
+          "RA": null,
+          "CSM": -45015046446.0
+        },
+        "cons": {
+          "BEL": 45015046446.0,
+          "RA": null,
+          "CSM": -45015046446.0
+        }
+      },
+      {
+        "label": "기타 가정변경",
+        "pattern": "%OtherAssumptionChangesOfEffectOfChangingAssumptions%",
+        "sep": {
+          "BEL": 290961332148.0,
+          "RA": null,
+          "CSM": -290961332148.0
+        },
+        "cons": {
+          "BEL": 290961332148.0,
+          "RA": null,
+          "CSM": -290961332148.0
+        }
+      },
+      {
+        "label": "(추가) 손실요소 변동",
+        "pattern": "%FluctuationsDueToLossFactorsOfChanges%",
+        "sep": {
+          "BEL": null,
+          "RA": null,
+          "CSM": 58323063188.0
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": 58323063188.0
+        }
+      },
+      {
+        "label": "(추가) 보유물량·투자요소",
+        "pattern": "%FluctuationsDueToVolumeDifferencesAndDifferencesInInvestmentFactors%",
+        "sep": {
+          "BEL": -329416501281.0,
+          "RA": -20175751205.0,
+          "CSM": 349592252486.0
+        },
+        "cons": {
+          "BEL": -329416501281.0,
+          "RA": -20175751205.0,
+          "CSM": 349592252486.0
+        }
+      }
+    ]
+  },
+  "00126256": {
+    "name": "삼성생명",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "가정변경 효과 (단일)",
+        "pattern": "%EffectOfChangeInEstimateOfIncreaseDecreaseThroughChanges%",
+        "sep": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        }
+      }
+    ]
+  },
+  "00113058": {
+    "name": "한화생명",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "pattern": "%EffectsOfChangesInSurrenderRatesInsuranceContracts%",
+        "sep": {
+          "BEL": 605152000000.0,
+          "RA": null,
+          "CSM": -605152000000.0
+        },
+        "cons": {
+          "BEL": 721795000000.0,
+          "RA": null,
+          "CSM": -721795000000.0
+        }
+      },
+      {
+        "label": "위험률 가정변경",
+        "pattern": "%EffectsOfChangesInRiskRatesInsuranceContracts%",
+        "sep": {
+          "BEL": 74021000000.0,
+          "RA": null,
+          "CSM": -74021000000.0
+        },
+        "cons": {
+          "BEL": 371218000000.0,
+          "RA": null,
+          "CSM": -371218000000.0
+        }
+      },
+      {
+        "label": "사업비율 가정변경",
+        "pattern": "%EffectsOfChangesInExpenseRatioInsuranceContracts%",
+        "sep": {
+          "BEL": -137201000000.0,
+          "RA": null,
+          "CSM": 137201000000.0
+        },
+        "cons": {
+          "BEL": -380121000000.0,
+          "RA": null,
+          "CSM": 380121000000.0
+        }
+      },
+      {
+        "label": "기타 가정변경",
+        "pattern": "%EffectsOfChangesInOtherAssumptionInsuranceContracts%",
+        "sep": {
+          "BEL": -55586000000.0,
+          "RA": null,
+          "CSM": 55586000000.0
+        },
+        "cons": {
+          "BEL": -102132000000.0,
+          "RA": null,
+          "CSM": 102132000000.0
+        }
+      },
+      {
+        "label": "가정변경 총합",
+        "pattern": "%EffectsOfChangesInAssumptionsInsuranceContractsLiabilityAssetOfIncreaseDecreaseOther%",
+        "sep": {
+          "BEL": 486386000000.0,
+          "RA": null,
+          "CSM": -486386000000.0
+        },
+        "cons": {
+          "BEL": 610760000000.0,
+          "RA": null,
+          "CSM": -610760000000.0
+        }
+      }
+    ]
+  },
+  "00117267": {
+    "name": "동양생명",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00139214": {
+    "name": "삼성화재",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00164973": {
+    "name": "현대해상",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "pattern": "%EffectsOfChangesOfSurrenderRatioAssumption%",
+        "sep": {
+          "BEL": 299613522329.0,
+          "RA": null,
+          "CSM": -299613522329.0
+        },
+        "cons": {
+          "BEL": 299613522329.0,
+          "RA": null,
+          "CSM": -299613522329.0
+        }
+      },
+      {
+        "label": "위험률 가정변경",
+        "pattern": "%EffectsOfChangesOfRiskRatioAssumption%",
+        "sep": {
+          "BEL": 1298617542534.0,
+          "RA": null,
+          "CSM": -1298617542534.0
+        },
+        "cons": {
+          "BEL": 1298617542534.0,
+          "RA": null,
+          "CSM": -1298617542534.0
+        }
+      },
+      {
+        "label": "사업비율 가정변경",
+        "pattern": "%EffectsOfChangesOfOperatingExpenseRateAssumption%",
+        "sep": {
+          "BEL": -400726961712.0,
+          "RA": null,
+          "CSM": 400726961712.0
+        },
+        "cons": {
+          "BEL": -400726961712.0,
+          "RA": null,
+          "CSM": 400726961712.0
+        }
+      },
+      {
+        "label": "기타 가정변경",
+        "pattern": "%EffectsOfChangesOfOtherAssumption%",
+        "sep": {
+          "BEL": -31793662579.0,
+          "RA": null,
+          "CSM": 31793662579.0
+        },
+        "cons": {
+          "BEL": -31793662579.0,
+          "RA": null,
+          "CSM": 31793662579.0
+        }
+      },
+      {
+        "label": "가정변경 총합",
+        "pattern": "%EffectsOfChangesOfActuarialAssumption%",
+        "sep": {
+          "BEL": 1165710440572.0,
+          "RA": null,
+          "CSM": -1165710440572.0
+        },
+        "cons": {
+          "BEL": 1165710440572.0,
+          "RA": null,
+          "CSM": -1165710440572.0
+        }
+      }
+    ]
+  },
+  "00159102": {
+    "name": "DB손보",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "pattern": "%EffectsOfChangesOfSurrenderRatioAssumption%",
+        "sep": {
+          "BEL": 442871000000.0,
+          "RA": null,
+          "CSM": -442871000000.0
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        }
+      },
+      {
+        "label": "위험률 가정변경",
+        "pattern": "%EffectsOfChangesOfRiskRatioAssumption%",
+        "sep": {
+          "BEL": -688879000000.0,
+          "RA": null,
+          "CSM": 688879000000.0
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        }
+      },
+      {
+        "label": "사업비율 가정변경",
+        "pattern": "%EffectsOfChangesOfOperatingExpenseRateAssumption%",
+        "sep": {
+          "BEL": 1119294000000.0,
+          "RA": null,
+          "CSM": -1119294000000.0
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        }
+      },
+      {
+        "label": "기타 가정변경",
+        "pattern": "%EffectsOfChangesOfOtherAssumption%",
+        "sep": {
+          "BEL": -20214000000.0,
+          "RA": null,
+          "CSM": 20214000000.0
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        }
+      },
+      {
+        "label": "가정변경 총합",
+        "pattern": "%EffectsOfChangesOfActuarialAssumption%",
+        "sep": {
+          "BEL": 1706144000000.0,
+          "RA": null,
+          "CSM": -1706144000000.0
+        },
+        "cons": {
+          "BEL": null,
+          "RA": null,
+          "CSM": null
+        }
+      }
+    ]
+  },
+  "00135917": {
+    "name": "한화손보",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경 (CSM 조정)",
+        "pattern": "%ChangesInSurrenderRatioAssumptionsThatAdjust%",
+        "sep": {
+          "BEL": 116642905000.0,
+          "RA": null,
+          "CSM": -116642905000.0
+        },
+        "cons": {
+          "BEL": 116642905000.0,
+          "RA": null,
+          "CSM": -116642905000.0
+        }
+      },
+      {
+        "label": "위험률 가정변경 (CSM 조정)",
+        "pattern": "%ChangesInRiskRatioAssumptionsThatAdjust%",
+        "sep": {
+          "BEL": 297196971000.0,
+          "RA": null,
+          "CSM": -297196971000.0
+        },
+        "cons": {
+          "BEL": 297196971000.0,
+          "RA": null,
+          "CSM": -297196971000.0
+        }
+      },
+      {
+        "label": "사업비율 가정변경 (CSM 조정)",
+        "pattern": "%ChangesInOperatingExpenseRatioAssumptionsThatAdjust%",
+        "sep": {
+          "BEL": -242919759000.0,
+          "RA": null,
+          "CSM": 242919759000.0
+        },
+        "cons": {
+          "BEL": -242919759000.0,
+          "RA": null,
+          "CSM": 242919759000.0
+        }
+      },
+      {
+        "label": "기타 가정변경 (CSM 조정)",
+        "pattern": "%ChangesInOtherAssumptionsThatAdjust%",
+        "sep": {
+          "BEL": -46545829000.0,
+          "RA": null,
+          "CSM": 46545829000.0
+        },
+        "cons": {
+          "BEL": -46545829000.0,
+          "RA": null,
+          "CSM": 46545829000.0
+        }
+      },
+      {
+        "label": "가정변경 총합 (CSM 조정)",
+        "pattern": "%ChangesInAssumptionsThatAdjustContractualServiceMargin%",
+        "sep": {
+          "BEL": 248748576000.0,
+          "RA": null,
+          "CSM": -248748576000.0
+        },
+        "cons": {
+          "BEL": 248748576000.0,
+          "RA": null,
+          "CSM": -248748576000.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "00112332": {
+    "name": "미래에셋",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "위험율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "예정율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "기타 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "(추가) 손실요소 변동",
+        "sep": 58323063188.0,
+        "cons": 58323063188.0
+      },
+      {
+        "label": "(추가) 보유물량·투자요소",
+        "sep": null,
+        "cons": null
+      }
+    ]
+  },
+  "00126256": {
+    "name": "삼성생명",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "가정변경 효과 (단일)",
+        "sep": null,
+        "cons": null
+      }
+    ]
+  },
+  "00113058": {
+    "name": "한화생명",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "위험률 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "사업비율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "기타 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "가정변경 총합",
+        "sep": null,
+        "cons": null
+      }
+    ]
+  },
+  "00117267": {
+    "name": "동양생명",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00139214": {
+    "name": "삼성화재",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00164973": {
+    "name": "현대해상",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "위험률 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "사업비율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "기타 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "가정변경 총합",
+        "sep": null,
+        "cons": null
+      }
+    ]
+  },
+  "00159102": {
+    "name": "DB손보",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "위험률 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "사업비율 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "기타 가정변경",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "가정변경 총합",
+        "sep": null,
+        "cons": null
+      }
+    ]
+  },
+  "00135917": {
+    "name": "한화손보",
+    "status": "extracted",
+    "lines": [
+      {
+        "label": "해지율 가정변경 (CSM 조정)",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "위험률 가정변경 (CSM 조정)",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "사업비율 가정변경 (CSM 조정)",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "기타 가정변경 (CSM 조정)",
+        "sep": null,
+        "cons": null
+      },
+      {
+        "label": "가정변경 총합 (CSM 조정)",
+        "sep": null,
+        "cons": null
+      }
+    ]
+  }
+}

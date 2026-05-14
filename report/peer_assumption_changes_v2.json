@@ -1,0 +1,273 @@
+{
+  "00112332": {
+    "name": "미래에셋",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "eid": "entity00112332_ChangeInCancellationRateAssumptionOfEffectOfChangingAssumptionsOfChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "위험율 가정변경",
+        "eid": "entity00112332_ChangeInRiskRateAssumptionOfEffectOfChangingAssumptionsOfChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "예정율 가정변경",
+        "eid": "entity00112332_ChangeInProjectRatioAssumptionOfEffectOfChangingAssumptionsOfChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "기타 가정변경",
+        "eid": "entity00112332_OtherAssumptionChangesOfEffectOfChangingAssumptionsOfChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "(추가) 손실요소 변동",
+        "eid": "entity00112332_FluctuationsDueToLossFactorsOfChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems",
+        "BEL": 0.0,
+        "RA": 0.0,
+        "CSM": 58323063188.0,
+        "total": null
+      },
+      {
+        "label": "(추가) 보유물량·투자요소",
+        "eid": "entity00112332_FluctuationsDueToVolumeDifferencesAndDifferencesInInvestmentFactorsExpectedToBeRecognizedAsCsmAdjustmentsOfChangesInFutureServicesAttributableToFactorsOtherThanNewContractsOfChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTableOfItems",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  },
+  "00126256": {
+    "name": "삼성생명",
+    "lines": [
+      {
+        "label": "가정변경 효과 (단일)",
+        "eid": "entity00126256_EffectOfChangeInEstimateOfIncreaseDecreaseThroughChangesInEstimatesThatAdjustContractualServiceMarginInsuranceContractsLiabilityAssetOfDisclosureOfReconciliationOfChangesInInsuranceContractsIssuedByComponentsOfInsuranceContractsTableOfItems",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  },
+  "00113058": {
+    "name": "한화생명",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "eid": "entity00113058_IncreaseDecreaseThroughEffectsOfChangesInSurrenderRatesInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "위험률 가정변경",
+        "eid": "entity00113058_IncreaseDecreaseThroughEffectsOfChangesInRiskRatesInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "사업비율 가정변경",
+        "eid": "entity00113058_IncreaseDecreaseThroughEffectsOfChangesInExpenseRatioInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "기타 가정변경",
+        "eid": "entity00113058_IncreaseDecreaseThroughEffectsOfChangesInOtherAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "가정변경 총합",
+        "eid": "entity00113058_IncreaseDecreaseThroughEffectsOfChangesInAssumptionsInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  },
+  "00117267": {
+    "name": "동양생명",
+    "lines": [
+      {
+        "label": "(가정 분해 미공시 — 추정변경 통합)",
+        "eid": null,
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  },
+  "00139214": {
+    "name": "삼성화재",
+    "lines": [],
+    "status": "not_disclosed"
+  },
+  "00164973": {
+    "name": "현대해상",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "eid": "entity00164973_IncreaseDecreaseThroughEffectsOfChangesOfSurrenderRatioAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "위험률 가정변경",
+        "eid": "entity00164973_IncreaseDecreaseThroughEffectsOfChangesOfRiskRatioAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "사업비율 가정변경",
+        "eid": "entity00164973_IncreaseDecreaseThroughEffectsOfChangesOfOperatingExpenseRateAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "기타 가정변경",
+        "eid": "entity00164973_IncreaseDecreaseThroughEffectsOfChangesOfOtherAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "가정변경 총합",
+        "eid": "entity00164973_IncreaseDecreaseThroughEffectsOfChangesOfActuarialAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  },
+  "00159102": {
+    "name": "DB손보",
+    "lines": [
+      {
+        "label": "해지율 가정변경",
+        "eid": "entity00159102_IncreaseDecreaseThroughEffectsOfChangesOfSurrenderRatioAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "위험률 가정변경",
+        "eid": "entity00159102_IncreaseDecreaseThroughEffectsOfChangesOfRiskRatioAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "사업비율 가정변경",
+        "eid": "entity00159102_IncreaseDecreaseThroughEffectsOfChangesOfOperatingExpenseRateAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "기타 가정변경",
+        "eid": "entity00159102_IncreaseDecreaseThroughEffectsOfChangesOfOtherAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "가정변경 총합",
+        "eid": "entity00159102_IncreaseDecreaseThroughEffectsOfChangesOfActuarialAssumptionInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  },
+  "00135917": {
+    "name": "한화손보",
+    "lines": [
+      {
+        "label": "해지율 가정변경 (CSM 조정)",
+        "eid": "entity00135917_IncreaseDecreaseThroughChangesInSurrenderRatioAssumptionsThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "위험률 가정변경 (CSM 조정)",
+        "eid": "entity00135917_IncreaseDecreaseThroughChangesInRiskRatioAssumptionsThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "사업비율 가정변경 (CSM 조정)",
+        "eid": "entity00135917_IncreaseDecreaseThroughChangesInOperatingExpenseRatioAssumptionsThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "기타 가정변경 (CSM 조정)",
+        "eid": "entity00135917_IncreaseDecreaseThroughChangesInOtherAssumptionsThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      },
+      {
+        "label": "가정변경 총합 (CSM 조정)",
+        "eid": "entity00135917_IncreaseDecreaseThroughChangesInAssumptionsThatAdjustContractualServiceMarginInsuranceContractsLiabilityAsset",
+        "BEL": null,
+        "RA": null,
+        "CSM": null,
+        "total": null
+      }
+    ],
+    "status": "extracted"
+  }
+}

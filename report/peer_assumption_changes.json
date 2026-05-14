@@ -1,0 +1,43 @@
+{
+  "00112332": {
+    "name": "미래에셋",
+    "status": "no_children",
+    "root": "entity00112332_ChangesInInsuranceLiabilitiesBasedOnActuarialAssumptionsTable",
+    "lines": []
+  },
+  "00126256": {
+    "name": "삼성생명",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00113058": {
+    "name": "한화생명",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00117267": {
+    "name": "동양생명",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00139214": {
+    "name": "삼성화재",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00164973": {
+    "name": "현대해상",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00159102": {
+    "name": "DB손보",
+    "status": "not_disclosed",
+    "lines": []
+  },
+  "00135917": {
+    "name": "한화손보",
+    "status": "not_disclosed",
+    "lines": []
+  }
+}
