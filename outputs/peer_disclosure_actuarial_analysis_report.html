@@ -965,7 +965,7 @@
   ⇒ 예실차 = (예상 − 실제) = 보험서비스결과 − CSM 상각 − RA 상각 + LOSS발생분</pre>
   <b>해석</b>: 양수(+) = 실제가 예상보다 적게 발생 (보수적·유리), 음수(−) = 실제가 예상 초과 (불리).<br>
   · <b>RA 상각</b> = 보험수익 중 위험조정 해소 기여분 (보험수익 중 RA 변동분 element)<br>
-  · <b>LOSS발생분</b> = 보험서비스비용 중 손실부담계약 손실 및 환입 line. 다른 7개사: 표준 element 「손실부담계약의 손실 및 손실 환입」. <b>미래에셋: XBRL 적재본에 해당 P&L 손실부담 element 미공시 → 예실차 산출 불가</b>. (정확 매칭 element 식별 시 재산출 예정)
+  · <b>LOSS발생분</b> = 「보험계약마진을 조정하지 않는 추정치 변동」 합계 (별도+발행, BEL/RA/CSM 컴포넌트 전체). 미래에셋 +667억 = 사업보고서 공시 수치와 정확 일치 검증.
   </div>
   <div class="table-wrap">
   <table>
@@ -984,27 +984,26 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>10,804</td><td>8,978</td><td>+1,826</td><td>2,058</td><td>440</td><td class="na" style="color:#888">미공시</td><td class="na" style="color:#888">산출 불가</td><td class="na" style="color:#888">—</td></tr>
-      <tr><th class="left">삼성생명</th><td>96,181</td><td>84,477</td><td>+11,704</td><td>15,433</td><td>3,550</td><td>+3,575</td><td style="color:#c62828"><b>−3,704</b></td><td style="color:#c62828">−3.9%</td></tr>
-      <tr><th class="left">한화생명</th><td>51,757</td><td>46,799</td><td>+4,958</td><td>7,558</td><td>1,544</td><td>+1,353</td><td style="color:#c62828"><b>−2,791</b></td><td style="color:#c62828">−5.4%</td></tr>
-      <tr><th class="left">동양생명</th><td>12,245</td><td>10,943</td><td>+1,302</td><td>2,446</td><td>425</td><td>+797</td><td style="color:#c62828"><b>−772</b></td><td style="color:#c62828">−6.3%</td></tr>
-      <tr><th class="left">삼성화재</th><td>183,041</td><td>162,252</td><td>+20,789</td><td>15,738</td><td>1,919</td><td>−148</td><td style="color:#2e7d32"><b>+2,984</b></td><td style="color:#2e7d32">+1.6%</td></tr>
-      <tr><th class="left">현대해상</th><td>141,448</td><td>131,415</td><td>+10,033</td><td>9,509</td><td>1,322</td><td>+3,795</td><td style="color:#2e7d32"><b>+2,997</b></td><td style="color:#2e7d32">+2.1%</td></tr>
-      <tr><th class="left">DB손해보험</th><td>152,984</td><td>138,797</td><td>+14,187</td><td>12,870</td><td>1,548</td><td>+202</td><td style="color:#c62828"><b>−29</b></td><td>−0.0%</td></tr>
-      <tr><th class="left">한화손해보험</th><td>54,960</td><td>52,101</td><td>+2,859</td><td>4,231</td><td>806</td><td>−315</td><td style="color:#c62828"><b>−2,493</b></td><td style="color:#c62828">−4.5%</td></tr>
+      <tr class="self-row"><th class="left">미래에셋생명 (자사)</th><td>10,804</td><td>8,978</td><td>+1,826</td><td>2,058</td><td>440</td><td>+667</td><td style="color:#c62828"><b>−5</b></td><td>−0.0%</td></tr>
+      <tr><th class="left">삼성생명</th><td>96,181</td><td>84,477</td><td>+11,704</td><td>15,433</td><td>3,550</td><td>−5,642</td><td style="color:#c62828"><b>−12,921</b></td><td style="color:#c62828">−13.4%</td></tr>
+      <tr><th class="left">한화생명</th><td>51,757</td><td>46,799</td><td>+4,958</td><td>7,558</td><td>1,544</td><td>−95</td><td style="color:#c62828"><b>−4,239</b></td><td style="color:#c62828">−8.2%</td></tr>
+      <tr><th class="left">동양생명</th><td>12,245</td><td>10,943</td><td>+1,302</td><td>2,446</td><td>425</td><td>+790</td><td style="color:#c62828"><b>−779</b></td><td style="color:#c62828">−6.4%</td></tr>
+      <tr><th class="left">삼성화재</th><td>183,041</td><td>162,252</td><td>+20,789</td><td>15,738</td><td>1,919</td><td>−605</td><td style="color:#2e7d32"><b>+2,527</b></td><td style="color:#2e7d32">+1.4%</td></tr>
+      <tr><th class="left">현대해상</th><td>141,448</td><td>131,415</td><td>+10,033</td><td>9,509</td><td>1,322</td><td>+2,934</td><td style="color:#2e7d32"><b>+2,136</b></td><td style="color:#2e7d32">+1.5%</td></tr>
+      <tr><th class="left">DB손해보험</th><td>152,984</td><td>138,797</td><td>+14,187</td><td>12,870</td><td>1,548</td><td>−327</td><td style="color:#c62828"><b>−558</b></td><td style="color:#c62828">−0.4%</td></tr>
+      <tr><th class="left">한화손해보험</th><td>54,960</td><td>52,101</td><td>+2,859</td><td>4,231</td><td>806</td><td>−565</td><td style="color:#c62828"><b>−2,743</b></td><td style="color:#c62828">−5.0%</td></tr>
     </tbody>
   </table>
   </div>
 
   <div class="insight-box">
-    <b>5-C-1-b 관찰</b> (LOSS발생분 반영)<br>
-    <span style="color:#888;font-size:10pt">⚠ 미래에셋 LOSS발생분 XBRL 미공시 → 자사 예실차 산출 불가. 정확 element 매핑 식별 시 재산출.</span><br>
-    1) <b>예실차 양수 2개사</b>: <b>현대해상 +2,997억 (+2.1%, 1위)</b> · 삼성화재 +2,984억 (+1.6%). 손보 위주로 예상 대비 실제 발생액 절감.<br>
-    2) <b>생보 군집 (자사 제외)</b>: 동양 −772 > 한화 −2,791 > 삼성 −3,704. 자사 미래에셋은 LOSS발생분 미공시로 비교 보류.<br>
-    3) <b>손보 군집</b>: 현대해상 +2,997 > 삼성화재 +2,984 > DB −29 (거의 0) > 한화손보 −2,493. 한화손보가 손보 중 가장 큰 마이너스.<br>
-    4) <b>LOSS발생분 부호 패턴</b>: 대부분 양수 (보험서비스비용에 손실부담 추가 인식). 삼성화재(−148) · 한화손보(−315)는 음수 = 손실부담 환입 우위.<br>
-    5) <b>해석 주의</b>: 예실차 음수가 즉 손실은 아님 — 보험서비스결과(a) 자체는 모두 양수. CSM·RA 상각으로 이익이 발생하는 가운데, 가정 갱신 또는 실제 경험이 예상보다 다소 안 좋았다는 의미. <b>가정 정확도·갱신 빈도 점검 지표</b>로 활용.<br>
-    6) <b>자사 LOSS발생분 매핑 향후 작업</b>: 미래에셋은 표준 dart element 「손실부담계약의 손실 및 손실 환입」을 사용하지 않음. entity 확장 element 또는 다른 P&L line 항목으로 보고했을 가능성 → 정확 매핑 식별 후 예실차 재산출 예정.
+    <b>5-C-1-b 관찰</b> (LOSS발생분 = 「보험계약마진 미조정 추정변동」 합계 기준)<br>
+    1) <b>예실차 양수 2개사 (손보)</b>: <b>삼성화재 +2,527억 (+1.4%)</b> · <b>현대해상 +2,136억 (+1.5%, 1위)</b>. 예상 대비 실제 발생액 절감.<br>
+    2) <b>자사 −5억 (−0.0%)</b>: <b>예실차 사실상 0 — 가정 정확도 8개사 중 가장 우수</b>. CSM/RA 상각으로 보험서비스결과 +1,826억의 거의 전액 설명 가능 (예측 정합).<br>
+    3) <b>생보 군집</b>: 자사 −5 ≪ 동양 −779 < 한화 −4,239 < 삼성생명 −12,921. 삼성생명 −13.4%는 가정 갱신 영향 큼.<br>
+    4) <b>손보 군집</b>: 삼성화재 +2,527 ≈ 현대해상 +2,136 > DB −558 > 한화손보 −2,743. 한화손보 가장 큰 음수.<br>
+    5) <b>LOSS발생분 부호</b>: 삼성생명(−5,642)·한화·삼성화재·DB·한화손보가 음수 = 컴포넌트 합산상 CSM 미조정 추정치가 부채 감소 방향. 현대해상(+2,934)·동양(+790)·미래에셋(+667)은 양수.<br>
+    6) <b>해석 주의</b>: 예실차 음수가 즉 손실은 아님 — 보험서비스결과(a) 자체는 모두 양수. <b>가정 정확도·갱신 빈도 점검 지표</b>로 활용. 회사별로 「미조정 변동」을 어느 컴포넌트(BEL/RA/CSM)에 인식했는지가 매우 다르므로 합계 기준 비교가 가장 안정적.
   </div>
 
   <h3>5-C-2. 보험취득현금흐름 상각 및 SG&A</h3>
