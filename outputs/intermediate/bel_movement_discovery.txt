@@ -1,0 +1,385 @@
+========================================================================================================================
+미래에셋생명 (00112332)
+========================================================================================================================
+
+  [closing]
+           +269,967억  [n=15]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+            -18,521억  [n=1]  직접참가특성계약에 대한 기초항목의 공정가치                             | ifrs-full_FairValueOfUnderlyingItemsForContractsWithDirectPa
+               +667억  [n=15]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 발생사고부채에 대한 기타 조정 사항    | dart_OtherAdjustmentsOfLiabilitiesForIncurredClaimsThatArise
+
+  [duration]
+            -42,970억  [n=15]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+            +40,500억  [n=15]  보험계약으로부터의 현금흐름                                      | ifrs-full_CashFlowsFromUsedInInsuranceContracts
+            +23,456억  [n=1]  기말 새 아이템 (1)                                        | entity00112332_InvestmentServiceProfitAndLossRecognizedInPro
+            +22,728억  [n=15]  보험금융손익                                              | ifrs-full_IncreaseDecreaseThroughInsuranceFinanceIncomeOrExp
+            -22,728억  [n=1]  당기손익으로 인식한 발행한 보험계약의 보험금융수익(비용)                     | ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContrac
+             +9,701억  [n=1]  금융상품평가및처분손익                                         | dart_GainsOnChangeInFairValueAndOnDisposalOfFinancialInstrum
+             -8,015억  [n=1]  기말 새 아이템 (2)                                        | entity00112332_InvestmentServiceProfitAndLossRecognizedInOth
+             -5,948억  [n=15]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+             +4,910억  [n=1]  이자수익                                                | ifrs-full_RevenueFromInterest
+             +4,835억  [n=1]  기말 새 아이템 (29)                                       | entity00112332_ChangeEffectOfDiscountRateAndFinancialAssumpt
+             +4,835억  [n=1]  기말 새 아이템 (2)                                        | entity00112332_InsuranceFinanceIncomeExpensesFromInsuranceCo
+             -4,815억  [n=1]  금융부채의 이자비용                                          | ifrs-full_InterestExpense
+             +2,189억  [n=15]  발생한 보험금 및 그 밖의 발생한 보험서비스비용에 따른 증가분(감소분), 보험계약부채(자산  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncur
+               +831억  [n=1]  기타수익                                                | dart_OtherOperatingIncomeInvestment
+               +544억  [n=1]  기말 새 아이템 (27)                                       | entity00112332_FinancialRiskDecreaseAmountOfFairValueOfUnder
+               +196억  [n=15]  보험취득 현금흐름의 상각에 따른 증가분(감소분), 보험계약부채(자산)              | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+               -166억  [n=15]  기말 새 아이템 (1)                                        | entity00112332_InsuranceFinanceIncomeExpensesFromInsuranceCo
+                +64억  [n=1]  기타변동                                                | ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEqu
+                 +0억  [n=1]  환율변동                                                | dart_ChangesInForeignExchangeRates
+                 +0억  [n=15]  보고기간에 처음 인식한 손실부담계약 집합의 영향에 따른 증가분(감소분), 보험계약부채(자산  | ifrs-full_IncreaseDecreaseThroughEffectsOfGroupsOfOnerousCon
+
+  [opening]
+           +262,484억  [n=15]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+            -15,775억  [n=1]  직접참가특성계약에 대한 기초항목의 공정가치                             | ifrs-full_FairValueOfUnderlyingItemsForContractsWithDirectPa
+            -10,804억  [n=15]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+               +303억  [n=15]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 발생사고부채에 대한 기타 조정 사항    | dart_OtherAdjustmentsOfLiabilitiesForIncurredClaimsThatArise
+========================================================================================================================
+삼성생명 (00126256)
+========================================================================================================================
+
+  [closing]
+         +6,025,390억  [n=3]  보험계약부채                                              | ifrs-full_InsuranceContractsThatAreLiabilities
+         +4,016,927억  [n=2]  기말 재보험계약부채(자산)                                      | ifrs-full_InsuranceContractsLiabilityAsset
+                 +0억  [n=2]  보험계약자산                                              | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+           -857,928억  [n=12]  보험취득 현금흐름을 제외하고 발행한 보험계약에 대해 지급한 보험금과 그 밖의 보험서비스비용  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+           +835,979억  [n=12]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+           -132,315억  [n=12]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+            +74,339억  [n=6]  당기손익으로 인식한 발행한 보험계약의 보험금융수익(비용)                     | ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContrac
+            -46,813억  [n=12]  보험서비스 결과로 인한 증가분(감소분), 보험계약 부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+            -29,592억  [n=6]  서비스 이전을 반영하기 위해 당기손익으로 인식한 보험계약마진 금액에 따른 증가분(감소분),  | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+            -11,284억  [n=12]  보험계약마진을 조정하지 않는 추정치의 변동분에 따른 증가분(감소분), 보험계약부채(자산)   | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+             -6,911억  [n=6]  미래 또는 과거 서비스와 관련 없는 비금융위험에 대한 위험조정의 변동에 따른 증가분(감소분  | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+             +5,453억  [n=12]  과거 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+             +3,219억  [n=6]  경험조정                                                | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+             +1,510억  [n=2]  당기 최초 인식 계약                                         | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+                 +0억  [n=12]  보험계약마진 추정의 변경                                       | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+
+  [opening]
+         +6,064,689억  [n=3]  보험계약부채                                              | ifrs-full_InsuranceContractsThatAreLiabilities
+         +4,043,126억  [n=2]  기말 재보험계약부채(자산)                                      | ifrs-full_InsuranceContractsLiabilityAsset
+                 +0억  [n=2]  보험계약자산                                              | ifrs-full_InsuranceContractsThatAreAssets
+========================================================================================================================
+한화생명 (00113058)
+========================================================================================================================
+
+  [closing]
+         +2,908,075억  [n=3]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +969,358억  [n=2]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=2]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+           +166,870억  [n=2]  (1) 수취한 보험료                                         | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+           -135,186억  [n=2]  (3) 지급한 보험금과 그 밖의 보험서비스비용                           | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+            +61,988억  [n=3]  (3) 최초 인식한 계약의 효과                                   | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+            -51,757억  [n=2]  보험 수익으로 인한 증가분(감소분), 보험계약 부채(자산)                    | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueInsuranceCo
+            +46,799억  [n=2]  보험서비스 비용에 따른 총 증가분(감소분), 보험계약부채(자산)                 | ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesIns
+            -40,644억  [n=2]  (1) 보험계약마진을 조정하는 추정치 변동                             | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+            -39,683억  [n=2]  (2) 보험취득현금흐름                                        | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+            +36,477억  [n=2]  (1) 보험금 및 보험서비스비용                                   | ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncur
+            -15,746억  [n=2]  (1) 제공한 서비스에 대해 인식한 보험계약마진                          | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+            -15,065억  [n=2]  보험서비스 결과로 인한 증가분(감소분), 보험계약 부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+            +10,081억  [n=2]  (2) 보험취득현금흐름의 상각                                    | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+             +7,155억  [n=2]  보험금융손익                                              | ifrs-full_IncreaseDecreaseThroughInsuranceFinanceIncomeOrExp
+             -5,148억  [n=1]  현행 서비스 관련 변동                                        | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToCurrentS
+             -5,139억  [n=2]  현금흐름                                                | ifrs-full_IncreaseDecreaseThroughCashFlowsInsuranceContracts
+             +3,816억  [n=1]  (3) 경험조정                                            | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+             +2,860억  [n=1]  (4) 기타현금흐름                                          | entity00113058_IncreaseDecreaseThroughOtherCashFlowsInsuranc
+             +2,860억  [n=1]  (4) 기타 현금흐름                                         | entity00113058_IncreaseDecreaseThroughOtherCashFlowsInsuranc
+             +2,710억  [n=3]  (3) 손실회수요소 전입(환입)                                   | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToFutureSe
+             -1,114억  [n=2]  (2) 발생사고 이행현금흐름 변동분                                 | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+             -1,091억  [n=1]  (2) 비금융위험에 대한 위험조정의 변동분                             | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+                -95억  [n=1]  (2) 손실부담계약의 손실(환입)                                  | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+                 +0억  [n=1]  보험수익 및 보험서비스비용에서 제외된 투자요소에 따른 증가분(감소분), 보험계약부채(자산)  | ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExclude
+
+  [opening]
+         +2,914,566억  [n=3]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +971,522억  [n=2]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=2]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+========================================================================================================================
+동양생명 (00117267)
+========================================================================================================================
+
+  [closing]
+           +562,902억  [n=2]  기말 보험계약부채                                           | ifrs-full_InsuranceContractsThatAreLiabilities
+           +281,451억  [n=1]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +228,475억  [n=90]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료                  | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+           +218,221억  [n=90]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치      | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+           +124,193억  [n=1]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료, 현재가치            | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+           +111,316억  [n=1]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치, 현재  | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+            +25,478억  [n=75]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료                  | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+            +19,878억  [n=75]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치      | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+            +11,642억  [n=30]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료                  | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+            -10,197억  [n=1]  기말자본                                                | ifrs-full_Equity
+             +9,815억  [n=30]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치      | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+                 +0억  [n=2]  기말 보험계약자산                                           | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+            +45,633억  [n=90]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예정유지비                  | entity00117267_ScheduledMaintenanceCostsArisingFromContracts
+            +40,617억  [n=3]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+            -36,212억  [n=3]  보험취득 현금흐름을 제외하고 발행한 보험계약에 대해 지급한 보험금과 그 밖의 보험서비스비용  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+            +35,934억  [n=1]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예정유지비, 현재가치            | entity00117267_ScheduledMaintenanceCostsArisingFromContracts
+            +34,319억  [n=90]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예상유지비 등                | entity00117267_ExpectedMaintenanceCostsEtcArisingFromContrac
+            -25,984억  [n=2]  당기손익                                                | ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContrac
+            +21,764억  [n=1]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예상유지비 등, 현재가치          | entity00117267_ExpectedMaintenanceCostsEtcArisingFromContrac
+            +18,667억  [n=2]  기타포괄손익                                              | ifrs-full_OtherComprehensiveIncomeBeforeTaxInsuranceFinanceI
+            -12,245억  [n=3]  보험 수익으로 인한 증가분(감소분), 보험계약 부채(자산)                    | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueInsuranceCo
+            +10,943억  [n=3]  보험서비스 비용에 따른 총 증가분(감소분), 보험계약부채(자산)                 | ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesIns
+             +8,212억  [n=3]  발생한 보험금 및 그 밖의 발생한 보험서비스비용에 따른 증가분(감소분), 보험계약부채(자산  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncur
+             -7,492억  [n=3]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+             -5,633억  [n=3]  공정가치법 적용 보험계약                                       | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToCo
+             +5,188억  [n=75]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예정유지비                  | entity00117267_ScheduledMaintenanceCostsArisingFromContracts
+             -4,332억  [n=3]  완전소급법 및 전환이후 보험계약                                   | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueNotRelatedT
+             +3,872억  [n=75]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예상유지비 등                | entity00117267_ExpectedMaintenanceCostsEtcArisingFromContrac
+             +3,659억  [n=3]  보험금융손익                                              | ifrs-full_IncreaseDecreaseThroughInsuranceFinanceIncomeOrExp
+             -3,087억  [n=3]  해당기간의 현금흐름                                          | ifrs-full_IncreaseDecreaseThroughCashFlowsInsuranceContracts
+             -3,021억  [n=1]  공정가치평가로 인한 변동                                       | ifrs-full_OtherComprehensiveIncomeBeforeTaxGainsLossesOnReva
+             -2,468억  [n=3]  보험계약마진 상각                                           | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+             -2,443억  [n=3]  당기서비스관련 변동                                          | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToCurrentS
+             +2,356억  [n=3]  기말 새 아이템 (27)                                       | entity00117267_ChangesInComprehensiveIncomeDueToInsuranceSer
+             +2,356억  [n=3]  기말 새 아이템 (33)                                       | entity00117267_ChangesInComprehensiveIncomeDueToInsuranceSer
+             -2,280억  [n=3]  수정소급법 적용 보험계약                                       | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToCo
+             +1,695억  [n=30]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예정유지비                  | entity00117267_ScheduledMaintenanceCostsArisingFromContracts
+             +1,590억  [n=3]  보험취득 현금흐름의 상각에 따른 증가분(감소분), 보험계약부채(자산)              | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+             +1,424억  [n=30]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 예상유지비 등                | entity00117267_ExpectedMaintenanceCostsEtcArisingFromContrac
+             -1,302억  [n=3]  보험서비스 결과                                            | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+               +883억  [n=3]  미래 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToFutureSe
+               -859억  [n=1]  기타포괄손익으로 인식된 금액                                     | ifrs-full_IncomeTaxRelatingToComponentsOfOtherComprehensiveI
+               +790억  [n=3]  보험계약마진을 조정하지 않는 추정치의 변동분에 따른 증가분(감소분), 보험계약부채(자산)   | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+               +460억  [n=3]  경험조정                                                | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+               -436억  [n=3]  미래 또는 과거 서비스와 관련 없는 비금융위험에 대한 위험조정의 변동에 따른 증가분(감소분  | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+               +258억  [n=3]  과거 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+               +186억  [n=2]  최초 인식한 보험계약                                         | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+                +56억  [n=1]  기타포괄손익-공정가치로 측정되는 금융자산의 재분류 조정, 세전                  | ifrs-full_ReclassificationAdjustmentsOnFinancialAssetsMeasur
+                -33억  [n=3]  기타 증감                                               | ifrs-full_IncreaseDecreaseThroughAdditionalItemsNecessaryToU
+                 +0억  [n=3]  보험서비스결과 및 보험금융손익에서 제외된 투자요소                         | ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExclude
+                 +0억  [n=3]  보험계약마진 추정의 변경                                       | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+
+  [opening]
+           +564,429억  [n=2]  기말 보험계약부채                                           | ifrs-full_InsuranceContractsThatAreLiabilities
+           +282,215억  [n=1]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +237,251억  [n=90]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료                  | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+           +217,762억  [n=90]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치      | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+           +132,154억  [n=1]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료, 현재가치            | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+           +114,650억  [n=1]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치, 현재  | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+            +30,378억  [n=75]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료                  | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+            +24,706억  [n=75]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치      | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+            +12,469억  [n=30]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 위험보험료                  | entity00117267_RiskPremiumsArisingFromContractsWithinTheScop
+            +10,368억  [n=30]  IFRS 17의 적용범위에 포함되는 계약에서 생기는 할인되지 않은 예상보험금 추정치      | entity00117267_EstimateOfUndiscountedExpectedClaimsThatArise
+             -7,979억  [n=1]  기말자본                                                | ifrs-full_Equity
+                 +0억  [n=2]  기말 보험계약자산                                           | ifrs-full_InsuranceContractsThatAreAssets
+========================================================================================================================
+삼성화재 (00139214)
+========================================================================================================================
+
+  [closing]
+           +974,696억  [n=2]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +487,348억  [n=1]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=1]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+           +358,007억  [n=6]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+           -309,902억  [n=6]  보험취득 현금흐름을 제외하고 발행한 보험계약에 대해 지급한 보험금과 그 밖의 보험서비스비용  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+           -183,041억  [n=4]  보험 수익으로 인한 증가분(감소분), 보험계약 부채(자산)                    | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueInsuranceCo
+           +162,252억  [n=4]  보험서비스 비용에 따른 총 증가분(감소분), 보험계약부채(자산)                 | ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesIns
+           +139,516억  [n=4]  발생보험금 및 발생보험서비스비용                                   | ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncur
+            -74,809억  [n=6]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+            -26,704억  [n=6]  현금흐름                                                | ifrs-full_IncreaseDecreaseThroughCashFlowsInsuranceContracts
+            -26,092억  [n=6]  당기손익으로 인식한 발행한 보험계약의 보험금융수익(비용)                     | ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContrac
+            +22,641억  [n=4]  보험취득 현금흐름의 상각에 따른 증가분(감소분), 보험계약부채(자산)              | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+            +18,965억  [n=6]  기타포괄손익인식 보험금융손익                                     | ifrs-full_OtherComprehensiveIncomeBeforeTaxInsuranceFinanceI
+            -16,651억  [n=2]  보험서비스 결과로 인한 증가분(감소분), 보험계약 부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+            -16,208억  [n=2]  보험계약마진 상각                                           | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+            -15,247억  [n=2]  당기서비스와 관련된 변동                                       | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToCurrentS
+             +5,967억  [n=6]  보험금융손익                                              | ifrs-full_IncreaseDecreaseThroughInsuranceFinanceIncomeOrExp
+             +2,609억  [n=2]  경험조정                                                | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+             -1,648억  [n=2]  미래 또는 과거 서비스와 관련 없는 비금융위험에 대한 위험조정의 변동에 따른 증가분(감소분  | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+             -1,005억  [n=6]  과거 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+               -605억  [n=2]  보험계약마진금액을 조정하지 않는 변동                                | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+               +460억  [n=2]  신계약효과                                               | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+               -303억  [n=6]  미래 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToFutureSe
+                -69억  [n=6]  기타                                                  | ifrs-full_IncreaseDecreaseThroughAdditionalItemsNecessaryToU
+                 +0억  [n=4]  보험수익 및 보험서비스비용에서 제외된 투자요소에 따른 증가분(감소분), 보험계약부채(자산)  | ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExclude
+                 +0억  [n=2]  보험계약마진금액을 조정하는 변동                                   | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+
+  [opening]
+         +1,032,191억  [n=2]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +516,095억  [n=1]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=1]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+========================================================================================================================
+현대해상 (00164973)
+========================================================================================================================
+
+  [closing]
+           +149,294억  [n=5]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+           +149,294억  [n=5]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+                 +0억  [n=5]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+           -282,897억  [n=2]  보험 수익으로 인한 증가분(감소분), 보험계약 부채(자산)                    | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueInsuranceCo
+            +60,857억  [n=2]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+            +54,829억  [n=2]  보험서비스 비용에 따른 총 증가분(감소분), 보험계약부채(자산)                 | ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesIns
+            -48,406억  [n=2]  보험취득 현금흐름을 제외하고 발행한 보험계약에 대해 지급한 보험금과 그 밖의 보험서비스비용  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+            +46,747억  [n=2]  발생한 보험금 및 그 밖의 발생한 보험서비스비용에 따른 증가분(감소분), 보험계약부채(자산  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncur
+            +40,751억  [n=2]  해당 기간에 처음 인식한 계약의 영향에 따른 증가분(감소분), 보험계약마진           | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+            +26,371억  [n=2]  미래 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약마진                | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToFutureSe
+            -19,278억  [n=2]  서비스 이전을 반영하기 위해 당기손익으로 인식한 보험계약마진 금액에 따른 증가분(감소분),  | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+            -14,381억  [n=2]  보험계약마진을 조정하는 추정치의 변동분에 따른 증가분(감소분), 보험계약마진          | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+             +6,504억  [n=2]  현금흐름에 따른 총 증가분(감소분), 재보험계약부채(자산)                    | ifrs-full_IncreaseDecreaseThroughCashFlowsInsuranceContracts
+             +6,355억  [n=2]  보험금융수익(비용)에 따른 증가분(감소분), 보험계약마진                     | ifrs-full_IncreaseDecreaseThroughInsuranceFinanceIncomeOrExp
+             -5,973억  [n=2]  현행 서비스와 관련된 변동분으로 인한 증가분(감소분), 보험계약 부채(자산)          | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToCurrentS
+             -5,947억  [n=2]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+             +5,875억  [n=2]  보험취득 현금흐름의 상각에 따른 증가분(감소분), 보험계약부채(자산)              | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+             +4,388억  [n=2]  경험조정에 따른 증가분(감소분), 보험계약부채(자산)                       | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+             -4,097억  [n=2]  보험서비스 결과로 인한 증가분(감소분), 보험계약 부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+             +2,934억  [n=2]  보험계약마진을 조정하지 않는 추정치의 변동분에 따른 증가분(감소분), 보험계약부채(자산)   | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+             +2,224억  [n=2]  과거 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+             +1,795억  [n=2]  보고기간에 처음 인식한 손실부담계약 집합의 영향에 따른 증가분(감소분), 보험계약부채(자산  | ifrs-full_IncreaseDecreaseThroughEffectsOfGroupsOfOnerousCon
+             +1,571억  [n=2]  기말 새 아이템 (2)                                        | entity00164973_IncreaseDecreaseThroughCashFlowsFromLoansToPo
+             +1,571억  [n=2]  기말 새 아이템 (1)                                        | entity00164973_IncreaseDecreaseThroughCashFlowsFromLoansToPo
+               -722억  [n=2]  미래 또는 과거 서비스와 관련 없는 비금융위험에 대한 위험조정의 변동에 따른 증가분(감소분  | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+               -102억  [n=1]  보험계약의 순장부금액 변동을 이해하는 데 필요한 추가 항목에 따른 증가분(감소분), 보험계  | ifrs-full_IncreaseDecreaseThroughAdditionalItemsNecessaryToU
+                 +0억  [n=2]  기말 새 아이템 (83)                                       | entity00164973_IncreaseDecreaseThroughOtherEffectsExcludingE
+                 +0억  [n=2]  보험수익 및 보험서비스비용에서 제외된 투자요소에 따른 증가분(감소분), 보험계약부채(자산)  | ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExclude
+
+  [opening]
+           +147,701억  [n=5]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +147,701억  [n=5]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=5]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+========================================================================================================================
+DB손해보험 (00159102)
+========================================================================================================================
+
+  [closing]
+           +315,801억  [n=1]  기말 재보험계약부채                                          | ifrs-full_InsuranceContractsIssuedThatAreLiabilities
+           +308,148억  [n=1]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+            +61,101억  [n=2]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+             +7,653억  [n=1]  기말 재보험계약자산                                          | ifrs-full_InsuranceContractsIssuedThatAreAssets
+                 +0억  [n=2]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+            +65,182억  [n=2]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+            -63,735억  [n=2]  보험 수익으로 인한 증가분(감소분), 보험계약 부채(자산)                    | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueInsuranceCo
+            +63,140억  [n=2]  발생한 보험금 및 그 밖의 발생한 보험서비스비용에 따른 증가분(감소분), 보험계약부채(자산  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsAndOtherIncur
+            +61,805억  [n=2]  보험서비스 비용에 따른 총 증가분(감소분), 보험계약부채(자산)                 | ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesIns
+            -52,274억  [n=2]  보험취득 현금흐름을 제외하고 발행한 보험계약에 대해 지급한 보험금과 그 밖의 보험서비스비용  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+            -37,842억  [n=2]  전환일에 존재했던 계약 중 수정소급법 또는 공정가치법을 적용한 보유재보험계약과 관련되지 않  | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueNotRelatedT
+            -29,484억  [n=2]  전환일에 존재했던 계약 중 공정가치법을 적용한 보유재보험계약과 관련된 재보험비용의 증가분(  | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToCo
+            -26,608억  [n=2]  기말 새 아이템 (54)                                       | entity00159102_IncreaseDecreaseThroughInsuranceServiceExpens
+            -23,837억  [n=2]  기말 새 아이템 (16)                                       | entity00159102_IncreaseDecreaseThroughInvestmentComponentsOt
+            -23,837억  [n=2]  기말 새 아이템 (14)                                       | entity00159102_IncreaseDecreaseThroughInvestmentComponentsOt
+            -21,923억  [n=2]  전환일에 존재했던 계약 중 수정소급법을 적용한 보험계약과 관련된 보험수익의 증가분(감소분)  | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToCo
+            -17,598억  [n=2]  기말 새 아이템 (59)                                       | entity00159102_IncreaseDecreaseThroughInsuranceServiceExpens
+            -15,270억  [n=2]  현행 서비스와 관련된 변동분으로 인한 증가분(감소분), 보험계약 부채(자산)          | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToCurrentS
+            -13,606억  [n=2]  기말 새 아이템 (49)                                       | entity00159102_IncreaseDecreaseThroughInsuranceServiceExpens
+            -12,851억  [n=2]  서비스 이전을 반영하기 위해 당기손익으로 인식한 보험계약마진 금액에 따른 증가분(감소분),  | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+            -12,100억  [n=2]  기말 새 아이템 (60)                                       | entity00159102_IncreaseDecreaseThroughAmortisationOfInsuranc
+             -8,856억  [n=2]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+             -7,863억  [n=2]  기말 새 아이템 (136)                                      | entity00159102_IncreaseDecreaseThroughOtherComprehensiveInco
+             -7,863억  [n=2]  기말 새 아이템 (127)                                      | entity00159102_IncreaseDecreaseThroughOtherComprehensiveInco
+             -7,440억  [n=2]  기말 새 아이템 (63)                                       | entity00159102_IncreaseDecreaseThroughContractualServiceMarg
+             +7,215억  [n=2]  기말 새 아이템 (64)                                       | entity00159102_IncreaseDecreaseThroughOtherOperatingExpenses
+             +6,177억  [n=2]  기말 새 아이템 (135)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+             +6,177억  [n=2]  기말 새 아이템 (126)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+             -6,001억  [n=2]  기말 새 아이템 (50)                                       | entity00159102_IncreaseDecreaseThroughAmortisationOfInsuranc
+             -5,674억  [n=2]  과거 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+             +4,354억  [n=2]  보험취득 현금흐름의 상각에 따른 증가분(감소분), 보험계약부채(자산)              | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+             +3,744억  [n=2]  현금흐름에 따른 총 증가분(감소분), 보험계약부채(자산)                     | ifrs-full_IncreaseDecreaseThroughCashFlowsInsuranceContracts
+             -2,727억  [n=2]  기말 새 아이템 (58)                                       | entity00159102_IncreaseDecreaseThroughContractualServiceMarg
+             -2,684억  [n=2]  기말 새 아이템 (53)                                       | entity00159102_IncreaseDecreaseThroughContractualServiceMarg
+             -1,930억  [n=2]  보험서비스 결과로 인한 증가분(감소분), 보험계약 부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+             -1,686억  [n=2]  기말 새 아이템 (134)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+             -1,686억  [n=2]  기말 새 아이템 (125)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+             -1,591억  [n=2]  미래 또는 과거 서비스와 관련 없는 비금융위험에 대한 위험조정의 변동에 따른 증가분(감소분  | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+             -1,102억  [n=2]  기말 새 아이템 (65)                                       | entity00159102_IncreaseDecreaseThroughAllocationOfLossCompon
+               -828억  [n=2]  경험조정에 따른 증가분(감소분), 보험계약부채(자산)                       | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+               -822억  [n=2]  기말 새 아이템 (61)                                       | entity00159102_IncreaseDecreaseThroughRiskAdjustmentForNonfi
+               +821억  [n=2]  해당 기간에 처음 인식한 계약의 영향에 따른 감소분, 보험계약자산                | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+               +724억  [n=2]  기말 새 아이템 (52)                                       | entity00159102_IncreaseDecreaseThroughLossComponentRelatedTo
+               +599억  [n=1]  기말 새 아이템 (129)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+               +555억  [n=1]  기말 새 아이템 (128)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+               -413억  [n=2]  기말 새 아이템 (56)                                       | entity00159102_IncreaseDecreaseThroughRiskAdjustmentForNonfi
+               -366억  [n=1]  기말 새 아이템 (68)                                       | entity00159102_IncreaseDecreaseThroughChangesInForeignExchan
+               -357억  [n=2]  기말 새 아이템 (51)                                       | entity00159102_IncreaseDecreaseThroughRiskAdjustmentForNonfi
+               -327억  [n=2]  보험계약마진을 조정하지 않는 추정치의 변동분에 따른 증가분(감소분), 보험계약부채(자산)   | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+               -308억  [n=1]  기말 새 아이템 (15)                                       | entity00159102_IncreaseDecreaseThroughInvestmentComponentsOt
+               -301억  [n=1]  기말 새 아이템 (70)                                       | entity00159102_IncreaseDecreaseThroughChangesInForeignExchan
+               +260억  [n=2]  기말 새 아이템 (57)                                       | entity00159102_IncreaseDecreaseThroughLossComponentRelatedTo
+               +231억  [n=1]  기말 새 아이템 (132)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+               +215억  [n=1]  기말 새 아이템 (131)                                      | entity00159102_IncreaseDecreaseThroughInsuranceFinanceExpens
+               -195억  [n=2]  기말 새 아이템 (66)                                       | entity00159102_IncreaseDecreaseThroughExperienceAdjustmentsO
+               +118억  [n=2]  기말 새 아이템 (62)                                       | entity00159102_IncreaseDecreaseThroughLossComponentNotRelate
+                -65억  [n=1]  기말 새 아이템 (69)                                       | entity00159102_IncreaseDecreaseThroughChangesInForeignExchan
+                -44억  [n=1]  기말 새 아이템 (130)                                      | entity00159102_IncreaseDecreaseThroughOtherComprehensiveInco
+                -16억  [n=1]  기말 새 아이템 (133)                                      | entity00159102_IncreaseDecreaseThroughOtherComprehensiveInco
+                -15억  [n=2]  미래 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약마진                | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToFutureSe
+                 +5억  [n=2]  기말 새 아이템 (55)                                       | entity00159102_IncreaseDecreaseThroughAmortisationOfInsuranc
+                 +0억  [n=2]  보험계약마진을 조정하는 추정치의 변동분에 따른 증가분(감소분), 보험계약마진          | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+                 +0억  [n=2]  보험수익 및 보험서비스비용에서 제외된 투자요소에 따른 증가분(감소분), 보험계약부채(자산)  | ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExclude
+
+  [opening]
+           +319,373억  [n=1]  기말 재보험계약부채                                          | ifrs-full_InsuranceContractsIssuedThatAreLiabilities
+           +312,442억  [n=1]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+            +59,079억  [n=2]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+             +6,931억  [n=1]  기말 재보험계약자산                                          | ifrs-full_InsuranceContractsIssuedThatAreAssets
+               +196억  [n=2]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+========================================================================================================================
+한화손해보험 (00135917)
+========================================================================================================================
+
+  [closing]
+           +306,970억  [n=4]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +153,485억  [n=2]  보험계약부채                                              | ifrs-full_InsuranceContractsIssuedThatAreLiabilities
+            +17,042억  [n=2]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=2]  보험계약자산                                              | ifrs-full_InsuranceContractsIssuedThatAreAssets
+                 +0억  [n=2]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
+
+  [duration]
+            -39,471억  [n=2]  기말 새 아이템 (3)                                        | entity00135917_IncreaseDecreaseThroughIncurredClaimsPaidForI
+            +27,158억  [n=2]  기말 새 아이템 (2)                                        | entity00135917_IncreaseDecreaseThroughIncurredClaimsInsuranc
+            -18,891억  [n=2]  전환일에 존재했던 계약 중 공정가치법을 적용한 보유재보험계약과 관련된 재보험비용의 증가분(  | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToCo
+            +16,666억  [n=2]  보험서비스 비용으로 인한 증가분(감소분), 보험계약 부채(자산)                 | ifrs-full_IncreaseDecreaseThroughInsuranceServiceExpensesIns
+            +15,629억  [n=2]  발행한 보험계약에 대해 수취한 보험료에 따른 증가분(감소분), 보험계약부채(자산)       | ifrs-full_IncreaseDecreaseThroughPremiumsReceivedForInsuranc
+            -15,354억  [n=2]  보험 수익으로 인한 증가분(감소분), 보험계약 부채(자산)                    | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueInsuranceCo
+            -13,687억  [n=2]  전환일에 존재했던 계약 중 수정소급법 또는 공정가치법을 적용한 보유재보험계약과 관련되지 않  | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueNotRelatedT
+            +13,592억  [n=2]  기말 새 아이템 (1)                                        | entity00135917_IncreaseDecreaseThroughIncurredClaimsInsuranc
+            -11,067억  [n=2]  보험취득 현금흐름을 제외하고 발행한 보험계약에 대해 지급한 보험금과 그 밖의 보험서비스비용  | ifrs-full_IncreaseDecreaseThroughIncurredClaimsPaidAndOtherI
+             -7,029억  [n=2]  전환일에 존재했던 계약 중 수정소급법을 적용한 보험계약과 관련된 보험수익의 증가분(감소분)  | ifrs-full_IncreaseDecreaseThroughInsuranceRevenueRelatedToCo
+             +6,818억  [n=1]  세전기타포괄손익, 당기손익에서 제외되나 당기손익으로 재분류될 발행한 보험계약의 보험금융수익  | ifrs-full_OtherComprehensiveIncomeBeforeTaxInsuranceFinanceI
+             -6,766억  [n=2]  기말 새 아이템 (18)                                       | entity00135917_IncreaseDecreaseThroughTotalComprehensiveInco
+             -6,766억  [n=2]  기말 새 아이템 (2)                                        | entity00135917_IncreaseDecreaseThroughTotalComprehensiveInco
+             -4,433억  [n=3]  당기손익으로 인식한 발행한 보험계약의 보험금융수익(비용)                     | ifrs-full_InsuranceFinanceIncomeExpensesFromInsuranceContrac
+             -4,231억  [n=2]  서비스 이전을 반영하기 위해 당기손익으로 인식한 보험계약마진 금액에 따른 증가분(감소분),  | ifrs-full_IncreaseDecreaseThroughRecognitionOfContractualSer
+             +3,144억  [n=2]  기말 새 아이템 (9)                                        | entity00135917_IncreaseDecreaseThroughOtherIncurredInsurance
+             -3,144억  [n=2]  기말 새 아이템 (14)                                       | entity00135917_IncreaseDecreaseThroughOtherIncurredInsurance
+             -3,144억  [n=2]  기말 새 아이템 (19)                                       | entity00135917_IncreaseDecreaseThroughOtherIncurredInsurance
+             +2,113억  [n=2]  기말 새 아이템 (9)                                        | entity00135917_IncreaseDecreaseThroughMergerEffectInsuranceC
+             +1,994억  [n=2]  현금흐름에 따른 총 증가분(감소분), 보험계약부채(자산)                     | ifrs-full_IncreaseDecreaseThroughCashFlowsInsuranceContracts
+             -1,883억  [n=2]  보험취득 현금흐름에 따른 증가분(감소분), 보험계약부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceAcquisitionCashFlo
+             +1,522억  [n=2]  기말 새 아이템 (6)                                        | entity00135917_IncreaseDecreaseThroughTotalComprehensiveInco
+             +1,312억  [n=2]  보험서비스 결과로 인한 증가분(감소분), 보험계약 부채(자산)                  | ifrs-full_IncreaseDecreaseThroughInsuranceServiceResultInsur
+             +1,030억  [n=2]  경험조정에 따른 증가분(감소분), 보험계약부채(자산)                       | ifrs-full_IncreaseDecreaseThroughExperienceAdjustmentsInsura
+               +992억  [n=1]  보험취득 현금흐름의 상각에 따른 증가분(감소분), 보험계약부채(자산)              | ifrs-full_IncreaseDecreaseThroughAmortisationOfInsuranceAcqu
+               +865억  [n=1]  기말 새 아이템 (1)                                        | entity00135917_IncreaseDecreaseThroughCurrentPeriodExpenseOf
+               -823억  [n=2]  기말 새 아이템 (7)                                        | entity00135917_IncreaseDecreaseThroughOtherIncurredInsurance
+               +823억  [n=2]  기말 새 아이템 (1)                                        | entity00135917_IncreaseDecreaseThroughOtherIncurredInsurance
+               -565억  [n=2]  보험계약마진을 조정하지 않는 추정치의 변동분에 따른 증가분(감소분), 보험계약부채(자산)   | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatDoNot
+               +478억  [n=2]  해당 기간에 처음 인식한 계약의 영향에 따른 증가분(감소분), 보험계약마진           | ifrs-full_IncreaseDecreaseThroughEffectsOfContractsInitially
+               -421억  [n=2]  미래 또는 과거 서비스와 관련 없는 비금융위험에 대한 위험조정의 변동에 따른 증가분(감소분  | ifrs-full_IncreaseDecreaseThroughChangeInRiskAdjustmentForNo
+               +383억  [n=2]  과거 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약부채(자산)            | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToPastServ
+               +286억  [n=2]  기말 새 아이템 (15)                                       | entity00135917_IncreaseDecreaseThroughOtherSuspenseAccountCa
+               +138억  [n=2]  기말 새 아이템 (8)                                        | entity00135917_IncreaseDecreaseThroughOtherSuspenseAccountCa
+                +39억  [n=2]  기말 새 아이템 (10)                                       | entity00135917_IncreaseDecreaseThroughExperienceAdjustmentsO
+                +11억  [n=2]  미래 서비스와 관련된 변동분에 따른 증가분(감소분), 보험계약마진                | ifrs-full_IncreaseDecreaseThroughChangesThatRelateToFutureSe
+                 +3억  [n=1]  기말 새 아이템 (5)                                        | entity00135917_IncreaseDecreaseThroughInsuranceFinanceIncome
+                 +0억  [n=2]  보험수익 및 보험서비스비용에서 제외된 투자요소에 따른 증가분(감소분), 보험계약부채(자산)  | ifrs-full_IncreaseDecreaseThroughInvestmentComponentsExclude
+                 +0억  [n=2]  보험계약마진을 조정하는 추정치의 변동분에 따른 증가분(감소분), 보험계약마진          | ifrs-full_IncreaseDecreaseThroughChangesInEstimatesThatAdjus
+
+  [opening]
+           +303,951억  [n=4]  기말 보험계약부채(자산)                                       | ifrs-full_InsuranceContractsLiabilityAsset
+           +151,976억  [n=2]  보험계약부채                                              | ifrs-full_InsuranceContractsIssuedThatAreLiabilities
+            +11,414억  [n=2]  부채인 보험계약                                            | ifrs-full_InsuranceContractsThatAreLiabilities
+                 +0억  [n=2]  보험계약자산                                              | ifrs-full_InsuranceContractsIssuedThatAreAssets
+                 +0억  [n=2]  자산인 보험계약                                            | ifrs-full_InsuranceContractsThatAreAssets
