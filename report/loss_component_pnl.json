@@ -1,0 +1,47 @@
+{
+  "00112332": {
+    "name": "미래에셋생명",
+    "loss_pnl": null,
+    "source": null
+  },
+  "00126256": {
+    "name": "삼성생명",
+    "loss_pnl": 357536000000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00113058": {
+    "name": "한화생명",
+    "loss_pnl": 135273000000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00117267": {
+    "name": "동양생명",
+    "loss_pnl": 79677000000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00139214": {
+    "name": "삼성화재",
+    "loss_pnl": -14755000000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00164973": {
+    "name": "현대해상",
+    "loss_pnl": 379505381851.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00159102": {
+    "name": "DB손해보험",
+    "loss_pnl": 20202000000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00135917": {
+    "name": "한화손해보험",
+    "loss_pnl": -31485967000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  },
+  "00103176": {
+    "name": "흥국화재",
+    "loss_pnl": -2863000000.0,
+    "source": "InsuranceServiceExpensesAmountsThroughChangesThatR"
+  }
+}
